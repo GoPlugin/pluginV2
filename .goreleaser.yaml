@@ -1,12 +1,12 @@
 ## goreleaser <1.14.0
-project_name: chainlink
+project_name: pluginV2
 
 env:
   - ZIG_EXEC={{ if index .Env "ZIG_EXEC"  }}{{ .Env.ZIG_EXEC }}{{ else }}zig{{ end }}
   - IMAGE_PREFIX={{ if index .Env "IMAGE_PREFIX"  }}{{ .Env.IMAGE_PREFIX }}{{ else }}localhost:5001{{ end }}
   - IMAGE_LABEL_DESCRIPTION="node of the decentralized oracle network, bridging on and off-chain computation"
   - IMAGE_LABEL_LICENSES="MIT"
-  - IMAGE_LABEL_SOURCE="https://github.com/smartcontractkit/{{ .ProjectName }}"
+  - IMAGE_LABEL_SOURCE="https://github.com/{{ .ProjectName }}"
 
 before:
   hooks:
@@ -34,8 +34,8 @@ builds:
       - -buildmode=pie
     ldflags:
       - -s -w -r=$ORIGIN/libs
-      - -X github.com/smartcontractkit/chainlink/core/static.Version={{ .Version }}
-      - -X github.com/smartcontractkit/chainlink/core/static.Sha={{ .FullCommit }}
+      - -X github.com/pluginV2/core/static.Version={{ .Version }}
+      - -X github.com/pluginV2/core/static.Sha={{ .FullCommit }}
   - binary: chainlink
     id: linux-amd64
     goos:
@@ -54,8 +54,8 @@ builds:
       - -buildmode=pie
     ldflags:
       - -s -w -r=$ORIGIN/libs
-      - -X github.com/smartcontractkit/chainlink/core/static.Version={{ .Version }}
-      - -X github.com/smartcontractkit/chainlink/core/static.Sha={{ .FullCommit }}
+      - -X github.com/pluginV2/core/static.Version={{ .Version }}
+      - -X github.com/pluginV2/core/static.Sha={{ .FullCommit }}
   - binary: chainlink
     id: darwin-arm64
     goos:
@@ -74,8 +74,8 @@ builds:
       - -buildmode=pie
     ldflags:
       - -s -w -r=@executable/libs
-      - -X github.com/smartcontractkit/chainlink/core/static.Version={{ .Version }}
-      - -X github.com/smartcontractkit/chainlink/core/static.Sha={{ .FullCommit }}
+      - -X github.com/pluginV2/core/static.Version={{ .Version }}
+      - -X github.com/pluginV2/core/static.Sha={{ .FullCommit }}
   - binary: chainlink
     id: darwin-amd64
     goos:
@@ -94,8 +94,8 @@ builds:
       - -buildmode=pie
     ldflags:
       - -s -w -r=@executable/libs
-      - -X github.com/smartcontractkit/chainlink/core/static.Version={{ .Version }}
-      - -X github.com/smartcontractkit/chainlink/core/static.Sha={{ .FullCommit }}
+      - -X github.com/pluginV2/core/static.Version={{ .Version }}
+      - -X github.com/pluginV2/core/static.Sha={{ .FullCommit }}
 
 # See https://goreleaser.com/customization/docker/
 dockers:
