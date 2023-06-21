@@ -1,0 +1,16 @@
+[Log]
+Level = 'debug'
+[WebServer]
+AllowOrigins = '*'
+SecureCookies = false
+[WebServer.TLS]
+HTTPSPort = 0 # Default
+ForceRedirect = false # Default
+[[EVM]]
+ChainID = '51'
+[[EVM.Nodes]]
+Name = 'XdcApothem'
+WSURL = 'wss://ws.apothem.network/ws'
+HTTPURL = 'https://erpc.apothem.network'
+[[Feature]]
+FeedsManager = true # Default
