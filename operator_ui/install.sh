@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-owner=pluginV2
+owner=smartcontractkit
 repo=operator-ui
 fullRepo=${owner}/${repo}
 gitRoot=$(git rev-parse --show-toplevel || pwd)
