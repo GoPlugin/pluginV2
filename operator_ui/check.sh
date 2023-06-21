@@ -5,7 +5,7 @@ set -e
 # gh cli ^2.15.0 https://github.com/cli/cli/releases/tag/v2.15.0
 # jq ^1.6 https://stedolan.github.io/jq/
 
-repo=smartcontractkit/operator-ui
+repo=pluginV2/operator-ui
 gitRoot=$(git rev-parse --show-toplevel)
 cd "$gitRoot/operator_ui"
 
