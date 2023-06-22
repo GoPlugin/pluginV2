@@ -13,8 +13,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 // NOTE: These metrics generate a new label per bridge, this should be safe

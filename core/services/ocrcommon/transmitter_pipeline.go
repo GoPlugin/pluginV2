@@ -7,10 +7,10 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 const txObservationSource = `

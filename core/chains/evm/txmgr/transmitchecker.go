@@ -10,13 +10,13 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/pkg/errors"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/types"
-	v1 "github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
-	v2 "github.com/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
-	bigmath "github.com/pluginV2/core/utils/big_math"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	v1 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
+	v2 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	bigmath "github.com/GoPlugin/pluginV2/core/utils/big_math"
 )
 
 var (

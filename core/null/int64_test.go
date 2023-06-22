@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/pluginV2/core/null"
+	"github.com/GoPlugin/pluginV2/core/null"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -13,13 +13,13 @@ import (
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 	"github.com/smartcontractkit/sqlx"
 
-	relaytypes "github.com/pluginV2-relay/pkg/types"
+	relaytypes "github.com/smartcontractkit/chainlink-relay/pkg/types"
 
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/ocr2/plugins/dkg/config"
-	types "github.com/pluginV2/core/services/relay/evm/types"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/dkg/config"
+	types "github.com/GoPlugin/pluginV2/core/services/relay/evm/types"
 )
 
 // DKGProvider provides all components needed for a DKG plugin.

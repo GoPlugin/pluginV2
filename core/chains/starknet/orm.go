@@ -3,12 +3,12 @@ package starknet
 import (
 	"github.com/smartcontractkit/sqlx"
 
-	starknetdb "github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
+	starknetdb "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
 
-	"github.com/pluginV2/core/chains"
-	"github.com/pluginV2/core/chains/starknet/types"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/chains"
+	"github.com/GoPlugin/pluginV2/core/chains/starknet/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 // https://app.shortcut.com/chainlinklabs/story/33622/remove-legacy-config

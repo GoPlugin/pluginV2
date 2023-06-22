@@ -5,13 +5,13 @@ import (
 	ocr "github.com/smartcontractkit/libocr/offchainreporting2"
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2-relay/pkg/types"
+	"github.com/smartcontractkit/chainlink-relay/pkg/types"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/ocr2/validate"
-	"github.com/pluginV2/core/services/ocrcommon"
-	"github.com/pluginV2/core/services/relay"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/validate"
+	"github.com/GoPlugin/pluginV2/core/services/ocrcommon"
+	"github.com/GoPlugin/pluginV2/core/services/relay"
 )
 
 // Delegate creates Bootstrap jobs

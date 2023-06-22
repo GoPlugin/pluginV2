@@ -7,7 +7,7 @@ import (
 
 	bind "github.com/ethereum/go-ethereum/accounts/abi/bind"
 
-	generated "github.com/pluginV2/core/gethwrappers/generated"
+	generated "github.com/GoPlugin/pluginV2/core/gethwrappers/generated"
 
 	mock "github.com/stretchr/testify/mock"
 

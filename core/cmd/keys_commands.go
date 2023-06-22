@@ -12,8 +12,8 @@ import (
 	"github.com/urfave/cli"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // KeysClient is a generic client interface for any type of key.

@@ -10,7 +10,7 @@ import (
 	"github.com/shopspring/decimal"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 //

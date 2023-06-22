@@ -15,12 +15,12 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 
-	"github.com/pluginV2/core/assets"
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/utils/mathutil"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils/mathutil"
 )
 
 // MaxStartTime is the maximum amount of time we are allowed to spend

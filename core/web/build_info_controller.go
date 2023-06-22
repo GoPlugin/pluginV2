@@ -3,8 +3,8 @@ package web
 import (
 	"net/http"
 
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/static"
 
 	"github.com/gin-gonic/gin"
 )

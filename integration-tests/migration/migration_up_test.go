@@ -9,10 +9,10 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-env/logging"
-	ctfClient "github.com/pluginV2-testing-framework/client"
-	"github.com/pluginV2-testing-framework/testsetups"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-env/logging"
+	ctfClient "github.com/smartcontractkit/chainlink-testing-framework/client"
+	"github.com/smartcontractkit/chainlink-testing-framework/testsetups"
 )
 
 type Data struct {

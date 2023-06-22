@@ -8,7 +8,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/accounts/keystore"
 
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type EncryptedPrivateKey struct {

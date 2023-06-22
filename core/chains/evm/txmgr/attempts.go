@@ -8,8 +8,8 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/chains/evm/gas"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas"
 )
 
 func (c *ChainKeyStore) NewDynamicFeeAttempt(etx EthTx, fee gas.DynamicFee, gasLimit uint32) (attempt EthTxAttempt, err error) {

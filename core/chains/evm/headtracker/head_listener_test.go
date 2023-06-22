@@ -12,16 +12,16 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/pluginV2/core/chains/evm/headtracker"
-	evmmocks "github.com/pluginV2/core/chains/evm/mocks"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/headtracker"
+	evmmocks "github.com/GoPlugin/pluginV2/core/chains/evm/mocks"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 func Test_HeadListener_HappyPath(t *testing.T) {

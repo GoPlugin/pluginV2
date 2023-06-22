@@ -4,7 +4,7 @@ import (
 	"math/big"
 
 	"github.com/pkg/errors"
-	"github.com/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
 )
 
 var (

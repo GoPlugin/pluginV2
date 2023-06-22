@@ -12,16 +12,16 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 
-	"github.com/pluginV2/core/assets"
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/gas"
-	httypes "github.com/pluginV2/core/chains/evm/headtracker/types"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas"
+	httypes "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/types"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 const (

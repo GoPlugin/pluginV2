@@ -3,9 +3,9 @@ package starkkey
 import (
 	"github.com/ethereum/go-ethereum/accounts/keystore"
 
-	stark "github.com/pluginV2-starknet/relayer/pkg/chainlink/keys"
-	"github.com/pluginV2/core/services/keystore/keys"
-	"github.com/pluginV2/core/utils"
+	stark "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/keys"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 const keyTypeIdentifier = "StarkNet"

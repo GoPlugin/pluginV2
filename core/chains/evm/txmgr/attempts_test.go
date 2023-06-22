@@ -10,14 +10,14 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/chains/evm/gas"
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/internal/testutils"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	"github.com/pluginV2/core/services/chainlink"
-	ksmocks "github.com/pluginV2/core/services/keystore/mocks"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	ksmocks "github.com/GoPlugin/pluginV2/core/services/keystore/mocks"
 )
 
 func TestTxm_NewDynamicFeeTx(t *testing.T) {

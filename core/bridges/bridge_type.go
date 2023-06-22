@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // BridgeTypeRequest is the incoming record used to create a BridgeType

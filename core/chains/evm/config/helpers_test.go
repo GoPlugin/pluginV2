@@ -1,6 +1,6 @@
 package config
 
-import "github.com/pluginV2/core/chains/evm/types"
+import "github.com/GoPlugin/pluginV2/core/chains/evm/types"
 
 // Deprecated: https://app.shortcut.com/chainlinklabs/story/33622/remove-legacy-config
 func UpdatePersistedCfg(cfg ChainScopedConfig, updateFn func(*types.ChainCfg)) {

@@ -3,28 +3,28 @@
 package mocks
 
 import (
-	assets "github.com/pluginV2/core/assets"
-	audit "github.com/pluginV2/core/logger/audit"
+	assets "github.com/GoPlugin/pluginV2/core/assets"
+	audit "github.com/GoPlugin/pluginV2/core/logger/audit"
 
 	big "math/big"
 
 	commontypes "github.com/smartcontractkit/libocr/commontypes"
 
-	config "github.com/pluginV2/core/config"
+	config "github.com/GoPlugin/pluginV2/core/config"
 
-	dialects "github.com/pluginV2/core/store/dialects"
+	dialects "github.com/GoPlugin/pluginV2/core/store/dialects"
 
-	ethkey "github.com/pluginV2/core/services/keystore/keys/ethkey"
+	ethkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
 
 	mock "github.com/stretchr/testify/mock"
 
-	models "github.com/pluginV2/core/store/models"
+	models "github.com/GoPlugin/pluginV2/core/store/models"
 
 	net "net"
 
 	networking "github.com/smartcontractkit/libocr/networking"
 
-	p2pkey "github.com/pluginV2/core/services/keystore/keys/p2pkey"
+	p2pkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 
 	sessions "github.com/gin-contrib/sessions"
 
@@ -32,7 +32,7 @@ import (
 
 	url "net/url"
 
-	utils "github.com/pluginV2/core/utils"
+	utils "github.com/GoPlugin/pluginV2/core/utils"
 
 	uuid "github.com/satori/go.uuid"
 

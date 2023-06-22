@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func TestExternalInitiatorPresenter_RenderTable(t *testing.T) {

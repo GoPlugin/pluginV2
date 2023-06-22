@@ -7,10 +7,10 @@ import (
 
 	"github.com/smartcontractkit/libocr/commontypes"
 
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 type Config interface {

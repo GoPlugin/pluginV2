@@ -5,8 +5,8 @@ import (
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func ValidatedCronSpec(tomlString string) (job.Job, error) {

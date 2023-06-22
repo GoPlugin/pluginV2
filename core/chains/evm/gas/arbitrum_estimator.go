@@ -13,10 +13,10 @@ import (
 	"github.com/pkg/errors"
 	"golang.org/x/exp/slices"
 
-	"github.com/pluginV2/core/assets"
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type ArbConfig interface {

@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	src "github.com/pluginV2/core/scripts/functions/src"
+	src "github.com/GoPlugin/pluginV2/core/scripts/functions/src"
 )
 
 type command interface {

@@ -10,11 +10,11 @@ import (
 	"github.com/pkg/errors"
 	libocr2 "github.com/smartcontractkit/libocr/offchainreporting2"
 
-	"github.com/pluginV2/core/services/job"
-	dkgconfig "github.com/pluginV2/core/services/ocr2/plugins/dkg/config"
-	ocr2vrfconfig "github.com/pluginV2/core/services/ocr2/plugins/ocr2vrf/config"
-	"github.com/pluginV2/core/services/ocrcommon"
-	"github.com/pluginV2/core/services/relay"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	dkgconfig "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/dkg/config"
+	ocr2vrfconfig "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/ocr2vrf/config"
+	"github.com/GoPlugin/pluginV2/core/services/ocrcommon"
+	"github.com/GoPlugin/pluginV2/core/services/relay"
 )
 
 // ValidatedOracleSpecToml validates an oracle spec that came from TOML

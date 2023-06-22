@@ -12,11 +12,11 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
 
-	"github.com/pluginV2/core/gethwrappers/generated/operator_factory"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/operator_factory"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
 )
 
 func DeployForwarderContracts(

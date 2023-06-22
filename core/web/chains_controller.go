@@ -10,9 +10,9 @@ import (
 	"github.com/manyminds/api2go/jsonapi"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/chains"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/chains"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
 )
 
 type ChainsController interface {

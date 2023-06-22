@@ -14,17 +14,17 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/bridges"
-	clnull "github.com/pluginV2/core/null"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/services/relay"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/utils/stringutils"
-	"github.com/pluginV2/core/utils/tomlutils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	clnull "github.com/GoPlugin/pluginV2/core/null"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/relay"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/utils/tomlutils"
 )
 
 const (

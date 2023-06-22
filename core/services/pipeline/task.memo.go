@@ -5,7 +5,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 // Memo task returns its value as a result

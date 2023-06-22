@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/config"
 )
 
 func init() {

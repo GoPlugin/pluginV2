@@ -3,7 +3,7 @@ package config
 import (
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
 )
 
 // PluginConfig contains custom arguments for the DKG plugin.

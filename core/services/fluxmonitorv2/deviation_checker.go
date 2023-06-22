@@ -2,7 +2,7 @@ package fluxmonitorv2
 
 import (
 	"github.com/shopspring/decimal"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 // DeviationThresholds carries parameters used by the threshold-trigger logic

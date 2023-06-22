@@ -8,13 +8,13 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2-solana/pkg/solana"
-	"github.com/pluginV2-solana/pkg/solana/config"
-	"github.com/pluginV2-solana/pkg/solana/db"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/config"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 
-	"github.com/pluginV2/core/chains"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/chains"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
 )
 
 // ChainSetOpts holds options for configuring a ChainSet.
@@ -69,7 +69,7 @@ func (o *ChainSetOpts) NewTOMLChain(cfg *SolanaConfig) (solana.Chain, error) {
 	return c, nil
 }
 
-//go:generate mockery --quiet --name ChainSet --srcpkg github.com/pluginV2-solana/pkg/solana --output ./mocks/ --case=underscore
+//go:generate mockery --quiet --name ChainSet --srcpkg github.com/smartcontractkit/chainlink-solana/pkg/solana --output ./mocks/ --case=underscore
 
 // ChainSet extends solana.ChainSet with mutability.
 type ChainSet interface {

@@ -5,8 +5,8 @@ import (
 
 	"gopkg.in/guregu/null.v4"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/utils"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // EVMChainResource is an EVM chain JSONAPI resource.

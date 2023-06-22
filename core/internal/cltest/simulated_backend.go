@@ -10,12 +10,12 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/chains/evm/client"
-	coreconfig "github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	coreconfig "github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func NewSimulatedBackend(t *testing.T, alloc core.GenesisAlloc, gasLimit uint32) *backends.SimulatedBackend {

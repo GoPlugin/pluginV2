@@ -6,10 +6,10 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/gethwrappers/generated"
-	"github.com/pluginV2/core/gethwrappers/generated/flags_wrapper"
-	"github.com/pluginV2/core/utils"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/flags_wrapper"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 //go:generate mockery --quiet --name Flags --output ./mocks/ --case=underscore --structname Flags --filename flags.go

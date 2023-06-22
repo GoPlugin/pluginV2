@@ -11,12 +11,12 @@ import (
 	"github.com/smartcontractkit/libocr/commontypes"
 	"github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	drocr_serv "github.com/pluginV2/core/services/directrequestocr"
-	drocr_mocks "github.com/pluginV2/core/services/directrequestocr/mocks"
-	"github.com/pluginV2/core/services/ocr2/plugins/directrequestocr"
-	"github.com/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	drocr_serv "github.com/GoPlugin/pluginV2/core/services/directrequestocr"
+	drocr_mocks "github.com/GoPlugin/pluginV2/core/services/directrequestocr/mocks"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
 )
 
 func preparePlugin(t *testing.T, batchSize uint32) (types.ReportingPlugin, *drocr_mocks.ORM, *directrequestocr.ReportCodec) {

@@ -10,8 +10,8 @@ import (
 	"github.com/slack-go/slack"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/pluginV2-testing-framework/testreporters"
-	"github.com/pluginV2/integration-tests/client"
+	"github.com/smartcontractkit/chainlink-testing-framework/testreporters"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
 )
 
 type ChainlinkProfileTestReporter struct {

@@ -3,8 +3,8 @@ package chains
 import (
 	"github.com/pkg/errors"
 
-	v2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/services/pg"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 type ormImmut[I ID, C Config, N Node] struct {

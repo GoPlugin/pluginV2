@@ -9,10 +9,10 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/pkg/errors"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/label"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/label"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // pollInterval is the maximum amount of time in addition to

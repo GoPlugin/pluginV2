@@ -9,10 +9,10 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
-	"github.com/pluginV2/core/utils"
-	bm "github.com/pluginV2/core/utils/big_math"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	bm "github.com/GoPlugin/pluginV2/core/utils/big_math"
 	"go.dedis.ch/kyber/v3"
 )
 

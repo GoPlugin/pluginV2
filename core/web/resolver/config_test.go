@@ -10,9 +10,9 @@ import (
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/internal/testutils/configtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/configtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
 )
 
 var (

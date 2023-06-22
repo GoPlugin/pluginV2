@@ -3,8 +3,8 @@
 package mocks
 
 import (
-	auth "github.com/pluginV2/core/auth"
-	bridges "github.com/pluginV2/core/bridges"
+	auth "github.com/GoPlugin/pluginV2/core/auth"
+	bridges "github.com/GoPlugin/pluginV2/core/bridges"
 
 	mock "github.com/stretchr/testify/mock"
 

@@ -14,13 +14,13 @@ import (
 	"golang.org/x/exp/slices"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/config"
-	v2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/config"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type HasEVMConfigs interface {

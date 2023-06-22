@@ -9,15 +9,15 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/urfave/cli"
 
-	"github.com/pluginV2-relay/pkg/utils"
-	"github.com/pluginV2-solana/pkg/solana/db"
+	"github.com/smartcontractkit/chainlink-relay/pkg/utils"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 
-	"github.com/pluginV2/core/chains/solana"
+	"github.com/GoPlugin/pluginV2/core/chains/solana"
 
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/internal/testutils/solanatest"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/solanatest"
 )
 
 func TestClient_IndexSolanaChains(t *testing.T) {

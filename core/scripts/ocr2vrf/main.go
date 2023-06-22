@@ -14,9 +14,9 @@ import (
 	"github.com/shopspring/decimal"
 	ocr2vrftypes "github.com/smartcontractkit/ocr2vrf/types"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/gethwrappers/generated/link_token_interface"
-	helpers "github.com/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/link_token_interface"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
 )
 
 type commonSetConfigArgs struct {

@@ -13,10 +13,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/relay"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/relay"
 )
 
 func setup(t testing.TB) (ocr2vrftypes.DKGSharePersistence, *sqlx.DB) {

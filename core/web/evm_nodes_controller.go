@@ -3,10 +3,10 @@ package web
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func NewEVMNodesController(app chainlink.Application) NodesController {

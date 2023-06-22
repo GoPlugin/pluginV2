@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 func TestKeypath(t *testing.T) {

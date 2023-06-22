@@ -8,9 +8,9 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 type transmitter interface {

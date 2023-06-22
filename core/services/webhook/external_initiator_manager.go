@@ -12,12 +12,12 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/static"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 //go:generate mockery --quiet --name ExternalInitiatorManager --output ./mocks/ --case=underscore

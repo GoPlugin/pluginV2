@@ -5,21 +5,21 @@ import (
 	"testing"
 	"time"
 
-	medianconfig "github.com/pluginV2/core/services/ocr2/plugins/median/config"
+	medianconfig "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/median/config"
 
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 	"github.com/smartcontractkit/sqlx"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/services/ocr2"
-	"github.com/pluginV2/core/services/ocr2/testhelpers"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/testhelpers"
 )
 
 func MustInsertOCROracleSpec(t *testing.T, db *sqlx.DB, transmitterAddress ethkey.EIP55Address) job.OCR2OracleSpec {

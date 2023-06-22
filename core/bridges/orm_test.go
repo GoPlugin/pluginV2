@@ -8,16 +8,16 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/auth"
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/auth"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 func setupORM(t *testing.T) (*sqlx.DB, bridges.ORM) {

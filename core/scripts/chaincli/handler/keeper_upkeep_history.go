@@ -18,9 +18,9 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/rpc"
 
-	registry11 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
-	registry12 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
-	"github.com/pluginV2/core/services/keeper"
+	registry11 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
+	registry12 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
+	"github.com/GoPlugin/pluginV2/core/services/keeper"
 )
 
 const (

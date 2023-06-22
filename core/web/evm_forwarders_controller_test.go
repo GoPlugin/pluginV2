@@ -11,14 +11,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	evmcfg "github.com/pluginV2/core/chains/evm/config/v2"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web"
-	"github.com/pluginV2/core/web/presenters"
+	evmcfg "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 type TestEVMForwardersController struct {

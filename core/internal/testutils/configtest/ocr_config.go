@@ -3,8 +3,8 @@ package configtest
 import (
 	"time"
 
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
 )
 
 var _ config.OCR1Config = &TestGeneralConfig{}

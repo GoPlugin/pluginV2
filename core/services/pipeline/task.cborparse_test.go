@@ -6,9 +6,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 func TestCBORParseTask(t *testing.T) {

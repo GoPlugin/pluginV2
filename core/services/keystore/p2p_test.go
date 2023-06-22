@@ -7,14 +7,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
-	"github.com/pluginV2/core/services/ocrcommon"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/services/ocrcommon"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func Test_P2PKeyStore_E2E(t *testing.T) {

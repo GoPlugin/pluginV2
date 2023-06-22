@@ -11,16 +11,16 @@ import (
 	"github.com/pkg/errors"
 	"github.com/smartcontractkit/sqlx"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/gas"
-	evmlogpoller "github.com/pluginV2/core/chains/evm/logpoller"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/gethwrappers/generated/authorized_forwarder"
-	"github.com/pluginV2/core/gethwrappers/generated/authorized_receiver"
-	"github.com/pluginV2/core/gethwrappers/generated/offchain_aggregator_wrapper"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas"
+	evmlogpoller "github.com/GoPlugin/pluginV2/core/chains/evm/logpoller"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/authorized_forwarder"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/authorized_receiver"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/offchain_aggregator_wrapper"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var forwardABI = evmtypes.MustGetABI(authorized_forwarder.AuthorizedForwarderABI).Methods["forward"]

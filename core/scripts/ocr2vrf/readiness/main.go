@@ -11,9 +11,9 @@ import (
 
 	"github.com/urfave/cli"
 
-	clcmd "github.com/pluginV2/core/cmd"
-	helpers "github.com/pluginV2/core/scripts/common"
-	"github.com/pluginV2/core/web/presenters"
+	clcmd "github.com/GoPlugin/pluginV2/core/cmd"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func newApp(remoteNodeURL string, writer io.Writer) (*clcmd.Client, *cli.App) {

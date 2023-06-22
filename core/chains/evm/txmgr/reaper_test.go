@@ -9,13 +9,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/chains/evm/txmgr/mocks"
-	"github.com/pluginV2/core/internal/cltest"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func newReaperWithChainID(t *testing.T, db *sqlx.DB, cfg txmgr.ReaperConfig, cid big.Int) *txmgr.Reaper {

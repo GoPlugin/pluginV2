@@ -9,7 +9,7 @@ import (
 	"github.com/pkg/errors"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func (s *scheduler) newMemoryTaskRun(task Task, vars Vars) *memoryTaskRun {

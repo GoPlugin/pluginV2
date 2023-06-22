@@ -6,9 +6,9 @@ import (
 
 	"github.com/graph-gophers/graphql-go"
 
-	"github.com/pluginV2/core/services/feeds"
-	"github.com/pluginV2/core/utils/stringutils"
-	"github.com/pluginV2/core/web/loader"
+	"github.com/GoPlugin/pluginV2/core/services/feeds"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/web/loader"
 )
 
 // FeedsManagerResolver resolves the FeedsManager type.

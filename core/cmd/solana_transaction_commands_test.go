@@ -13,14 +13,14 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/urfave/cli"
 
-	"github.com/pluginV2-relay/pkg/utils"
-	solanaClient "github.com/pluginV2-solana/pkg/solana/client"
-	solcfg "github.com/pluginV2-solana/pkg/solana/config"
+	"github.com/smartcontractkit/chainlink-relay/pkg/utils"
+	solanaClient "github.com/smartcontractkit/chainlink-solana/pkg/solana/client"
+	solcfg "github.com/smartcontractkit/chainlink-solana/pkg/solana/config"
 
-	"github.com/pluginV2/core/chains/solana"
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/chains/solana"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
 )
 
 func TestClient_SolanaSendSol(t *testing.T) {

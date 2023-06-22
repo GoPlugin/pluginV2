@@ -5,19 +5,19 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/services/webhook"
-	"github.com/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/services/webhook"
+	"github.com/GoPlugin/pluginV2/core/sessions"
 )
 
 func newBridgeORM(t *testing.T, db *sqlx.DB, cfg pg.QConfig) bridges.ORM {

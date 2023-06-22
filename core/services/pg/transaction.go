@@ -11,7 +11,7 @@ import (
 	"github.com/smartcontractkit/sqlx"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 type TxOptions struct {

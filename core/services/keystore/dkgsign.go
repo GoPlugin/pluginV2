@@ -5,7 +5,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/keystore/keys/dkgsignkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/dkgsignkey"
 )
 
 //go:generate mockery --quiet --name DKGSign --output mocks/ --case=underscore

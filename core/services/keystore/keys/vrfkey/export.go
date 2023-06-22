@@ -8,8 +8,8 @@ import (
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/signatures/secp256k1"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func FromEncryptedJSON(keyJSON []byte, password string) (KeyV2, error) {

@@ -12,11 +12,11 @@ import (
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/gethwrappers/generated/blockhash_store"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/blockhash_store"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 var _ BHS = &BulletproofBHS{}

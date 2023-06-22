@@ -11,9 +11,9 @@ import (
 	"github.com/urfave/cli"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/web"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/web"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func initJobsSubCmds(client *Client) []cli.Command {

@@ -13,10 +13,10 @@ import (
 	"github.com/urfave/cli"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/sessions"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func TestClient_CreateUser(t *testing.T) {

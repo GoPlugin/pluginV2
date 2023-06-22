@@ -9,7 +9,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
 )
 
 // VRFRandomnessRequestLogTopic returns the signature of the RandomnessRequest log

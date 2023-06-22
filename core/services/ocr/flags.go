@@ -4,9 +4,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/gethwrappers/generated/flags_wrapper"
-	"github.com/pluginV2/core/utils"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/flags_wrapper"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // ContractFlags wraps the a contract

@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/services/feeds"
-	"github.com/pluginV2/core/utils/crypto"
+	"github.com/GoPlugin/pluginV2/core/services/feeds"
+	"github.com/GoPlugin/pluginV2/core/utils/crypto"
 )
 
 func Test_FeedsManagers(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/pluginV2/core/gethwrappers/generated"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated"
 )
 
 //go:generate mockery --quiet --name Broadcast --output ./mocks/ --case=underscore --structname Broadcast --filename broadcast.go

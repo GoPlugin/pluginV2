@@ -3,7 +3,7 @@ package ethkey
 import (
 	"time"
 
-	"github.com/pluginV2/core/services/pg/datatypes"
+	"github.com/GoPlugin/pluginV2/core/services/pg/datatypes"
 )
 
 // NOTE: This model refers to the OLD key and is only used for migrations

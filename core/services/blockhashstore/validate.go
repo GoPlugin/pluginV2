@@ -7,7 +7,7 @@ import (
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/job"
 )
 
 // ValidatedSpec validates and converts the given toml string to a job.Job.

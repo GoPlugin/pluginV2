@@ -9,11 +9,11 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/pkg/errors"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/gethwrappers"
-	"github.com/pluginV2/core/gethwrappers/generated"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 // 1. Each listener being registered can specify a custom NumConfirmations - number of block confirmations required for any log being sent to it.

@@ -8,9 +8,9 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/chains/evm/log/mocks"
-	"github.com/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/log/mocks"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 func Test_BatchFulfillments_AddRun(t *testing.T) {

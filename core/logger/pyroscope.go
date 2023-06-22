@@ -5,7 +5,7 @@ import (
 
 	"github.com/pyroscope-io/client/pyroscope"
 
-	"github.com/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/static"
 )
 
 // PyroscopeConfig represents the expected configuration for Pyroscope to properly work

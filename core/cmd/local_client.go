@@ -31,17 +31,17 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/sessions"
-	"github.com/pluginV2/core/shutdown"
-	"github.com/pluginV2/core/static"
-	"github.com/pluginV2/core/store/dialects"
-	"github.com/pluginV2/core/store/migrate"
-	"github.com/pluginV2/core/utils"
-	webPresenters "github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/shutdown"
+	"github.com/GoPlugin/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/store/dialects"
+	"github.com/GoPlugin/pluginV2/core/store/migrate"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	webPresenters "github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func initLocalSubCmds(client *Client, devMode bool) []cli.Command {

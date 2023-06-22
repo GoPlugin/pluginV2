@@ -8,9 +8,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
 )
 
 type VRF interface {

@@ -11,10 +11,10 @@ import (
 	"github.com/urfave/cli"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/services/keystore/chaintype"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func initOCR2KeysSubCmd(client *Client) cli.Command {

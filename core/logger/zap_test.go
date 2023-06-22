@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/utils"
-	utilsmocks "github.com/pluginV2/core/utils/mocks"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	utilsmocks "github.com/GoPlugin/pluginV2/core/utils/mocks"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

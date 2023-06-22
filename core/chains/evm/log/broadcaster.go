@@ -12,15 +12,15 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/pkg/errors"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	httypes "github.com/pluginV2/core/chains/evm/headtracker/types"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/gethwrappers/generated"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/null"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	httypes "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/types"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/null"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 //go:generate mockery --quiet --name Broadcaster --output ./mocks/ --case=underscore --structname Broadcaster --filename broadcaster.go

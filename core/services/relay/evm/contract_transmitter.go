@@ -14,10 +14,10 @@ import (
 	"github.com/smartcontractkit/libocr/offchainreporting2/chains/evmutil"
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/chains/evm/logpoller"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/logpoller"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type ContractTransmitter interface {

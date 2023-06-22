@@ -9,10 +9,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/relay/evm/mercury/wsrpc"
-	"github.com/pluginV2/core/services/relay/evm/mercury/wsrpc/report"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/relay/evm/mercury/wsrpc"
+	"github.com/GoPlugin/pluginV2/core/services/relay/evm/mercury/wsrpc/report"
 )
 
 type MockWSRPCClient struct {

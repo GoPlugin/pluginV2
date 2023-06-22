@@ -16,13 +16,13 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
 
-	"github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/client/mocks"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/client/mocks"
 
-	"github.com/pluginV2/core/assets"
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func TestNewSendOnlyNode(t *testing.T) {

@@ -1,6 +1,6 @@
 package txmgr
 
-import evmclient "github.com/pluginV2/core/chains/evm/client"
+import evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
 
 func SetEthClientOnEthConfirmer(ethClient evmclient.Client, ethConfirmer *EthConfirmer) {
 	ethConfirmer.ethClient = ethClient

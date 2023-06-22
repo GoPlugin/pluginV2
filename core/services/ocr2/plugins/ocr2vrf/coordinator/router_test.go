@@ -9,9 +9,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
-	"github.com/pluginV2/core/services/ocr2/plugins/ocr2vrf/coordinator/mocks"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/ocr2vrf/coordinator/mocks"
 )
 
 var nilOpts *bind.CallOpts

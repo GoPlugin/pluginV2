@@ -7,7 +7,7 @@ import (
 	"github.com/smartcontractkit/sqlx"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2-solana/pkg/solana/db"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 )
 
 // MustInsertChain inserts chain in to db, or fails the test.

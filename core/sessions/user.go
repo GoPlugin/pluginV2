@@ -9,8 +9,8 @@ import (
 	"github.com/pkg/errors"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/auth"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/auth"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // User holds the credentials for API user.

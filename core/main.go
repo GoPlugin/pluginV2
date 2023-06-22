@@ -8,9 +8,9 @@ import (
 
 	"github.com/Masterminds/semver/v3"
 
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/recovery"
-	"github.com/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/recovery"
+	"github.com/GoPlugin/pluginV2/core/static"
 )
 
 func init() {

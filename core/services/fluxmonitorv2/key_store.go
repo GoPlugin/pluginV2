@@ -5,8 +5,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
 )
 
 //go:generate mockery --quiet --name KeyStoreInterface --output ./mocks/ --case=underscore

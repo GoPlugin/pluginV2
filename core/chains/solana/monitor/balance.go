@@ -6,12 +6,12 @@ import (
 
 	"github.com/gagliardetto/solana-go"
 
-	solanaClient "github.com/pluginV2-solana/pkg/solana/client"
+	solanaClient "github.com/smartcontractkit/chainlink-solana/pkg/solana/client"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/keystore/keys/solkey"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/solkey"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // Config defines the monitor configuration.

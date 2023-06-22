@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	bm "github.com/pluginV2/core/utils/big_math"
+	bm "github.com/GoPlugin/pluginV2/core/utils/big_math"
 	"github.com/stretchr/testify/assert"
 )
 

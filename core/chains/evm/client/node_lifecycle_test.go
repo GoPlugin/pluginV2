@@ -12,10 +12,10 @@ import (
 	"github.com/tidwall/gjson"
 	"go.uber.org/zap"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func standardHandler(method string, _ gjson.Result) (resp testutils.JSONRPCResponse) {

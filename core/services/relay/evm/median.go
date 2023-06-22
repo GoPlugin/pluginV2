@@ -14,9 +14,9 @@ import (
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/chains/evm"
-	offchain_aggregator_wrapper "github.com/pluginV2/core/internal/gethwrappers2/generated/offchainaggregator"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	offchain_aggregator_wrapper "github.com/GoPlugin/pluginV2/core/internal/gethwrappers2/generated/offchainaggregator"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 var _ median.MedianContract = &medianContract{}

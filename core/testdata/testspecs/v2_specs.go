@@ -8,8 +8,8 @@ import (
 
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/services/webhook"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/services/webhook"
 )
 
 var (

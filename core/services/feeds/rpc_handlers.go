@@ -4,7 +4,7 @@ import (
 	"context"
 
 	uuid "github.com/satori/go.uuid"
-	pb "github.com/pluginV2/core/services/feeds/proto"
+	pb "github.com/GoPlugin/pluginV2/core/services/feeds/proto"
 )
 
 // RPCHandlers define handlers for RPC method calls from the Feeds Manager

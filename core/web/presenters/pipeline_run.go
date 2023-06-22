@@ -5,8 +5,8 @@ import (
 
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 // Corresponds with models.d.ts PipelineRun

@@ -9,10 +9,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/services/chainlink"
-	clsessions "github.com/pluginV2/core/sessions"
-	"github.com/pluginV2/core/web/auth"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	clsessions "github.com/GoPlugin/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/web/auth"
 )
 
 // SessionsController manages session requests.

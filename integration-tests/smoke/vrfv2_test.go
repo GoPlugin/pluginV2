@@ -8,23 +8,23 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pluginV2-testing-framework/utils"
+	"github.com/smartcontractkit/chainlink-testing-framework/utils"
 	"go.uber.org/zap/zapcore"
 
 	"github.com/onsi/gomega"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-env/pkg/helm/chainlink"
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/chainlink"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
 
-	eth "github.com/pluginV2-env/pkg/helm/ethereum"
+	eth "github.com/smartcontractkit/chainlink-env/pkg/helm/ethereum"
 
-	networks "github.com/pluginV2/integration-tests"
-	"github.com/pluginV2/integration-tests/actions"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
+	networks "github.com/GoPlugin/pluginV2/integration-tests"
+	"github.com/GoPlugin/pluginV2/integration-tests/actions"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
 
 	"github.com/rs/zerolog/log"
 	uuid "github.com/satori/go.uuid"

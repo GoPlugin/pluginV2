@@ -10,10 +10,10 @@ import (
 	"github.com/pkg/errors"
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 //go:generate mockery --quiet --name Spawner --output ./mocks/ --case=underscore

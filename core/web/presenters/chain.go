@@ -5,7 +5,7 @@ import (
 
 	"github.com/manyminds/api2go/jsonapi"
 
-	"github.com/pluginV2/core/chains"
+	"github.com/GoPlugin/pluginV2/core/chains"
 )
 
 type ChainResource[C chains.Config] interface {

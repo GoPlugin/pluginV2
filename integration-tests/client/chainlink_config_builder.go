@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/pluginV2-env/config"
-	"github.com/pluginV2-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-env/config"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
 )
 
 const pyroscopeTOML = `[Pyroscope]
@@ -24,7 +24,7 @@ func AddNetworksConfig(baseTOML string, networks ...blockchain.EVMNetwork) strin
 
 // AddNetworkDetailedConfig adds EVM config to a base TOML. Also takes a detailed network config TOML where values like
 // using transaction forwarders can be included.
-// See https://github.com/pluginV2/blob/develop/docs/CONFIG.md#EVM
+// See https://github.com/GoPlugin/pluginV2/blob/develop/docs/CONFIG.md#EVM
 func AddNetworkDetailedConfig(baseTOML, detailedNetworkConfig string, network blockchain.EVMNetwork) string {
 	return fmt.Sprintf("%s\n\n%s\n\n%s", baseTOML, pyroscopeSettings(), network.MustChainlinkTOML(detailedNetworkConfig))
 }

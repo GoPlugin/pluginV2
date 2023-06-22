@@ -9,10 +9,10 @@ import (
 	"github.com/ethereum/go-ethereum/crypto/secp256k1"
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	starknet "github.com/pluginV2-starknet/relayer/pkg/chainlink/keys"
+	starknet "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/keys"
 
-	"github.com/pluginV2/core/services/keystore/chaintype"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 // nolint

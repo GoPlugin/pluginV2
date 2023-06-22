@@ -9,8 +9,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
 )
 
 func TestResolver_GetVRFKey(t *testing.T) {

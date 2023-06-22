@@ -14,9 +14,9 @@ import (
 	"github.com/smartcontractkit/sqlx"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/store/migrate/migrations" // Invoke init() functions within migrations pkg.
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/store/migrate/migrations" // Invoke init() functions within migrations pkg.
 )
 
 //go:embed migrations/*.sql

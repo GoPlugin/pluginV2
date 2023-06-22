@@ -10,7 +10,7 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pluginV2/core/config/parse"
+	"github.com/GoPlugin/pluginV2/core/config/parse"
 )
 
 // https://app.shortcut.com/chainlinklabs/story/33622/remove-legacy-config

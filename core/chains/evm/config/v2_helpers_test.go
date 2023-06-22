@@ -4,9 +4,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/shopspring/decimal"
 
-	v2 "github.com/pluginV2/core/chains/evm/config/v2"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/store/models"
+	v2 "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 func ChainSpecificConfigDefaultsAsV2() map[int64]v2.Chain {

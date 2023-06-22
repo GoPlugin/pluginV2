@@ -33,12 +33,12 @@ import (
 	"github.com/ulule/limiter/drivers/store/memory"
 	"github.com/unrolled/secure"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/web/auth"
-	"github.com/pluginV2/core/web/loader"
-	"github.com/pluginV2/core/web/resolver"
-	"github.com/pluginV2/core/web/schema"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/web/auth"
+	"github.com/GoPlugin/pluginV2/core/web/loader"
+	"github.com/GoPlugin/pluginV2/core/web/resolver"
+	"github.com/GoPlugin/pluginV2/core/web/schema"
 )
 
 // NewRouter returns *gin.Engine router that listens and responds to requests to the node for valid paths.

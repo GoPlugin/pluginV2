@@ -23,11 +23,11 @@ import (
 	"go.dedis.ch/kyber/v3/group/edwards25519"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/keystore/chaintype"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
 
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
 )
 
 // CreateOCR2VRFJobs bootstraps the first node and to the other nodes sends ocr jobs

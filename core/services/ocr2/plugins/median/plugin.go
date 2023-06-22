@@ -8,13 +8,13 @@ import (
 	libocr2 "github.com/smartcontractkit/libocr/offchainreporting2"
 	"github.com/smartcontractkit/libocr/offchainreporting2/reportingplugin/median"
 
-	"github.com/pluginV2-relay/pkg/types"
+	"github.com/smartcontractkit/chainlink-relay/pkg/types"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/ocr2/plugins/median/config"
-	"github.com/pluginV2/core/services/ocrcommon"
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/median/config"
+	"github.com/GoPlugin/pluginV2/core/services/ocrcommon"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 type MedianConfig interface {

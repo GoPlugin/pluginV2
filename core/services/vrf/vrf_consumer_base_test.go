@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
 	"github.com/stretchr/testify/require"
 )
 

@@ -5,14 +5,14 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/chains/evm/headtracker"
-	htmocks "github.com/pluginV2/core/chains/evm/headtracker/mocks"
-	httypes "github.com/pluginV2/core/chains/evm/headtracker/types"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/headtracker"
+	htmocks "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/mocks"
+	httypes "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/types"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func configureSaver(t *testing.T) (httypes.HeadSaver, headtracker.ORM) {

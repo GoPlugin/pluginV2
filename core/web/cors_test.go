@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/pluginV2/core/internal/cltest"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
 )
 
 func TestCors_DefaultOrigins(t *testing.T) {

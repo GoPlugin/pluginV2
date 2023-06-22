@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
 	"github.com/stretchr/testify/assert"
 )
 

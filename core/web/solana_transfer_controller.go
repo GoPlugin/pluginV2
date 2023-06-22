@@ -8,15 +8,15 @@ import (
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2-solana/pkg/solana/client"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/client"
 
 	solanaGo "github.com/gagliardetto/solana-go"
 
-	"github.com/pluginV2/core/chains"
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/services/chainlink"
-	solanamodels "github.com/pluginV2/core/store/models/solana"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/chains"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	solanamodels "github.com/GoPlugin/pluginV2/core/store/models/solana"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // SolanaTransfersController can send LINK tokens to another address

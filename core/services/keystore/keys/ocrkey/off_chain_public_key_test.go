@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/pluginV2/core/services/keystore/keys/ocrkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocrkey"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -15,19 +15,19 @@ import (
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/mock"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	v1 "github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg/datatypes"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	v1 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg/datatypes"
 )
 
 func TestFactory(t *testing.T) {

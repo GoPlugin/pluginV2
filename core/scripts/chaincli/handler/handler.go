@@ -28,14 +28,14 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/manyminds/api2go/jsonapi"
 
-	"github.com/pluginV2/core/cmd"
-	link "github.com/pluginV2/core/gethwrappers/generated/link_token_interface"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/scripts/chaincli/config"
-	helpers "github.com/pluginV2/core/scripts/common"
-	"github.com/pluginV2/core/services/keystore/chaintype"
-	"github.com/pluginV2/core/sessions"
-	bigmath "github.com/pluginV2/core/utils/big_math"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	link "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/link_token_interface"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/config"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
+	"github.com/GoPlugin/pluginV2/core/sessions"
+	bigmath "github.com/GoPlugin/pluginV2/core/utils/big_math"
 )
 
 const (

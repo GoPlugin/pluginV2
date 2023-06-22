@@ -12,12 +12,12 @@ import (
 	"github.com/stretchr/testify/require"
 	"gopkg.in/guregu/null.v4"
 
-	v2 "github.com/pluginV2/core/chains/evm/config/v2"
-	"github.com/pluginV2/core/internal/cltest"
-	configtest2 "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/pipeline"
+	v2 "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	configtest2 "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 func TestTimeoutAttribute(t *testing.T) {

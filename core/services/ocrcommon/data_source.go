@@ -11,11 +11,11 @@ import (
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
 	"github.com/smartcontractkit/libocr/offchainreporting2/reportingplugin/median"
 
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // inMemoryDataSource is an abstraction over the process of initiating a pipeline run

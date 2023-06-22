@@ -13,17 +13,17 @@ import (
 	"github.com/urfave/cli"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2-relay/pkg/utils"
-	solcfg "github.com/pluginV2-solana/pkg/solana/config"
-	"github.com/pluginV2-solana/pkg/solana/db"
+	"github.com/smartcontractkit/chainlink-relay/pkg/utils"
+	solcfg "github.com/smartcontractkit/chainlink-solana/pkg/solana/config"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 
-	"github.com/pluginV2/core/chains/solana"
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/internal/testutils/configtest"
-	"github.com/pluginV2/core/internal/testutils/solanatest"
-	"github.com/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/chains/solana"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/configtest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/solanatest"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
 )
 
 // Deprecated: https://app.shortcut.com/chainlinklabs/story/33622/remove-legacy-config

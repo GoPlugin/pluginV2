@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/assets"
 )
 
 func Test_ReasonableGasPrice(t *testing.T) {

@@ -13,8 +13,8 @@ import (
 	confighelper2 "github.com/smartcontractkit/libocr/offchainreporting2/confighelper"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/cltest"
-	utils "github.com/pluginV2/core/services/ocr2/plugins/directrequestocr/test/internal"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	utils "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr/test/internal"
 )
 
 func TestIntegration_OCR2DR_MultipleRequests_Success(t *testing.T) {

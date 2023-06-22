@@ -18,20 +18,20 @@ import (
 	"github.com/smartcontractkit/sqlx"
 	"go.uber.org/multierr"
 
-	relaytypes "github.com/pluginV2-relay/pkg/types"
+	relaytypes "github.com/smartcontractkit/chainlink-relay/pkg/types"
 
-	"github.com/pluginV2/core/chains/evm"
-	txm "github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/ocrcommon"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/services/relay/evm/mercury"
-	"github.com/pluginV2/core/services/relay/evm/mercury/wsrpc"
-	types "github.com/pluginV2/core/services/relay/evm/types"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	txm "github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/ocrcommon"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/relay/evm/mercury"
+	"github.com/GoPlugin/pluginV2/core/services/relay/evm/mercury/wsrpc"
+	types "github.com/GoPlugin/pluginV2/core/services/relay/evm/types"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var _ relaytypes.Relayer = &Relayer{}
@@ -86,7 +86,7 @@ func (r *Relayer) HealthReport() map[string]error {
 	return map[string]error{r.Name(): r.Healthy()}
 }
 
-// This is a stub, to be added in pluginV2#8340
+// This is a stub, to be added in GoPlugin/pluginV2#8340
 func (r *Relayer) NewMercuryProvider(rargs relaytypes.RelayArgs, pargs relaytypes.PluginArgs) (relaytypes.MercuryProvider, error) {
 	return nil, errors.New("mercury is not supported")
 }

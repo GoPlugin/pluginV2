@@ -1,9 +1,9 @@
 package web
 
 import (
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/keystore/keys/dkgencryptkey"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/dkgencryptkey"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func NewDKGEncryptKeysController(app chainlink.Application) KeysController {

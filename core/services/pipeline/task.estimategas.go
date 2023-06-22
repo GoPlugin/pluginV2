@@ -11,9 +11,9 @@ import (
 	"github.com/shopspring/decimal"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 //

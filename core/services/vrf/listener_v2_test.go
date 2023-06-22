@@ -13,16 +13,16 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
-	"github.com/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
+	"github.com/GoPlugin/pluginV2/core/services/job"
 
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/testdata/testspecs"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/testdata/testspecs"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func addEthTx(t *testing.T, db *sqlx.DB, from common.Address, state txmgr.EthTxState, maxLink string, subID uint64, reqTxHash common.Hash) {

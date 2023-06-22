@@ -5,8 +5,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/pluginV2/core/chains/evm/forwarders"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/forwarders"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // EVMForwarderResource is an EVM forwarder JSONAPI resource.

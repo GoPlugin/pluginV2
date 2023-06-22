@@ -12,8 +12,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 // jsonAPIError adds an error to the gin context and sets

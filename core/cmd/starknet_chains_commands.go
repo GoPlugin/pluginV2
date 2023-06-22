@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
 
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // StarkNetChainPresenter implements TableRenderer for a StarkNetChainResource

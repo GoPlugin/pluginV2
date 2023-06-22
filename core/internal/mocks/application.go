@@ -5,43 +5,43 @@ package mocks
 import (
 	big "math/big"
 
-	audit "github.com/pluginV2/core/logger/audit"
+	audit "github.com/GoPlugin/pluginV2/core/logger/audit"
 
-	bridges "github.com/pluginV2/core/bridges"
+	bridges "github.com/GoPlugin/pluginV2/core/bridges"
 
-	chainlink "github.com/pluginV2/core/services/chainlink"
+	chainlink "github.com/GoPlugin/pluginV2/core/services/chainlink"
 
-	config "github.com/pluginV2/core/config"
+	config "github.com/GoPlugin/pluginV2/core/config"
 
 	context "context"
 
-	feeds "github.com/pluginV2/core/services/feeds"
+	feeds "github.com/GoPlugin/pluginV2/core/services/feeds"
 
-	job "github.com/pluginV2/core/services/job"
+	job "github.com/GoPlugin/pluginV2/core/services/job"
 
-	keystore "github.com/pluginV2/core/services/keystore"
+	keystore "github.com/GoPlugin/pluginV2/core/services/keystore"
 
-	logger "github.com/pluginV2/core/logger"
+	logger "github.com/GoPlugin/pluginV2/core/logger"
 
 	mock "github.com/stretchr/testify/mock"
 
-	pg "github.com/pluginV2/core/services/pg"
+	pg "github.com/GoPlugin/pluginV2/core/services/pg"
 
-	pipeline "github.com/pluginV2/core/services/pipeline"
+	pipeline "github.com/GoPlugin/pluginV2/core/services/pipeline"
 
-	services "github.com/pluginV2/core/services"
+	services "github.com/GoPlugin/pluginV2/core/services"
 
-	sessions "github.com/pluginV2/core/sessions"
+	sessions "github.com/GoPlugin/pluginV2/core/sessions"
 
 	sqlx "github.com/smartcontractkit/sqlx"
 
-	txmgr "github.com/pluginV2/core/chains/evm/txmgr"
+	txmgr "github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
 
-	types "github.com/pluginV2/core/chains/evm/types"
+	types "github.com/GoPlugin/pluginV2/core/chains/evm/types"
 
 	uuid "github.com/satori/go.uuid"
 
-	webhook "github.com/pluginV2/core/services/webhook"
+	webhook "github.com/GoPlugin/pluginV2/core/services/webhook"
 
 	zapcore "go.uber.org/zap/zapcore"
 )

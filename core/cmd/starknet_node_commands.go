@@ -6,9 +6,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
 
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
 
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // StarkNetNodePresenter implements TableRenderer for a StarkNetNodeResource.

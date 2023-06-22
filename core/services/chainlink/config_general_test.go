@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	v2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/logger"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func TestTOMLGeneralConfig_Defaults(t *testing.T) {

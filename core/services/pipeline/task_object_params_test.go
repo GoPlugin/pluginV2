@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 func TestObjectParam_UnmarshalPipelineParamValid(t *testing.T) {

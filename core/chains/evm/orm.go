@@ -3,11 +3,11 @@ package evm
 import (
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/chains"
-	"github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // NewORM returns a new EVM ORM

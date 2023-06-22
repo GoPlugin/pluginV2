@@ -10,17 +10,17 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	htmocks "github.com/pluginV2/core/chains/evm/headtracker/mocks"
-	evmmocks "github.com/pluginV2/core/chains/evm/mocks"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/internal/testutils"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	htmocks "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/mocks"
+	evmmocks "github.com/GoPlugin/pluginV2/core/chains/evm/mocks"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func Test_ETHGetBlockTask(t *testing.T) {

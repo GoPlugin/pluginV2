@@ -14,16 +14,16 @@ import (
 	ocrConfigHelper "github.com/smartcontractkit/libocr/offchainreporting/confighelper"
 	ocrTypes "github.com/smartcontractkit/libocr/offchainreporting/types"
 
-	"github.com/pluginV2/core/gethwrappers/generated/authorized_forwarder"
-	"github.com/pluginV2/core/gethwrappers/generated/operator_factory"
-	"github.com/pluginV2/core/gethwrappers/generated/operator_wrapper"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/authorized_forwarder"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/operator_factory"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/operator_wrapper"
 
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
 
-	"github.com/pluginV2/integration-tests/client"
-	ethereum2 "github.com/pluginV2/integration-tests/contracts/ethereum"
-	"github.com/pluginV2/integration-tests/testreporters"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	ethereum2 "github.com/GoPlugin/pluginV2/integration-tests/contracts/ethereum"
+	"github.com/GoPlugin/pluginV2/integration-tests/testreporters"
 )
 
 // EthereumOracle oracle for "directrequest" job tests

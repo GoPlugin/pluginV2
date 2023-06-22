@@ -3,7 +3,7 @@ package resolver
 import (
 	"github.com/graph-gophers/graphql-go"
 
-	"github.com/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/sessions"
 )
 
 type clearSessionsError struct{}

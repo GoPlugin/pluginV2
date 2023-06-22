@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	csakey "github.com/pluginV2/core/services/keystore/keys/csakey"
+	csakey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/csakey"
 
 	mock "github.com/stretchr/testify/mock"
 )

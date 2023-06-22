@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 func Test_Bridges(t *testing.T) {

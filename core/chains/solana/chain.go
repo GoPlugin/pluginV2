@@ -13,26 +13,26 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2-solana/pkg/solana"
-	solanaclient "github.com/pluginV2-solana/pkg/solana/client"
-	"github.com/pluginV2-solana/pkg/solana/config"
-	"github.com/pluginV2-solana/pkg/solana/db"
-	v2 "github.com/pluginV2/core/config/v2"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana"
+	solanaclient "github.com/smartcontractkit/chainlink-solana/pkg/solana/client"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/config"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
 
-	"github.com/pluginV2/core/chains/solana/monitor"
-	"github.com/pluginV2/core/chains/solana/soltxm"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/solana/monitor"
+	"github.com/GoPlugin/pluginV2/core/chains/solana/soltxm"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // DefaultRequestTimeout is the default Solana client timeout.
 const DefaultRequestTimeout = 30 * time.Second
 
-//go:generate mockery --quiet --name TxManager --srcpkg github.com/pluginV2-solana/pkg/solana --output ./mocks/ --case=underscore
-//go:generate mockery --quiet --name Reader --srcpkg github.com/pluginV2-solana/pkg/solana/client --output ./mocks/ --case=underscore
-//go:generate mockery --quiet --name Chain --srcpkg github.com/pluginV2-solana/pkg/solana --output ./mocks/ --case=underscore
+//go:generate mockery --quiet --name TxManager --srcpkg github.com/smartcontractkit/chainlink-solana/pkg/solana --output ./mocks/ --case=underscore
+//go:generate mockery --quiet --name Reader --srcpkg github.com/smartcontractkit/chainlink-solana/pkg/solana/client --output ./mocks/ --case=underscore
+//go:generate mockery --quiet --name Chain --srcpkg github.com/smartcontractkit/chainlink-solana/pkg/solana --output ./mocks/ --case=underscore
 var _ solana.Chain = (*chain)(nil)
 
 type chain struct {

@@ -5,12 +5,12 @@ package mocks
 import (
 	context "context"
 
-	logger "github.com/pluginV2/core/logger"
+	logger "github.com/GoPlugin/pluginV2/core/logger"
 	mock "github.com/stretchr/testify/mock"
 
-	pg "github.com/pluginV2/core/services/pg"
+	pg "github.com/GoPlugin/pluginV2/core/services/pg"
 
-	pipeline "github.com/pluginV2/core/services/pipeline"
+	pipeline "github.com/GoPlugin/pluginV2/core/services/pipeline"
 
 	uuid "github.com/satori/go.uuid"
 )

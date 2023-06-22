@@ -5,9 +5,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	httypes "github.com/pluginV2/core/chains/evm/headtracker/types"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/logger"
+	httypes "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/types"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 type headSaver struct {

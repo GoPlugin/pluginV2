@@ -11,10 +11,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pluginV2/core/chains/evm/client"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func TestNullClient(t *testing.T) {

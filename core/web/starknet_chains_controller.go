@@ -1,10 +1,10 @@
 package web
 
 import (
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
 
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func NewStarkNetChainsController(app chainlink.Application) ChainsController {

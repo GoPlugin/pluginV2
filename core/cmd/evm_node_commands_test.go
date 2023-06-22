@@ -11,14 +11,14 @@ import (
 	"github.com/urfave/cli"
 	"gopkg.in/guregu/null.v4"
 
-	evmcfg "github.com/pluginV2/core/chains/evm/config/v2"
-	"github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
+	evmcfg "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func mustInsertEVMChain(t *testing.T, orm types.ORM) types.DBChain {

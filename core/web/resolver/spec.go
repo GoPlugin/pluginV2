@@ -3,9 +3,9 @@ package resolver
 import (
 	"github.com/graph-gophers/graphql-go"
 
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/utils/stringutils"
-	"github.com/pluginV2/core/web/gqlscalar"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/web/gqlscalar"
 )
 
 type SpecResolver struct {

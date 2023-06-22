@@ -5,7 +5,7 @@ package mocks
 import (
 	common "github.com/ethereum/go-ethereum/common"
 
-	generated "github.com/pluginV2/core/gethwrappers/generated"
+	generated "github.com/GoPlugin/pluginV2/core/gethwrappers/generated"
 
 	mock "github.com/stretchr/testify/mock"
 

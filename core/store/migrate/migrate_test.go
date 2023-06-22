@@ -10,13 +10,13 @@ import (
 	"github.com/stretchr/testify/require"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/internal/cltest/heavyweight"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/services/relay"
-	"github.com/pluginV2/core/store/migrate"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest/heavyweight"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/relay"
+	"github.com/GoPlugin/pluginV2/core/store/migrate"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 var migrationDir = "migrations"

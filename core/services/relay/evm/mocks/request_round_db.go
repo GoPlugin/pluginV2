@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	pg "github.com/pluginV2/core/services/pg"
+	pg "github.com/GoPlugin/pluginV2/core/services/pg"
 	ocr2aggregator "github.com/smartcontractkit/libocr/gethwrappers2/ocr2aggregator"
 	mock "github.com/stretchr/testify/mock"
 )

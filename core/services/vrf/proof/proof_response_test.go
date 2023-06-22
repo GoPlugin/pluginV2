@@ -4,9 +4,9 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_verifier_wrapper"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	proof2 "github.com/pluginV2/core/services/vrf/proof"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_verifier_wrapper"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	proof2 "github.com/GoPlugin/pluginV2/core/services/vrf/proof"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
@@ -16,9 +16,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
 )
 
 func TestMarshaledProof(t *testing.T) {

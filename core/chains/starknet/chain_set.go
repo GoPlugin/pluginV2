@@ -6,15 +6,15 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/multierr"
 
-	starkchain "github.com/pluginV2-starknet/relayer/pkg/chainlink/chain"
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/config"
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
+	starkchain "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/chain"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/config"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
 
-	"github.com/pluginV2/core/chains"
-	"github.com/pluginV2/core/chains/starknet/types"
-	coreconfig "github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/chains"
+	"github.com/GoPlugin/pluginV2/core/chains/starknet/types"
+	coreconfig "github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
 )
 
 type ChainSetOpts struct {

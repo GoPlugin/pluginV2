@@ -9,10 +9,10 @@ import (
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
 )
 
 var (

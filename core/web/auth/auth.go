@@ -8,10 +8,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/auth"
-	"github.com/pluginV2/core/bridges"
-	clsessions "github.com/pluginV2/core/sessions"
-	"github.com/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/auth"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	clsessions "github.com/GoPlugin/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/static"
 )
 
 const (

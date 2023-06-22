@@ -13,11 +13,11 @@ import (
 
 	ocrnetworking "github.com/smartcontractkit/libocr/networking"
 
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // ConfigSchema records the schema of configuration at the type level

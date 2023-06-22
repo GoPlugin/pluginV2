@@ -3,8 +3,8 @@ package presenters
 import (
 	"time"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/bridges"
 )
 
 // BridgeResource represents a Bridge JSONAPI resource.

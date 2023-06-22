@@ -3,7 +3,7 @@ package utils_test
 import (
 	"testing"
 
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils"
 	"github.com/stretchr/testify/assert"
 )
 

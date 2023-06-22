@@ -3,7 +3,7 @@ package recovery
 import (
 	"github.com/getsentry/sentry-go"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func ReportPanics(fn func()) {

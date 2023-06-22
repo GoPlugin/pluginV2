@@ -8,20 +8,20 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-env/pkg/helm/chainlink"
-	"github.com/pluginV2-env/pkg/helm/ethereum"
-	"github.com/pluginV2-env/pkg/helm/mockserver"
-	mockservercfg "github.com/pluginV2-env/pkg/helm/mockserver-cfg"
-	"github.com/pluginV2-testing-framework/blockchain"
-	ctfClient "github.com/pluginV2-testing-framework/client"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/chainlink"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/ethereum"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/mockserver"
+	mockservercfg "github.com/smartcontractkit/chainlink-env/pkg/helm/mockserver-cfg"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	ctfClient "github.com/smartcontractkit/chainlink-testing-framework/client"
 	"github.com/stretchr/testify/require"
 
-	networks "github.com/pluginV2/integration-tests"
-	"github.com/pluginV2/integration-tests/actions"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
-	"github.com/pluginV2/integration-tests/testsetups"
+	networks "github.com/GoPlugin/pluginV2/integration-tests"
+	"github.com/GoPlugin/pluginV2/integration-tests/actions"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/integration-tests/testsetups"
 )
 
 func TestOCRBasic(t *testing.T) {

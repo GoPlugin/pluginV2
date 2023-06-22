@@ -22,8 +22,8 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/shopspring/decimal"
 
-	"github.com/pluginV2/core/gethwrappers/generated/link_token_interface"
-	"github.com/pluginV2/core/gethwrappers/generated/mock_v3_aggregator_contract"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/link_token_interface"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/mock_v3_aggregator_contract"
 )
 
 type Environment struct {

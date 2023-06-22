@@ -10,7 +10,7 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/utils/crypto"
+	"github.com/GoPlugin/pluginV2/core/utils/crypto"
 )
 
 const (

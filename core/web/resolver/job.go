@@ -5,9 +5,9 @@ import (
 
 	"github.com/graph-gophers/graphql-go"
 
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/web/loader"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/web/loader"
 )
 
 // JobResolver resolves the Job type.

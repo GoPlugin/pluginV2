@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/pluginV2/core/scripts/chaincli/command/feed"
-	"github.com/pluginV2/core/scripts/chaincli/command/keeper"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/command/feed"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/command/keeper"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

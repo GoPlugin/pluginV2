@@ -5,12 +5,12 @@ import (
 
 	"github.com/pelletier/go-toml/v2"
 
-	"github.com/pluginV2/core/chains/starknet"
+	"github.com/GoPlugin/pluginV2/core/chains/starknet"
 
-	evmcfg "github.com/pluginV2/core/chains/evm/config/v2"
-	"github.com/pluginV2/core/chains/solana"
-	config "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/store/models"
+	evmcfg "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	"github.com/GoPlugin/pluginV2/core/chains/solana"
+	config "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 // Config is the root type used for TOML configuration.

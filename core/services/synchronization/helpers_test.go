@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore"
-	telemPb "github.com/pluginV2/core/services/synchronization/telem"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	telemPb "github.com/GoPlugin/pluginV2/core/services/synchronization/telem"
 )
 
 // NewTestTelemetryIngressClient calls NewTelemetryIngressClient and injects telemClient.

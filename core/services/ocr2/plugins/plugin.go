@@ -3,7 +3,7 @@ package plugins
 import (
 	ocr2types "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/job"
 )
 
 // OraclePlugin is the interface that every OCR2 plugin needs to implement to be able to run from the generic

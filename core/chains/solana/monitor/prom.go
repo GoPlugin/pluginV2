@@ -5,7 +5,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 
-	solanaRelay "github.com/pluginV2-solana/pkg/solana"
+	solanaRelay "github.com/smartcontractkit/chainlink-solana/pkg/solana"
 )
 
 var promSolanaBalance = promauto.NewGaugeVec(

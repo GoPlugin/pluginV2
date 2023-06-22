@@ -1,6 +1,6 @@
 package cmd
 
-import "github.com/pluginV2/core/logger"
+import "github.com/GoPlugin/pluginV2/core/logger"
 
 // CheckRemoteBuildCompatibility exposes checkRemoteBuildCompatibility for testing.
 func (cli *Client) CheckRemoteBuildCompatibility(lggr logger.Logger, onlyWarn bool, cliVersion, cliSha string) error {

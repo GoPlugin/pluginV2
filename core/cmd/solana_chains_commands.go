@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/pluginV2-solana/pkg/solana/db"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // SolanaChainPresenter implements TableRenderer for a SolanaChainResource

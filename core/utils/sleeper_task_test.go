@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils"
 
 	"github.com/onsi/gomega"
 	"github.com/stretchr/testify/require"

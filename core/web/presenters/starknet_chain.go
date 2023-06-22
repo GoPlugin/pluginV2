@@ -3,9 +3,9 @@ package presenters
 import (
 	"time"
 
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
 
-	starknet "github.com/pluginV2/core/chains/starknet/types"
+	starknet "github.com/GoPlugin/pluginV2/core/chains/starknet/types"
 )
 
 // StarkNetChainResource is an StarkNet chain JSONAPI resource.

@@ -7,7 +7,7 @@ import (
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 // TxStrategy controls how txes are queued and sent

@@ -12,9 +12,9 @@ import (
 	"github.com/smartcontractkit/libocr/commontypes"
 	"github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/services/directrequestocr"
-	"github.com/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/directrequestocr"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 type DirectRequestReportingPluginFactory struct {

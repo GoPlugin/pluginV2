@@ -11,11 +11,11 @@ import (
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
 
-	"github.com/pluginV2/core/config"
-	v2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/config"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/static"
 )
 
 func removeHidden(cmds ...cli.Command) []cli.Command {

@@ -3,7 +3,7 @@ package auth
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 // jsonAPIError adds an error to the gin context and sets

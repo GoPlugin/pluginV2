@@ -5,10 +5,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils/tomlutils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils/tomlutils"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

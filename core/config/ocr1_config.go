@@ -5,10 +5,10 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/config/parse"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/config/parse"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 // OCR1Config is a subset of global config relevant to OCR v1.

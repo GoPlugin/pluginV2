@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	dkgsignkey "github.com/pluginV2/core/services/keystore/keys/dkgsignkey"
+	dkgsignkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/dkgsignkey"
 
 	mock "github.com/stretchr/testify/mock"
 )

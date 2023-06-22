@@ -7,7 +7,7 @@ import (
 
 	"github.com/gorilla/securecookie"
 
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // this permission grants read / write access to file owners only

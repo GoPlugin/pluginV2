@@ -14,7 +14,7 @@ import (
 	gethParams "github.com/ethereum/go-ethereum/params"
 	"github.com/fatih/color"
 
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

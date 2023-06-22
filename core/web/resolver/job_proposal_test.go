@@ -8,7 +8,7 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/services/feeds"
+	"github.com/GoPlugin/pluginV2/core/services/feeds"
 )
 
 func TestResolver_GetJobProposal(t *testing.T) {

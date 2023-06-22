@@ -14,13 +14,13 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/ocr"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/ocr"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 const (

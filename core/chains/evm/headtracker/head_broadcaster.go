@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	httypes "github.com/pluginV2/core/chains/evm/headtracker/types"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
+	httypes "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/types"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 const TrackableCallbackTimeout = 2 * time.Second

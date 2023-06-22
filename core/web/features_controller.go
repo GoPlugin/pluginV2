@@ -3,8 +3,8 @@ package web
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // FeaturesController manages the feature flags

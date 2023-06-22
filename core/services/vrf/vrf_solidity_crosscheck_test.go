@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_verifier_wrapper"
-	"github.com/pluginV2/core/internal/testutils"
-	proof2 "github.com/pluginV2/core/services/vrf/proof"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_verifier_wrapper"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	proof2 "github.com/GoPlugin/pluginV2/core/services/vrf/proof"
 
 	"github.com/ethereum/go-ethereum/eth/ethconfig"
 
@@ -19,11 +19,11 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.dedis.ch/kyber/v3"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // Cross-checks of golang implementation details vs corresponding solidity

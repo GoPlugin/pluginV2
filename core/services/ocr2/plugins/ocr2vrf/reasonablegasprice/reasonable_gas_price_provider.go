@@ -6,8 +6,8 @@ import (
 
 	"github.com/smartcontractkit/ocr2vrf/types"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/chains/evm/gas"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas"
 )
 
 // reasonableGasPriceProvider provides an estimate for the average gas price

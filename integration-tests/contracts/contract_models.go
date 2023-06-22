@@ -11,11 +11,11 @@ import (
 	ocrConfigHelper "github.com/smartcontractkit/libocr/offchainreporting/confighelper"
 	ocrConfigHelper2 "github.com/smartcontractkit/libocr/offchainreporting2/confighelper"
 
-	"github.com/pluginV2/core/gethwrappers/generated/operator_factory"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/operator_factory"
 
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
 
-	"github.com/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
 )
 
 type FluxAggregatorOptions struct {

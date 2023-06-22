@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	helpers "github.com/pluginV2/core/scripts/common"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
 	"github.com/urfave/cli"
 )
 

@@ -5,12 +5,12 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
-	"github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
-	"github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_3"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_3"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 var Registry1_1ABI = types.MustGetABI(keeper_registry_wrapper1_1.KeeperRegistryABI)

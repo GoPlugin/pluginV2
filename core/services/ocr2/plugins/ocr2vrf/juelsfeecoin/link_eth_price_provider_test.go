@@ -9,8 +9,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/gethwrappers/generated/aggregator_v3_interface"
-	"github.com/pluginV2/core/services/vrf/mocks"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/aggregator_v3_interface"
+	"github.com/GoPlugin/pluginV2/core/services/vrf/mocks"
 )
 
 func Test_JuelsPerFeeCoin(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 var (

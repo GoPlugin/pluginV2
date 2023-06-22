@@ -5,7 +5,7 @@ package pipeline_test
 import (
 	"testing"
 
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 func FuzzParse(f *testing.F) {

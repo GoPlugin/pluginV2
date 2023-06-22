@@ -7,15 +7,15 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/gethwrappers/generated/blockhash_store"
-	v1 "github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
-	v2 "github.com/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/blockhash_store"
+	v1 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
+	v2 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var _ job.ServiceCtx = &service{}

@@ -12,12 +12,12 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"go.uber.org/zap/zapcore"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	httypes "github.com/pluginV2/core/chains/evm/headtracker/types"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	httypes "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/types"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var (

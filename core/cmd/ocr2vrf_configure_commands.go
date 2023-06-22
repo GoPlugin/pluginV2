@@ -14,17 +14,17 @@ import (
 	"github.com/pkg/errors"
 	clipkg "github.com/urfave/cli"
 
-	"github.com/pluginV2/core/chains/evm/forwarders"
-	"github.com/pluginV2/core/gethwrappers/generated/authorized_forwarder"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/keystore/chaintype"
-	"github.com/pluginV2/core/services/keystore/keys/ocr2key"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/static"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/forwarders"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/authorized_forwarder"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocr2key"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type SetupOCR2VRFNodePayload struct {

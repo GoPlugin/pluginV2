@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func (k *Keeper) CreateJob(ctx context.Context) {

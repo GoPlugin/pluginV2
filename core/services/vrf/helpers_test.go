@@ -8,13 +8,13 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/services/blockhashstore"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
-	"github.com/pluginV2/core/services/vrf/proof"
-	"github.com/pluginV2/core/testdata/testspecs"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/services/blockhashstore"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/vrf/proof"
+	"github.com/GoPlugin/pluginV2/core/testdata/testspecs"
 )
 
 func GenerateProofResponseFromProof(p vrfkey.Proof, s proof.PreSeedData) (

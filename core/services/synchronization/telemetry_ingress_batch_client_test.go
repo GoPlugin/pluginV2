@@ -11,13 +11,13 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/services/keystore/keys/csakey"
-	ksmocks "github.com/pluginV2/core/services/keystore/mocks"
-	"github.com/pluginV2/core/services/synchronization"
-	"github.com/pluginV2/core/services/synchronization/mocks"
-	telemPb "github.com/pluginV2/core/services/synchronization/telem"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/csakey"
+	ksmocks "github.com/GoPlugin/pluginV2/core/services/keystore/mocks"
+	"github.com/GoPlugin/pluginV2/core/services/synchronization"
+	"github.com/GoPlugin/pluginV2/core/services/synchronization/mocks"
+	telemPb "github.com/GoPlugin/pluginV2/core/services/synchronization/telem"
 )
 
 func TestTelemetryIngressBatchClient_HappyPath(t *testing.T) {

@@ -15,13 +15,13 @@ import (
 	plugintypes "github.com/smartcontractkit/ocr2keepers/pkg/types"
 	pluginutils "github.com/smartcontractkit/ocr2keepers/pkg/util"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/logpoller"
-	registry "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
-	"github.com/pluginV2/core/logger"
-	pluginevm "github.com/pluginV2/core/services/ocr2/plugins/ocr2keeper/evm"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/logpoller"
+	registry "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	pluginevm "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/ocr2keeper/evm"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type TransmitUnpacker interface {

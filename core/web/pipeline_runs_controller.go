@@ -10,13 +10,13 @@ import (
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/services/webhook"
-	"github.com/pluginV2/core/web/auth"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/webhook"
+	"github.com/GoPlugin/pluginV2/core/web/auth"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // PipelineRunsController manages V2 job run requests.

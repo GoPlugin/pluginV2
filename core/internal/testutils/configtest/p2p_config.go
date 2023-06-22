@@ -3,8 +3,8 @@ package configtest
 import (
 	ocrnetworking "github.com/smartcontractkit/libocr/networking"
 
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 )
 
 var _ config.P2PNetworking = &TestGeneralConfig{}

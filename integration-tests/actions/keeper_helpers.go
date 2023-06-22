@@ -9,12 +9,12 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/rs/zerolog/log"
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
 )
 
 var ZeroAddress = common.Address{}

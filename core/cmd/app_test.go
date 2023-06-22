@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/pelletier/go-toml/v2"
-	v2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/services/chainlink"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
 	"github.com/stretchr/testify/require"
 )
 

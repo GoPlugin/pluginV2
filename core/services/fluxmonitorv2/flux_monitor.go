@@ -15,18 +15,18 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/bridges"
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/log"
-	"github.com/pluginV2/core/gethwrappers/generated/flags_wrapper"
-	"github.com/pluginV2/core/gethwrappers/generated/flux_aggregator_wrapper"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/recovery"
-	"github.com/pluginV2/core/services/fluxmonitorv2/promfm"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/log"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/flags_wrapper"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/flux_aggregator_wrapper"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/recovery"
+	"github.com/GoPlugin/pluginV2/core/services/fluxmonitorv2/promfm"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // PollRequest defines a request to initiate a poll

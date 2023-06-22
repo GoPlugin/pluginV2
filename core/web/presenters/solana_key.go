@@ -1,7 +1,7 @@
 package presenters
 
 import (
-	"github.com/pluginV2/core/services/keystore/keys/solkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/solkey"
 )
 
 // SolanaKeyResource represents a Solana key JSONAPI resource.

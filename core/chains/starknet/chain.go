@@ -8,17 +8,17 @@ import (
 
 	"github.com/pkg/errors"
 
-	starkChain "github.com/pluginV2-starknet/relayer/pkg/chainlink/chain"
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/config"
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/txm"
-	"github.com/pluginV2-starknet/relayer/pkg/starknet"
-	v2 "github.com/pluginV2/core/config/v2"
+	starkChain "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/chain"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/config"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/txm"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/starknet"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
 
-	"github.com/pluginV2/core/chains/starknet/types"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/starknet/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var _ starkChain.Chain = (*chain)(nil)

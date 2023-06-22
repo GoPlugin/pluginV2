@@ -3,11 +3,11 @@ package evm
 import (
 	"github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
 
-	relaytypes "github.com/pluginV2-relay/pkg/types"
+	relaytypes "github.com/smartcontractkit/chainlink-relay/pkg/types"
 )
 
 type drProvider struct {

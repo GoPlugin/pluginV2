@@ -5,9 +5,9 @@ import (
 
 	ocrcommontypes "github.com/smartcontractkit/libocr/commontypes"
 
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/config/parse"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/config/parse"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 // P2PV2Networking is a subset of global config relevant to p2p v2 networking.

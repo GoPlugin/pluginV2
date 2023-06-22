@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pluginV2/core/services/feeds"
+	"github.com/GoPlugin/pluginV2/core/services/feeds"
 	"github.com/stretchr/testify/mock"
 )
 

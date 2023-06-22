@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 //go:generate mockery --quiet --name Service --output ./mocks/ --case=underscore

@@ -14,14 +14,14 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"github.com/shopspring/decimal"
 
-	"github.com/pluginV2/core/gethwrappers/generated/blockhash_store"
-	linktoken "github.com/pluginV2/core/gethwrappers/generated/link_token_interface"
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
-	vrfltoc "github.com/pluginV2/core/gethwrappers/generated/vrf_load_test_ownerless_consumer"
-	vrfoc "github.com/pluginV2/core/gethwrappers/generated/vrf_ownerless_consumer_example"
-	helpers "github.com/pluginV2/core/scripts/common"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/blockhash_store"
+	linktoken "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/link_token_interface"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
+	vrfltoc "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_load_test_ownerless_consumer"
+	vrfoc "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_ownerless_consumer_example"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func main() {

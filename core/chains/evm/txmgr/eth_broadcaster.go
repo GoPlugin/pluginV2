@@ -20,14 +20,14 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/assets"
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/gas"
-	"github.com/pluginV2/core/chains/evm/label"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/label"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 const (
@@ -770,7 +770,7 @@ func (eb *EthBroadcaster) tryAgainBumpingGas(ctx context.Context, lgr logger.Log
 		return eb.tryAgainBumpingDynamicFeeGas(ctx, lgr, etx, attempt, initialBroadcastAt)
 	default:
 		err = errors.Errorf("invariant violation: Attempt %v had unrecognised transaction type %v"+
-			"This is a bug! Please report to https://github.com/pluginV2/issues", attempt.ID, attempt.TxType)
+			"This is a bug! Please report to https://github.com/GoPlugin/pluginV2/issues", attempt.ID, attempt.TxType)
 		logger.Sugared(eb.logger).AssumptionViolation(err.Error())
 		return err, false
 	}

@@ -12,13 +12,13 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/auth"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/sessions"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/auth"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func setupORM(t *testing.T) (*sqlx.DB, sessions.ORM) {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/ethereum/go-ethereum"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/utils"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var _ ethereum.Subscription = &chainIDSubForwarder{}

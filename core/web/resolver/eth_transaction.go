@@ -6,9 +6,9 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/graph-gophers/graphql-go"
 
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/utils/stringutils"
-	"github.com/pluginV2/core/web/loader"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/web/loader"
 )
 
 type EthTransactionResolver struct {

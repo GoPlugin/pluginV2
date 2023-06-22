@@ -14,8 +14,8 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 //go:generate mockery --quiet --name SendOnlyNode --output ../mocks/ --case=underscore

@@ -15,11 +15,11 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/shopspring/decimal"
 
-	helpers "github.com/pluginV2/core/scripts/common"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
-	"github.com/pluginV2/core/services/vrf/proof"
-	"github.com/pluginV2/core/utils"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/services/vrf/proof"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func main() {

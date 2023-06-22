@@ -10,11 +10,11 @@ import (
 	"github.com/urfave/cli"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/utils/stringutils"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func initEVMTxSubCmd(client *Client) cli.Command {

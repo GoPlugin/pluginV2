@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"strconv"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/web/presenters"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // EVMChainPresenter implements TableRenderer for an EVMChainResource.

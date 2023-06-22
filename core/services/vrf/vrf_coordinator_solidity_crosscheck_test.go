@@ -5,16 +5,16 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/gethwrappers/generated/blockhash_store"
-	"github.com/pluginV2/core/gethwrappers/generated/link_token_interface"
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_consumer_interface"
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_consumer_interface_v08"
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_request_id"
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_request_id_v08"
-	"github.com/pluginV2/core/internal/testutils"
-	proof2 "github.com/pluginV2/core/services/vrf/proof"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/blockhash_store"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/link_token_interface"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_consumer_interface"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_consumer_interface_v08"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_request_id"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_request_id_v08"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	proof2 "github.com/GoPlugin/pluginV2/core/services/vrf/proof"
 
 	"github.com/ethereum/go-ethereum/eth/ethconfig"
 
@@ -26,14 +26,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	evmconfig "github.com/pluginV2/core/chains/evm/config"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
-	"github.com/pluginV2/core/services/vrf"
-	"github.com/pluginV2/core/utils"
+	evmconfig "github.com/GoPlugin/pluginV2/core/chains/evm/config"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/services/vrf"
+	"github.com/GoPlugin/pluginV2/core/utils"
 
-	"github.com/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
 )
 
 // coordinatorUniverse represents the universe in which a randomness request occurs and

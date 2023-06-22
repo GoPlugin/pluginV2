@@ -20,7 +20,7 @@ import (
 	"github.com/smartcontractkit/ocr2keepers/pkg/chain"
 	plugintypes "github.com/smartcontractkit/ocr2keepers/pkg/types"
 
-	"github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
 )
 
 type OCR2ReportDataElem struct {

@@ -9,17 +9,17 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/exp/slices"
 
-	evmcfg "github.com/pluginV2/core/chains/evm/config"
-	evmcfg2 "github.com/pluginV2/core/chains/evm/config/v2"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/config"
-	cfg2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/internal/testutils/configtest"
-	configtest2 "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/chainlink/cfgtest"
-	"github.com/pluginV2/core/utils"
+	evmcfg "github.com/GoPlugin/pluginV2/core/chains/evm/config"
+	evmcfg2 "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/config"
+	cfg2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/configtest"
+	configtest2 "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink/cfgtest"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func TestDefaultConfig(t *testing.T) {

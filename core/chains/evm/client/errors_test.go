@@ -6,7 +6,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
 )
 
 func newSendErrorWrapped(s string) *evmclient.SendError {

@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	utils "github.com/pluginV2/core/utils"
+	utils "github.com/GoPlugin/pluginV2/core/utils"
 	mock "github.com/stretchr/testify/mock"
 )
 

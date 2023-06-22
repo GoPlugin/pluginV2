@@ -10,13 +10,13 @@ import (
 	"github.com/pkg/errors"
 	"github.com/smartcontractkit/libocr/offchainreporting"
 
-	"github.com/pluginV2/core/chains/evm"
-	config2 "github.com/pluginV2/core/chains/evm/config"
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
-	"github.com/pluginV2/core/services/ocrcommon"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	config2 "github.com/GoPlugin/pluginV2/core/chains/evm/config"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/services/ocrcommon"
 )
 
 type ValidationConfig interface {

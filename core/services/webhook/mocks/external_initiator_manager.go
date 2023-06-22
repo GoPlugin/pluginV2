@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	bridges "github.com/pluginV2/core/bridges"
+	bridges "github.com/GoPlugin/pluginV2/core/bridges"
 	mock "github.com/stretchr/testify/mock"
 )
 

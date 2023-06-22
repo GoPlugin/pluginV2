@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/job"
 )
 
 func TestValidateBootstrapSpec(t *testing.T) {

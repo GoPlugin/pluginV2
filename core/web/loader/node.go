@@ -5,9 +5,9 @@ import (
 
 	"github.com/graph-gophers/dataloader"
 
-	"github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type nodeBatcher struct {

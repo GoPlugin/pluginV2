@@ -6,10 +6,10 @@ import (
 
 	"github.com/robfig/cron/v3"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // Cron runs a cron jobSpec from a CronSpec

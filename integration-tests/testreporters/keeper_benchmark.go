@@ -14,8 +14,8 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/slack-go/slack"
 
-	"github.com/pluginV2-testing-framework/testreporters"
-	"github.com/pluginV2/integration-tests/client"
+	"github.com/smartcontractkit/chainlink-testing-framework/testreporters"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
 )
 
 var (

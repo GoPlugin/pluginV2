@@ -12,13 +12,13 @@ import (
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 	"github.com/smartcontractkit/sqlx"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/log"
-	offchain_aggregator_wrapper "github.com/pluginV2/core/internal/gethwrappers2/generated/offchainaggregator"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/ocrcommon"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/log"
+	offchain_aggregator_wrapper "github.com/GoPlugin/pluginV2/core/internal/gethwrappers2/generated/offchainaggregator"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/ocrcommon"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // RequestRoundTracker subscribes to new request round logs.

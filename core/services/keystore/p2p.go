@@ -5,8 +5,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 //go:generate mockery --quiet --name P2P --output ./mocks/ --case=underscore --filename p2p.go

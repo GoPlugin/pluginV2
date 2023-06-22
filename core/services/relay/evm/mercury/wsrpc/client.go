@@ -8,10 +8,10 @@ import (
 	"github.com/smartcontractkit/wsrpc"
 	"github.com/smartcontractkit/wsrpc/connectivity"
 
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/keystore/keys/csakey"
-	"github.com/pluginV2/core/services/relay/evm/mercury/wsrpc/report"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/csakey"
+	"github.com/GoPlugin/pluginV2/core/services/relay/evm/mercury/wsrpc/report"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type Client interface {

@@ -13,13 +13,13 @@ import (
 	"github.com/stretchr/testify/mock"
 	"gopkg.in/guregu/null.v4"
 
-	clnull "github.com/pluginV2/core/null"
-	"github.com/pluginV2/core/services/directrequest"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/testdata/testspecs"
-	"github.com/pluginV2/core/utils/stringutils"
+	clnull "github.com/GoPlugin/pluginV2/core/null"
+	"github.com/GoPlugin/pluginV2/core/services/directrequest"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/testdata/testspecs"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
 )
 
 // This tests the main fields on the job results. Embedded spec testing is done

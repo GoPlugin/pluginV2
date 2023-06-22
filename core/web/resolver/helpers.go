@@ -8,9 +8,9 @@ import (
 	"github.com/graph-gophers/graphql-go"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
 )
 
 const (

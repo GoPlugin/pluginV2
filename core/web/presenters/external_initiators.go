@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pluginV2/core/auth"
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/auth"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 // ExternalInitiatorAuthentication includes initiator and authentication details.

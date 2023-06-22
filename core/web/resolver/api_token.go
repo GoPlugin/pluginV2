@@ -1,6 +1,6 @@
 package resolver
 
-import "github.com/pluginV2/core/auth"
+import "github.com/GoPlugin/pluginV2/core/auth"
 
 type APITokenResolver struct {
 	token auth.Token

@@ -7,13 +7,13 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 
 	"github.com/gin-gonic/gin"
 )

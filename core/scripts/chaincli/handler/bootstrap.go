@@ -8,9 +8,9 @@ import (
 	"io"
 	"log"
 
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/web"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/web"
 )
 
 const (

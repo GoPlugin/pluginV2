@@ -23,16 +23,16 @@ import (
 	"github.com/smartcontractkit/ocr2vrf/ocr2vrf"
 	ocr2vrftypes "github.com/smartcontractkit/ocr2vrf/types"
 
-	"github.com/pluginV2/core/chains/evm/logpoller"
-	lp_mocks "github.com/pluginV2/core/chains/evm/logpoller/mocks"
-	evm_mocks "github.com/pluginV2/core/chains/evm/mocks"
-	dkg_wrapper "github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/ocr2/plugins/ocr2vrf/coordinator/mocks"
-	"github.com/pluginV2/core/utils/mathutil"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/logpoller"
+	lp_mocks "github.com/GoPlugin/pluginV2/core/chains/evm/logpoller/mocks"
+	evm_mocks "github.com/GoPlugin/pluginV2/core/chains/evm/mocks"
+	dkg_wrapper "github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/ocr2vrf/coordinator/mocks"
+	"github.com/GoPlugin/pluginV2/core/utils/mathutil"
 )
 
 func TestCoordinator_BeaconPeriod(t *testing.T) {

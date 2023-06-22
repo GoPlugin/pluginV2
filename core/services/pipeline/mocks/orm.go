@@ -5,12 +5,12 @@ package mocks
 import (
 	context "context"
 
-	models "github.com/pluginV2/core/store/models"
+	models "github.com/GoPlugin/pluginV2/core/store/models"
 	mock "github.com/stretchr/testify/mock"
 
-	pg "github.com/pluginV2/core/services/pg"
+	pg "github.com/GoPlugin/pluginV2/core/services/pg"
 
-	pipeline "github.com/pluginV2/core/services/pipeline"
+	pipeline "github.com/GoPlugin/pluginV2/core/services/pipeline"
 
 	time "time"
 

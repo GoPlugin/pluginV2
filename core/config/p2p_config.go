@@ -7,8 +7,8 @@ import (
 
 	ocrnetworking "github.com/smartcontractkit/libocr/networking"
 
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 )
 
 // P2PNetworking is a subset of global config relevant to p2p networking.

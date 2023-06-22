@@ -14,22 +14,22 @@ import (
 
 	"github.com/onsi/gomega"
 
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-env/logging"
-	"github.com/pluginV2-env/pkg/helm/chainlink"
-	eth "github.com/pluginV2-env/pkg/helm/ethereum"
-	"github.com/pluginV2-env/pkg/helm/mockserver"
-	mockservercfg "github.com/pluginV2-env/pkg/helm/mockserver-cfg"
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
-	"github.com/pluginV2-testing-framework/utils"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-env/logging"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/chainlink"
+	eth "github.com/smartcontractkit/chainlink-env/pkg/helm/ethereum"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/mockserver"
+	mockservercfg "github.com/smartcontractkit/chainlink-env/pkg/helm/mockserver-cfg"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
+	"github.com/smartcontractkit/chainlink-testing-framework/utils"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zapcore"
 
-	networks "github.com/pluginV2/integration-tests"
-	"github.com/pluginV2/integration-tests/actions"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
+	networks "github.com/GoPlugin/pluginV2/integration-tests"
+	"github.com/GoPlugin/pluginV2/integration-tests/actions"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
 )
 
 const (

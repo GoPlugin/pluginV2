@@ -10,10 +10,10 @@ import (
 	"github.com/smartcontractkit/libocr/offchainreporting2/chains/evmutil"
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/relay/evm/mercury/wsrpc"
-	pb "github.com/pluginV2/core/services/relay/evm/mercury/wsrpc/report"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/relay/evm/mercury/wsrpc"
+	pb "github.com/GoPlugin/pluginV2/core/services/relay/evm/mercury/wsrpc/report"
 )
 
 var _ ocrtypes.ContractTransmitter = &mercuryTransmitter{}

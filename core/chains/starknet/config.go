@@ -9,12 +9,12 @@ import (
 	"golang.org/x/exp/slices"
 	"gopkg.in/guregu/null.v4"
 
-	stkcfg "github.com/pluginV2-starknet/relayer/pkg/chainlink/config"
-	"github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
-	starknetdb "github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
+	stkcfg "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/config"
+	"github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
+	starknetdb "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
 
-	"github.com/pluginV2/core/chains/starknet/types"
-	v2 "github.com/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/chains/starknet/types"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
 )
 
 type StarknetConfigs []*StarknetConfig

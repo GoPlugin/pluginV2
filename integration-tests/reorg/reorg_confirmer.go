@@ -11,11 +11,11 @@ import (
 	"github.com/pkg/errors"
 	"github.com/rs/zerolog/log"
 
-	"github.com/pluginV2-env/chaos"
-	"github.com/pluginV2-env/environment"
-	a "github.com/pluginV2-env/pkg/alias"
-	"github.com/pluginV2-env/pkg/helm/reorg"
-	"github.com/pluginV2-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-env/chaos"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	a "github.com/smartcontractkit/chainlink-env/pkg/alias"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/reorg"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
 )
 
 // The steps are:

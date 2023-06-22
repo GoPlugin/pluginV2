@@ -11,9 +11,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/config/parse"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/config/parse"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func TestGeneralConfig_Defaults(t *testing.T) {

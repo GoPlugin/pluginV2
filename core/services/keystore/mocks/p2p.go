@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	p2pkey "github.com/pluginV2/core/services/keystore/keys/p2pkey"
+	p2pkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 	mock "github.com/stretchr/testify/mock"
 )
 

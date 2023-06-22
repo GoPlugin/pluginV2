@@ -3,8 +3,8 @@ package chainlink
 import (
 	"time"
 
-	"github.com/pluginV2/core/assets"
-	v2 "github.com/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
 )
 
 func (g *generalConfig) GlobalBalanceMonitorEnabled() (bool, bool) { panic(v2.ErrUnsupported) }

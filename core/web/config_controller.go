@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/pluginV2/core/config"
-	v2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/config"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/utils"
 
 	"github.com/gin-gonic/gin"
 )

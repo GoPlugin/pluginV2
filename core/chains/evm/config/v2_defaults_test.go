@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/chains/evm/config"
-	v2 "github.com/pluginV2/core/chains/evm/config/v2"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/config"
+	v2 "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func Test_v2Config_SetDefaults(t *testing.T) {

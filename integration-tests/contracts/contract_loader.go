@@ -3,15 +3,15 @@ package contracts
 import (
 	"errors"
 
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
-	int_ethereum "github.com/pluginV2/integration-tests/contracts/ethereum"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
+	int_ethereum "github.com/GoPlugin/pluginV2/integration-tests/contracts/ethereum"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2/core/gethwrappers/generated/authorized_forwarder"
-	"github.com/pluginV2/core/gethwrappers/generated/operator_wrapper"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/authorized_forwarder"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/operator_wrapper"
 )
 
 // ContractLoader is an interface for abstracting the contract loading methods across network implementations

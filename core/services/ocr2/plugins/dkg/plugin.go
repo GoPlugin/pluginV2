@@ -13,15 +13,15 @@ import (
 	"github.com/smartcontractkit/ocr2vrf/dkg"
 	"github.com/smartcontractkit/sqlx"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/ocr2/plugins/dkg/config"
-	"github.com/pluginV2/core/services/ocr2/plugins/dkg/persistence"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/services/relay"
-	evmrelay "github.com/pluginV2/core/services/relay/evm"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/dkg/config"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/dkg/persistence"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/relay"
+	evmrelay "github.com/GoPlugin/pluginV2/core/services/relay/evm"
 )
 
 func NewDKGServices(

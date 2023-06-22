@@ -10,9 +10,9 @@ import (
 	ocr "github.com/smartcontractkit/libocr/offchainreporting"
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
 
-	"github.com/pluginV2/core/assets"
-	gencfg "github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	gencfg "github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func NewTOMLChainScopedConfig(genCfg gencfg.BasicConfig, chain *EVMConfig, lggr logger.Logger) *ChainScoped {

@@ -8,10 +8,10 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	starknetdb "github.com/pluginV2-starknet/relayer/pkg/chainlink/db"
-	"github.com/pluginV2/core/services/pg"
+	starknetdb "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 type SetupConfig interface {

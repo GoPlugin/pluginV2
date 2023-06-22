@@ -14,10 +14,10 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/go-resty/resty/v2"
 	"github.com/rs/zerolog/log"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
-	"github.com/pluginV2/integration-tests/contracts/ethereum/mercury/exchanger"
-	"github.com/pluginV2/integration-tests/testsetups"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts/ethereum/mercury/exchanger"
+	"github.com/GoPlugin/pluginV2/integration-tests/testsetups"
 	"github.com/stretchr/testify/require"
 )
 

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"math/big"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	config "github.com/pluginV2/core/config/v2"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	config "github.com/GoPlugin/pluginV2/core/config/v2"
 )
 
 func (c *ChainScoped) SetEvmGasPriceDefault(_ *big.Int) error {

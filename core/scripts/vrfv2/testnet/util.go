@@ -10,17 +10,17 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/rlp"
 
-	"github.com/pluginV2/core/gethwrappers/generated/batch_blockhash_store"
-	"github.com/pluginV2/core/gethwrappers/generated/batch_vrf_coordinator_v2"
-	"github.com/pluginV2/core/gethwrappers/generated/blockhash_store"
-	"github.com/pluginV2/core/gethwrappers/generated/link_token_interface"
-	"github.com/pluginV2/core/gethwrappers/generated/nocancel_vrf_coordinator_v2"
-	"github.com/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
-	"github.com/pluginV2/core/gethwrappers/generated/vrf_external_sub_owner_example"
-	"github.com/pluginV2/core/gethwrappers/generated/vrfv2_wrapper"
-	"github.com/pluginV2/core/gethwrappers/generated/vrfv2_wrapper_consumer_example"
-	helpers "github.com/pluginV2/core/scripts/common"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/batch_blockhash_store"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/batch_vrf_coordinator_v2"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/blockhash_store"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/link_token_interface"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/nocancel_vrf_coordinator_v2"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_external_sub_owner_example"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrfv2_wrapper"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrfv2_wrapper_consumer_example"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func deployBHS(e helpers.Environment) (blockhashStoreAddress common.Address) {

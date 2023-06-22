@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/services/ocr2/plugins/directrequestocr"
-	"github.com/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
 )
 
 func req(id int, result []byte, err []byte) *directrequestocr.ProcessedRequest {

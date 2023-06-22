@@ -8,14 +8,14 @@ import (
 
 	"github.com/urfave/cli"
 
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
 )
 
 func TestVRFKeyPresenter_RenderTable(t *testing.T) {

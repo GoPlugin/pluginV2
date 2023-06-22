@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/theodesp/go-heaps/pairing"
 
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func TestConfirmedLogExtraction(t *testing.T) {

@@ -17,11 +17,11 @@ import (
 	"github.com/tidwall/gjson"
 	"go.uber.org/zap"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	evmmocks "github.com/pluginV2/core/chains/evm/mocks"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmmocks "github.com/GoPlugin/pluginV2/core/chains/evm/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 type poolConfig struct {

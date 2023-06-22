@@ -8,8 +8,8 @@ import (
 	"github.com/pkg/errors"
 	ocrnetworking "github.com/smartcontractkit/libocr/networking"
 
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/config/parse"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/config/parse"
 )
 
 // P2PV1Networking is a subset of global config relevant to p2p v1 networking.

@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
 )
 
 // JobErrors are only embedded on the job and are not fetchable by it's own id,

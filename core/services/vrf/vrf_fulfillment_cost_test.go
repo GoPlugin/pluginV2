@@ -4,12 +4,12 @@ import (
 	"math/big"
 	"testing"
 
-	proof2 "github.com/pluginV2/core/services/vrf/proof"
+	proof2 "github.com/GoPlugin/pluginV2/core/services/vrf/proof"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
 )
 
 // TestMeasureFulfillmentGasCost establishes rough bounds on the cost of

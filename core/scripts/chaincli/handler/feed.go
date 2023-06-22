@@ -6,8 +6,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	feed "github.com/pluginV2/core/gethwrappers/generated/derived_price_feed_wrapper"
-	"github.com/pluginV2/core/scripts/chaincli/config"
+	feed "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/derived_price_feed_wrapper"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/config"
 )
 
 // Feed is the price feeds commands handler

@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	feeds "github.com/pluginV2/core/services/feeds"
+	feeds "github.com/GoPlugin/pluginV2/core/services/feeds"
 	mock "github.com/stretchr/testify/mock"
 )
 

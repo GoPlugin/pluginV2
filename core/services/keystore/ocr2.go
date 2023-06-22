@@ -5,8 +5,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/keystore/chaintype"
-	"github.com/pluginV2/core/services/keystore/keys/ocr2key"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocr2key"
 )
 
 //go:generate mockery --quiet --name OCR2 --output mocks/ --case=underscore

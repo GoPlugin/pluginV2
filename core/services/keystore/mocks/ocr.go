@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	ocrkey "github.com/pluginV2/core/services/keystore/keys/ocrkey"
+	ocrkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocrkey"
 	mock "github.com/stretchr/testify/mock"
 )
 

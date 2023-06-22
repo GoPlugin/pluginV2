@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/services/keystore/keys/ocrkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocrkey"
 )
 
 func TestOCR_OnChainSigningAddress_String(t *testing.T) {

@@ -10,17 +10,17 @@ import (
 	"github.com/stretchr/testify/require"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	txmmocks "github.com/pluginV2/core/chains/evm/txmgr/mocks"
-	"github.com/pluginV2/core/internal/testutils"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	clnull "github.com/pluginV2/core/null"
-	"github.com/pluginV2/core/services/chainlink"
-	keystoremocks "github.com/pluginV2/core/services/keystore/mocks"
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	txmmocks "github.com/GoPlugin/pluginV2/core/chains/evm/txmgr/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	clnull "github.com/GoPlugin/pluginV2/core/null"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	keystoremocks "github.com/GoPlugin/pluginV2/core/services/keystore/mocks"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 func TestETHTxTask(t *testing.T) {

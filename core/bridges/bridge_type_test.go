@@ -11,10 +11,10 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/math"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

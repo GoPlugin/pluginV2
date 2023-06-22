@@ -12,8 +12,8 @@ import (
 	"github.com/urfave/cli"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/chains"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/chains"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 var chainHeaders = []string{"ID", "Enabled", "Config", "Created", "Updated"}

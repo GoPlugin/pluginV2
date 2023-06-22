@@ -8,9 +8,9 @@ import (
 
 	gqlerrors "github.com/graph-gophers/graphql-go/errors"
 	"github.com/pkg/errors"
-	"github.com/pluginV2/core/internal/testutils/keystest"
-	"github.com/pluginV2/core/services/keystore/chaintype"
-	"github.com/pluginV2/core/services/keystore/keys/ocr2key"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/keystest"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocr2key"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

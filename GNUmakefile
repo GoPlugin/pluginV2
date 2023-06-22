@@ -52,7 +52,8 @@ docker:
 
 .PHONY: chainlink-build
 chainlink-build: operator-ui ## Build & install the chainlink binary.
-	go build $(GOFLAGS) -o chainlink ./core/
+	go build -o pluginV2 ./core/
+	#go build -o chainlink ./core/
 	rm -f $(GOBIN)/chainlink
 	cp chainlink $(GOBIN)/chainlink
 

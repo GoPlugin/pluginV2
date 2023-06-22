@@ -15,13 +15,13 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-testing-framework/blockchain"
-	ctfClient "github.com/pluginV2-testing-framework/client"
-	"github.com/pluginV2-testing-framework/testreporters"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	ctfClient "github.com/smartcontractkit/chainlink-testing-framework/client"
+	"github.com/smartcontractkit/chainlink-testing-framework/testreporters"
 
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
 )
 
 // ContractDeploymentInterval After how many contract actions to wait before starting any more

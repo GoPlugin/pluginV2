@@ -14,8 +14,8 @@ import (
 	"go.dedis.ch/kyber/v3"
 	"go.dedis.ch/kyber/v3/group/curve25519"
 
-	"github.com/pluginV2/core/services/signatures/cryptotest"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/cryptotest"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
 )
 
 var numSignatures = 5

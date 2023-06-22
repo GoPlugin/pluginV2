@@ -12,15 +12,15 @@ import (
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2-solana/pkg/solana"
-	solanaClient "github.com/pluginV2-solana/pkg/solana/client"
-	"github.com/pluginV2-solana/pkg/solana/config"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana"
+	solanaClient "github.com/smartcontractkit/chainlink-solana/pkg/solana/client"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/config"
 
-	"github.com/pluginV2/core/chains/solana/fees"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/solana/fees"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 const (

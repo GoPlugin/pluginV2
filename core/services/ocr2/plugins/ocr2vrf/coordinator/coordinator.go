@@ -21,16 +21,16 @@ import (
 	"golang.org/x/exp/maps"
 	"google.golang.org/protobuf/proto"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/logpoller"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	dkg_wrapper "github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
-	vrf_wrapper "github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils/mathutil"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/logpoller"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	dkg_wrapper "github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
+	vrf_wrapper "github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils/mathutil"
 )
 
 var _ ocr2vrftypes.CoordinatorInterface = &coordinator{}

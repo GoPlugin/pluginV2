@@ -22,16 +22,16 @@ import (
 	"github.com/spf13/viper"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/config/parse"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/static"
-	"github.com/pluginV2/core/store/dialects"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/config/parse"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/store/dialects"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 //go:generate mockery --quiet --name GeneralConfig --output ./mocks/ --case=underscore

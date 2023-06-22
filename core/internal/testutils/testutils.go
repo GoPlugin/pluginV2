@@ -28,7 +28,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	// NOTE: To avoid circular dependencies, this package MUST NOT import
-	// anything from "github.com/pluginV2/core"
+	// anything from "github.com/GoPlugin/pluginV2/core"
 )
 
 const (

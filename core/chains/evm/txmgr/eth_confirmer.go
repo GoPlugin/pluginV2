@@ -18,15 +18,15 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/assets"
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/gas"
-	"github.com/pluginV2/core/chains/evm/label"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/label"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 const (
@@ -742,7 +742,7 @@ func (ec *EthConfirmer) attemptForRebroadcast(ctx context.Context, lggr logger.L
 	}
 	return attempt, errors.Errorf("invariant violation: EthTx %v was unconfirmed but didn't have any attempts. "+
 		"Falling back to default gas price instead."+
-		"This is a bug! Please report to https://github.com/pluginV2/issues", etx.ID)
+		"This is a bug! Please report to https://github.com/GoPlugin/pluginV2/issues", etx.ID)
 }
 
 func (ec *EthConfirmer) logFieldsPreviousAttempt(attempt EthTxAttempt) []interface{} {
@@ -789,7 +789,7 @@ func (ec *EthConfirmer) bumpGas(ctx context.Context, etx EthTx, previousAttempts
 		}
 	default:
 		err = errors.Errorf("invariant violation: Attempt %v had unrecognised transaction type %v"+
-			"This is a bug! Please report to https://github.com/pluginV2/issues", previousAttempt.ID, previousAttempt.TxType)
+			"This is a bug! Please report to https://github.com/GoPlugin/pluginV2/issues", previousAttempt.ID, previousAttempt.TxType)
 	}
 
 	if errors.Is(errors.Cause(err), gas.ErrBumpGasExceedsLimit) {

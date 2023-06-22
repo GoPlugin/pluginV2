@@ -8,9 +8,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/manyminds/api2go/jsonapi"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
 )
 
 type Keystore[K keystore.Key] interface {

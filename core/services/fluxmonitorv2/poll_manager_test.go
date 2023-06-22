@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/gethwrappers/generated/flux_aggregator_wrapper"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/fluxmonitorv2"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/flux_aggregator_wrapper"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/fluxmonitorv2"
 )
 
 var (

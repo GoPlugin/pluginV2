@@ -1,8 +1,8 @@
 package presenters
 
 import (
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
 )
 
 type VRFKeyResource struct {

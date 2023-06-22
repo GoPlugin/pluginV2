@@ -17,11 +17,11 @@ import (
 	ocr2keepers "github.com/smartcontractkit/ocr2keepers/pkg/types"
 	"github.com/umbracle/ethgo/abi"
 
-	"github.com/pluginV2/core/cmd"
-	registry11 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
-	registry12 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
-	registry20 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
-	"github.com/pluginV2/core/scripts/chaincli/config"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	registry11 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
+	registry12 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
+	registry20 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/config"
 )
 
 // canceller describes the behavior to cancel upkeeps

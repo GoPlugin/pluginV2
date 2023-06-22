@@ -6,9 +6,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // TerminalKeyStoreAuthenticator contains fields for prompting the user and an

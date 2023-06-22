@@ -5,16 +5,16 @@ package mocks
 import (
 	context "context"
 
-	job "github.com/pluginV2/core/services/job"
-	ethkey "github.com/pluginV2/core/services/keystore/keys/ethkey"
+	job "github.com/GoPlugin/pluginV2/core/services/job"
+	ethkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
 
 	mock "github.com/stretchr/testify/mock"
 
-	pg "github.com/pluginV2/core/services/pg"
+	pg "github.com/GoPlugin/pluginV2/core/services/pg"
 
-	pipeline "github.com/pluginV2/core/services/pipeline"
+	pipeline "github.com/GoPlugin/pluginV2/core/services/pipeline"
 
-	utils "github.com/pluginV2/core/utils"
+	utils "github.com/GoPlugin/pluginV2/core/utils"
 
 	uuid "github.com/satori/go.uuid"
 )

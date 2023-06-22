@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/params"
-	"github.com/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/assets"
 	"github.com/stretchr/testify/assert"
 )
 

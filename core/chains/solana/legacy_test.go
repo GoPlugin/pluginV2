@@ -6,13 +6,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	solanadb "github.com/pluginV2-solana/pkg/solana/db"
-	"github.com/pluginV2/core/services/pg"
+	solanadb "github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 
-	"github.com/pluginV2/core/chains/solana"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/chains/solana"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func TestSetupNodes(t *testing.T) {

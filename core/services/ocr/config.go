@@ -3,8 +3,8 @@ package ocr
 import (
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
 
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 // Config contains OCR configurations for a job.

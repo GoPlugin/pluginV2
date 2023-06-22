@@ -5,14 +5,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 
 	"github.com/onsi/gomega"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/cltest/heavyweight"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest/heavyweight"
 )
 
 func TestEventBroadcaster(t *testing.T) {

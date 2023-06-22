@@ -9,15 +9,15 @@ import (
 	"github.com/smartcontractkit/libocr/commontypes"
 	ocr2types "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/gethwrappers/generated/ocr2dr_oracle"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/directrequestocr"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/ocr2/plugins"
-	"github.com/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/ocr2dr_oracle"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/directrequestocr"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type DROracle struct {

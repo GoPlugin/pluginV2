@@ -3,8 +3,8 @@ package client_test
 import (
 	"testing"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	evmmocks "github.com/pluginV2/core/chains/evm/mocks"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmmocks "github.com/GoPlugin/pluginV2/core/chains/evm/mocks"
 
 	"github.com/stretchr/testify/assert"
 )

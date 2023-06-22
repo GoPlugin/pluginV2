@@ -11,14 +11,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	evmcfg "github.com/pluginV2/core/chains/evm/config/v2"
-	"github.com/pluginV2/core/chains/solana"
-	"github.com/pluginV2/core/chains/starknet"
-	config "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/chainlink/cfgtest"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	evmcfg "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	"github.com/GoPlugin/pluginV2/core/chains/solana"
+	"github.com/GoPlugin/pluginV2/core/chains/starknet"
+	config "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink/cfgtest"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
 )
 
 func TestDoc(t *testing.T) {

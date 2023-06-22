@@ -6,9 +6,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/pluginV2/core/services/synchronization"
-	"github.com/pluginV2/core/services/synchronization/mocks"
-	"github.com/pluginV2/core/services/telemetry"
+	"github.com/GoPlugin/pluginV2/core/services/synchronization"
+	"github.com/GoPlugin/pluginV2/core/services/synchronization/mocks"
+	"github.com/GoPlugin/pluginV2/core/services/telemetry"
 )
 
 func TestIngressAgent(t *testing.T) {

@@ -5,9 +5,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/pluginV2/core/logger"
-	telemPb "github.com/pluginV2/core/services/synchronization/telem"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	telemPb "github.com/GoPlugin/pluginV2/core/services/synchronization/telem"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // telemetryIngressBatchWorker pushes telemetry in batches to the ingress server via wsrpc.

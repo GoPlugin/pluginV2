@@ -10,9 +10,9 @@ import (
 	"github.com/smartcontractkit/wsrpc"
 	"github.com/smartcontractkit/wsrpc/connectivity"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/recovery"
-	pb "github.com/pluginV2/core/services/feeds/proto"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/recovery"
+	pb "github.com/GoPlugin/pluginV2/core/services/feeds/proto"
 )
 
 //go:generate mockery --quiet --name ConnectionsManager --output ./mocks/ --case=underscore

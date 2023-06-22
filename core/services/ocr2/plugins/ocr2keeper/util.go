@@ -8,14 +8,14 @@ import (
 	ktypes "github.com/smartcontractkit/ocr2keepers/pkg/types"
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2-relay/pkg/types"
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	kevm "github.com/pluginV2/core/services/ocr2/plugins/ocr2keeper/evm"
-	"github.com/pluginV2/core/services/pipeline"
-	evmrelay "github.com/pluginV2/core/services/relay/evm"
+	"github.com/smartcontractkit/chainlink-relay/pkg/types"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	kevm "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/ocr2keeper/evm"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	evmrelay "github.com/GoPlugin/pluginV2/core/services/relay/evm"
 )
 
 var (

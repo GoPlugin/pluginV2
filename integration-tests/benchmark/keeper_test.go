@@ -12,21 +12,21 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/stretchr/testify/require"
 
-	env_client "github.com/pluginV2-env/client"
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-env/pkg/cdk8s/blockscout"
-	"github.com/pluginV2-env/pkg/helm/chainlink"
-	"github.com/pluginV2-env/pkg/helm/ethereum"
-	"github.com/pluginV2-env/pkg/helm/reorg"
+	env_client "github.com/smartcontractkit/chainlink-env/client"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-env/pkg/cdk8s/blockscout"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/chainlink"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/ethereum"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/reorg"
 
-	"github.com/pluginV2-testing-framework/blockchain"
-	eth_contracts "github.com/pluginV2-testing-framework/contracts/ethereum"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	eth_contracts "github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
 
-	networks "github.com/pluginV2/integration-tests"
-	"github.com/pluginV2/integration-tests/actions"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
-	"github.com/pluginV2/integration-tests/testsetups"
+	networks "github.com/GoPlugin/pluginV2/integration-tests"
+	"github.com/GoPlugin/pluginV2/integration-tests/actions"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/integration-tests/testsetups"
 )
 
 var (

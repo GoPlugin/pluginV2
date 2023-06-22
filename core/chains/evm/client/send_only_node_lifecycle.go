@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // verifyLoop may only be triggered once, on Start, if initial chain ID check

@@ -1,8 +1,8 @@
 package command
 
 import (
-	"github.com/pluginV2/core/scripts/chaincli/config"
-	"github.com/pluginV2/core/scripts/chaincli/handler"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/config"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/handler"
 	"github.com/spf13/cobra"
 )
 

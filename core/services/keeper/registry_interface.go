@@ -11,13 +11,13 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/pkg/errors"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	registry1_1 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
-	registry1_2 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
-	registry1_3 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_3"
-	type_and_version "github.com/pluginV2/core/gethwrappers/generated/type_and_version_interface_wrapper"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	registry1_1 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
+	registry1_2 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
+	registry1_3 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_3"
+	type_and_version "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/type_and_version_interface_wrapper"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
 )
 
 type RegistryVersion int32

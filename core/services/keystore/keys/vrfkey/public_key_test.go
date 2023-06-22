@@ -3,9 +3,9 @@ package vrfkey
 import (
 	"testing"
 
-	"github.com/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
 
-	"github.com/pluginV2/core/services/signatures/cryptotest"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/cryptotest"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

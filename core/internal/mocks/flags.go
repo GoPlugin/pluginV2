@@ -8,9 +8,9 @@ import (
 
 	event "github.com/ethereum/go-ethereum/event"
 
-	flags_wrapper "github.com/pluginV2/core/gethwrappers/generated/flags_wrapper"
+	flags_wrapper "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/flags_wrapper"
 
-	generated "github.com/pluginV2/core/gethwrappers/generated"
+	generated "github.com/GoPlugin/pluginV2/core/gethwrappers/generated"
 
 	mock "github.com/stretchr/testify/mock"
 

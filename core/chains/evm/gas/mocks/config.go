@@ -3,8 +3,8 @@
 package mocks
 
 import (
-	assets "github.com/pluginV2/core/assets"
-	config "github.com/pluginV2/core/config"
+	assets "github.com/GoPlugin/pluginV2/core/assets"
+	config "github.com/GoPlugin/pluginV2/core/config"
 
 	mock "github.com/stretchr/testify/mock"
 )

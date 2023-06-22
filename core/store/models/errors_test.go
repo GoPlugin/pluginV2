@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 	"github.com/stretchr/testify/require"
 )
 

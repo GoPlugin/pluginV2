@@ -9,11 +9,11 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/multierr"
 
-	cfgv2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	cfgv2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var (

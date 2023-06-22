@@ -6,15 +6,15 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_verifier_wrapper"
-	"github.com/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_verifier_wrapper"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
 
 	"github.com/ethereum/go-ethereum/eth/ethconfig"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
 
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"

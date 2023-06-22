@@ -3,7 +3,7 @@ package configtest
 import (
 	"time"
 
-	"github.com/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/config"
 )
 
 var _ config.OCR2Config = &TestGeneralConfig{}

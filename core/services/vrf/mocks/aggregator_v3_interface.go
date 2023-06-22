@@ -5,7 +5,7 @@ package mocks
 import (
 	big "math/big"
 
-	aggregator_v3_interface "github.com/pluginV2/core/gethwrappers/generated/aggregator_v3_interface"
+	aggregator_v3_interface "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/aggregator_v3_interface"
 
 	bind "github.com/ethereum/go-ethereum/accounts/abi/bind"
 

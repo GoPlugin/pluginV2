@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/services/vrf"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/services/vrf"
 )
 
 func TestListener_EstimateFeeJuels(t *testing.T) {

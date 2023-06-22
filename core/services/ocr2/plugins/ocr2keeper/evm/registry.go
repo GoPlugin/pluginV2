@@ -16,13 +16,13 @@ import (
 	"github.com/smartcontractkit/ocr2keepers/pkg/types"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/chains/evm/logpoller"
-	"github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/logpoller"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var (

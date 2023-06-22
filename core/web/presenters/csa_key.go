@@ -1,7 +1,7 @@
 package presenters
 
 import (
-	"github.com/pluginV2/core/services/keystore/keys/csakey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/csakey"
 )
 
 // CSAKeyResource represents a CSA key JSONAPI resource.

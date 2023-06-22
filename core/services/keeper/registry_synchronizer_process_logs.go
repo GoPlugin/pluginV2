@@ -6,12 +6,12 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/chains/evm/log"
-	registry1_1 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
-	registry1_2 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
-	registry1_3 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_3"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/log"
+	registry1_1 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
+	registry1_2 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
+	registry1_3 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_3"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func (rs *RegistrySynchronizer) processLogs() {

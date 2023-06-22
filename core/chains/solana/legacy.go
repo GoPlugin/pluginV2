@@ -8,9 +8,9 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	solanadb "github.com/pluginV2-solana/pkg/solana/db"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
+	solanadb "github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 type SetupConfig interface {

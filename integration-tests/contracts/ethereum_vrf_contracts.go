@@ -13,15 +13,15 @@ import (
 	"github.com/pkg/errors"
 	"github.com/rs/zerolog/log"
 
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
 
-	"github.com/pluginV2/core/gethwrappers/generated/batch_blockhash_store"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon_consumer"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_router"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/batch_blockhash_store"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon_consumer"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_router"
 )
 
 // DeployVRFContract deploy VRF contract

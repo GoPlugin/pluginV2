@@ -5,8 +5,8 @@ import (
 	"database/sql"
 
 	uuid "github.com/satori/go.uuid"
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/sessions"
 )
 
 type AuthorizerConfig interface {

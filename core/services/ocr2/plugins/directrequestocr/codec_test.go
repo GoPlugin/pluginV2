@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/services/ocr2/plugins/directrequestocr"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr"
 )
 
 func TestDRCodec_EncodeDecodeSuccess(t *testing.T) {

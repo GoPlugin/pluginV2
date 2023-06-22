@@ -17,9 +17,9 @@ import (
 	"github.com/smartcontractkit/ocr2vrf/types/hash"
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/services/relay"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/relay"
 )
 
 var (

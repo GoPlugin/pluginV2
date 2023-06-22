@@ -4,10 +4,10 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/pluginV2/core/internal/mocks"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/services/fluxmonitorv2"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/internal/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/services/fluxmonitorv2"
+	"github.com/GoPlugin/pluginV2/core/utils"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )

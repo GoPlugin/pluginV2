@@ -3,8 +3,8 @@ package config
 import (
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/keystore"
-	dkgconfig "github.com/pluginV2/core/services/ocr2/plugins/dkg/config"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	dkgconfig "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/dkg/config"
 )
 
 // PluginConfig contains custom arguments for the OCR2VRF plugin.

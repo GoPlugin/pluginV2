@@ -9,9 +9,9 @@ import (
 
 	"golang.org/x/exp/slices"
 
-	"github.com/pluginV2/core/config"
-	cfgv2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/config"
+	cfgv2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var (

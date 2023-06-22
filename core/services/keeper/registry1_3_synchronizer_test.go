@@ -12,19 +12,19 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	registry1_3 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_3"
-	configtest "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/utils"
+	registry1_3 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_3"
+	configtest "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/utils"
 
-	logmocks "github.com/pluginV2/core/chains/evm/log/mocks"
-	evmmocks "github.com/pluginV2/core/chains/evm/mocks"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keeper"
+	logmocks "github.com/GoPlugin/pluginV2/core/chains/evm/log/mocks"
+	evmmocks "github.com/GoPlugin/pluginV2/core/chains/evm/mocks"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keeper"
 )
 
 var registryConfig1_3 = registry1_3.Config{

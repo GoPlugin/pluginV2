@@ -5,9 +5,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/gethwrappers/generated/flux_aggregator_wrapper"
-	"github.com/pluginV2/core/services/pg"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/flux_aggregator_wrapper"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 //go:generate mockery --quiet --name ContractSubmitter --output ./mocks/ --case=underscore

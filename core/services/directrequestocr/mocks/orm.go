@@ -4,10 +4,10 @@ package mocks
 
 import (
 	common "github.com/ethereum/go-ethereum/common"
-	directrequestocr "github.com/pluginV2/core/services/directrequestocr"
+	directrequestocr "github.com/GoPlugin/pluginV2/core/services/directrequestocr"
 	mock "github.com/stretchr/testify/mock"
 
-	pg "github.com/pluginV2/core/services/pg"
+	pg "github.com/GoPlugin/pluginV2/core/services/pg"
 
 	time "time"
 )

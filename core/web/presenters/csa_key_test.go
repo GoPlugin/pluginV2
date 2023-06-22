@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/services/keystore/keys/csakey"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/csakey"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func TestCSAKeyResource(t *testing.T) {

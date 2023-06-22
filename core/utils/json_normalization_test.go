@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/utils"
 
 	"github.com/stretchr/testify/assert"
 )

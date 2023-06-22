@@ -9,8 +9,8 @@ import (
 
 	"github.com/urfave/cli"
 
-	"github.com/pluginV2/core/cmd"
-	helpers "github.com/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
 )
 
 func setupDKGNodes(e helpers.Environment) {

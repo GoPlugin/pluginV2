@@ -3,9 +3,9 @@ package presenters
 import (
 	"time"
 
-	"github.com/pluginV2-solana/pkg/solana/db"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 
-	"github.com/pluginV2/core/chains/solana"
+	"github.com/GoPlugin/pluginV2/core/chains/solana"
 )
 
 // SolanaChainResource is an Solana chain JSONAPI resource.

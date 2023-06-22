@@ -5,7 +5,7 @@ import (
 
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/pluginV2/core/null"
+	"github.com/GoPlugin/pluginV2/core/null"
 )
 
 type BaseTask struct {

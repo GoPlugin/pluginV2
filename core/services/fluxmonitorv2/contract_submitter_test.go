@@ -4,10 +4,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/pluginV2/core/internal/mocks"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/services/fluxmonitorv2"
-	fmmocks "github.com/pluginV2/core/services/fluxmonitorv2/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/services/fluxmonitorv2"
+	fmmocks "github.com/GoPlugin/pluginV2/core/services/fluxmonitorv2/mocks"
 	"github.com/stretchr/testify/assert"
 )
 

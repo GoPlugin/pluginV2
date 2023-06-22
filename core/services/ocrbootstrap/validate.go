@@ -3,8 +3,8 @@ package ocrbootstrap
 import (
 	"github.com/pelletier/go-toml"
 	"github.com/pkg/errors"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/ocrcommon"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/ocrcommon"
 )
 
 // ValidatedBootstrapSpecToml validates a bootstrap spec that came from TOML

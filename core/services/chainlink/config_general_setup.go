@@ -1,7 +1,7 @@
 package chainlink
 
 import (
-	v2 "github.com/pluginV2/core/config/v2"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
 )
 
 func (g *generalConfig) EthereumNodes() string { panic(v2.ErrUnsupported) }

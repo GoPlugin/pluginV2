@@ -10,9 +10,9 @@ import (
 
 	"github.com/urfave/cli"
 
-	helpers "github.com/pluginV2/core/scripts/common"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web/presenters"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 type ocr2Bundle struct {

@@ -7,7 +7,7 @@ import (
 
 	gethParams "github.com/ethereum/go-ethereum/params"
 
-	gethwrappers2 "github.com/pluginV2/core/gethwrappers"
+	gethwrappers2 "github.com/GoPlugin/pluginV2/core/gethwrappers"
 )
 
 func main() {

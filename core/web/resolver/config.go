@@ -7,8 +7,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
 )
 
 type ConfigItemResolver struct {

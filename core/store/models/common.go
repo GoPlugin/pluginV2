@@ -14,8 +14,8 @@ import (
 	"github.com/robfig/cron/v3"
 	"github.com/tidwall/gjson"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // CronParser is the global parser for crontabs.

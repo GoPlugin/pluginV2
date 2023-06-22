@@ -7,13 +7,13 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/chains/evm/log"
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/gethwrappers/generated/batch_vrf_coordinator_v2"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/services/pipeline"
-	bigmath "github.com/pluginV2/core/utils/big_math"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/log"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/batch_vrf_coordinator_v2"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	bigmath "github.com/GoPlugin/pluginV2/core/utils/big_math"
 )
 
 // batchFulfillment contains all the information needed in order to

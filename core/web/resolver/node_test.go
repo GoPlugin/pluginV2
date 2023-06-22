@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func TestResolver_Nodes(t *testing.T) {

@@ -6,11 +6,11 @@ import (
 	"github.com/graph-gophers/graphql-go"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/pipeline"
-	"github.com/pluginV2/core/services/webhook"
-	"github.com/pluginV2/core/utils/stringutils"
-	"github.com/pluginV2/core/web/loader"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/webhook"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/web/loader"
 )
 
 type JobRunStatus string

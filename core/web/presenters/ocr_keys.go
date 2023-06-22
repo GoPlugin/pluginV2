@@ -4,8 +4,8 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/pluginV2/core/services/keystore/keys/ocr2key"
-	"github.com/pluginV2/core/services/keystore/keys/ocrkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocr2key"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocrkey"
 )
 
 // OCRKeysBundleResource represents a bundle of OCRs keys as JSONAPI resource

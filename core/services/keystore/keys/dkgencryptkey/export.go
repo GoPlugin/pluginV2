@@ -3,8 +3,8 @@ package dkgencryptkey
 import (
 	"github.com/ethereum/go-ethereum/accounts/keystore"
 
-	"github.com/pluginV2/core/services/keystore/keys"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 const keyTypeIdentifier = "DKGEncrypt"

@@ -8,7 +8,7 @@ import (
 
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/job"
 )
 
 // EIServiceConfig represents External Initiator service config

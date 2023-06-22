@@ -10,12 +10,12 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-testing-framework/blockchain"
-	ctfClient "github.com/pluginV2-testing-framework/client"
-	reportModel "github.com/pluginV2-testing-framework/testreporters"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/testreporters"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	ctfClient "github.com/smartcontractkit/chainlink-testing-framework/client"
+	reportModel "github.com/smartcontractkit/chainlink-testing-framework/testreporters"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/testreporters"
 )
 
 // VRFV2SoakTest defines a typical VRFV2 soak test

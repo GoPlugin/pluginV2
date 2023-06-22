@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	"github.com/pkg/errors"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 	"github.com/stretchr/testify/assert"
 )
 

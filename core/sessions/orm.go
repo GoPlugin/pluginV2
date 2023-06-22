@@ -9,13 +9,13 @@ import (
 	"github.com/pkg/errors"
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/auth"
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/utils/mathutil"
+	"github.com/GoPlugin/pluginV2/core/auth"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils/mathutil"
 )
 
 //go:generate mockery --quiet --name ORM --output ./mocks/ --case=underscore

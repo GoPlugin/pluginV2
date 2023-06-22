@@ -3,10 +3,10 @@ package log
 import (
 	"github.com/ethereum/go-ethereum/core/types"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/utils"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // NewTestBroadcaster creates a broadcaster with Pause/Resume enabled.

@@ -10,8 +10,8 @@ import (
 	"github.com/shopspring/decimal"
 	"golang.org/x/exp/constraints"
 
-	"github.com/pluginV2/core/utils"
-	bigmath "github.com/pluginV2/core/utils/big_math"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	bigmath "github.com/GoPlugin/pluginV2/core/utils/big_math"
 )
 
 const (

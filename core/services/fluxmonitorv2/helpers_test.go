@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/chains/evm/log"
-	"github.com/pluginV2/core/gethwrappers/generated/flux_aggregator_wrapper"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/log"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/flux_aggregator_wrapper"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // Format implements fmt.Formatter to always print just the pointer address.

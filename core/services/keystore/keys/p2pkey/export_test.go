@@ -3,7 +3,7 @@ package p2pkey
 import (
 	"testing"
 
-	"github.com/pluginV2/core/services/keystore/keys"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys"
 )
 
 func TestP2PKeys_ExportImport(t *testing.T) {

@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	synchronization "github.com/pluginV2/core/services/synchronization"
+	synchronization "github.com/GoPlugin/pluginV2/core/services/synchronization"
 	mock "github.com/stretchr/testify/mock"
 
 	time "time"

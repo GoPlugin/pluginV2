@@ -3,8 +3,8 @@ package keeper
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/pluginV2/core/scripts/chaincli/config"
-	"github.com/pluginV2/core/scripts/chaincli/handler"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/config"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/handler"
 )
 
 var registryCmd = &cobra.Command{

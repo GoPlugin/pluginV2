@@ -10,13 +10,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	evmconfig "github.com/pluginV2/core/chains/evm/config"
-	configtest2 "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/ocr"
-	"github.com/pluginV2/core/store/models"
+	evmconfig "github.com/GoPlugin/pluginV2/core/chains/evm/config"
+	configtest2 "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/ocr"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 func TestValidateOracleSpec(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/graph-gophers/dataloader"
 
-	"github.com/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
 )
 
 type loadersKey struct{}

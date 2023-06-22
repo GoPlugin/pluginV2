@@ -14,11 +14,11 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/shopspring/decimal"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/gethwrappers/generated/link_token_interface"
-	"github.com/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
-	helpers "github.com/pluginV2/core/scripts/common"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/link_token_interface"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
 )
 
 const formattedVRFJob = `

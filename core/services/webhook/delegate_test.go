@@ -11,13 +11,13 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pipeline"
-	pipelinemocks "github.com/pluginV2/core/services/pipeline/mocks"
-	"github.com/pluginV2/core/services/webhook"
-	webhookmocks "github.com/pluginV2/core/services/webhook/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
+	pipelinemocks "github.com/GoPlugin/pluginV2/core/services/pipeline/mocks"
+	"github.com/GoPlugin/pluginV2/core/services/webhook"
+	webhookmocks "github.com/GoPlugin/pluginV2/core/services/webhook/mocks"
 )
 
 func TestWebhookDelegate(t *testing.T) {

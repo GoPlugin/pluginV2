@@ -10,8 +10,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/smartcontractkit/ocr2vrf/types"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/gethwrappers/generated/aggregator_v3_interface"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/aggregator_v3_interface"
 )
 
 // linkEthPriceProvider provides conversation rate between Link and native token using price feeds

@@ -7,7 +7,7 @@ import (
 	"github.com/urfave/cli"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func initBrideSubCmds(client *Client) []cli.Command {

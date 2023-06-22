@@ -6,7 +6,7 @@ import (
 	"math/big"
 	"time"
 
-	int_ethereum "github.com/pluginV2/integration-tests/contracts/ethereum"
+	int_ethereum "github.com/GoPlugin/pluginV2/integration-tests/contracts/ethereum"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
@@ -14,12 +14,12 @@ import (
 	"github.com/rs/zerolog/log"
 	ocrConfigHelper "github.com/smartcontractkit/libocr/offchainreporting/confighelper"
 
-	"github.com/pluginV2/core/gethwrappers/generated/operator_factory"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/operator_factory"
 
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
 
-	ethereum2 "github.com/pluginV2/integration-tests/contracts/ethereum"
+	ethereum2 "github.com/GoPlugin/pluginV2/integration-tests/contracts/ethereum"
 )
 
 // ContractDeployer is an interface for abstracting the contract deployment methods across network implementations

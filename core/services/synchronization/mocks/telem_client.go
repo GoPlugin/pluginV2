@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	telem "github.com/pluginV2/core/services/synchronization/telem"
+	telem "github.com/GoPlugin/pluginV2/core/services/synchronization/telem"
 	mock "github.com/stretchr/testify/mock"
 )
 

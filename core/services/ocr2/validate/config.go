@@ -5,9 +5,9 @@ import (
 
 	"github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 //go:generate mockery --quiet --name Config --output ../mocks/ --case=underscore

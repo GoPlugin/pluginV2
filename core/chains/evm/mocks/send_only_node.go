@@ -6,7 +6,7 @@ import (
 	context "context"
 	big "math/big"
 
-	client "github.com/pluginV2/core/chains/evm/client"
+	client "github.com/GoPlugin/pluginV2/core/chains/evm/client"
 
 	mock "github.com/stretchr/testify/mock"
 

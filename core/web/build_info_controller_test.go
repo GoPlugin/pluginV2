@@ -5,9 +5,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	clhttptest "github.com/pluginV2/core/internal/testutils/httptest"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	clhttptest "github.com/GoPlugin/pluginV2/core/internal/testutils/httptest"
 
 	"github.com/stretchr/testify/require"
 )

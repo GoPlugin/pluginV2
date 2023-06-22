@@ -4,10 +4,10 @@ import (
 	"net/url"
 
 	"github.com/pkg/errors"
-	"github.com/pluginV2-solana/pkg/solana/db"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 	"github.com/urfave/cli"
 
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // SolanaNodePresenter implements TableRenderer for a SolanaNodeResource.

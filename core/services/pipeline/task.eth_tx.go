@@ -12,11 +12,11 @@ import (
 	"go.uber.org/multierr"
 	"gopkg.in/guregu/null.v4"
 
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/chains/evm/txmgr"
-	"github.com/pluginV2/core/logger"
-	clnull "github.com/pluginV2/core/null"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	clnull "github.com/GoPlugin/pluginV2/core/null"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // Return types:

@@ -10,7 +10,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/assets"
 )
 
 func TestAssets_NewLinkAndString(t *testing.T) {

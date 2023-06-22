@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/shopspring/decimal"
-	"github.com/pluginV2/core/services/fluxmonitorv2"
+	"github.com/GoPlugin/pluginV2/core/services/fluxmonitorv2"
 	"github.com/stretchr/testify/assert"
 )
 

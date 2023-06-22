@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/cmd"
 )
 
 func TestJAID(t *testing.T) {

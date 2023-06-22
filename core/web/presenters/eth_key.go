@@ -3,9 +3,9 @@ package presenters
 import (
 	"time"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // ETHKeyResource represents a ETH key JSONAPI resource. It holds the hex

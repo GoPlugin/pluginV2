@@ -6,8 +6,8 @@ import (
 
 	"github.com/urfave/cli"
 
-	clcmd "github.com/pluginV2/core/cmd"
-	helpers "github.com/pluginV2/core/scripts/common"
+	clcmd "github.com/GoPlugin/pluginV2/core/cmd"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
 )
 
 func newApp(n *node, writer io.Writer) (*clcmd.Client, *cli.App) {

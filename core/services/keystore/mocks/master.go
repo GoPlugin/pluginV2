@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	keystore "github.com/pluginV2/core/services/keystore"
+	keystore "github.com/GoPlugin/pluginV2/core/services/keystore"
 	mock "github.com/stretchr/testify/mock"
 )
 

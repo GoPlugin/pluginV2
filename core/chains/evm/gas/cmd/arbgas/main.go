@@ -11,9 +11,9 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/chains/evm/gas"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func main() {

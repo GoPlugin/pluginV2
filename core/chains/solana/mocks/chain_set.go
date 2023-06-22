@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	solana "github.com/pluginV2-solana/pkg/solana"
+	solana "github.com/smartcontractkit/chainlink-solana/pkg/solana"
 	mock "github.com/stretchr/testify/mock"
 )
 

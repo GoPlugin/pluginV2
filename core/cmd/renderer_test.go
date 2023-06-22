@@ -6,13 +6,13 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/services/chainlink" //nolint:typecheck
-	"github.com/pluginV2/core/web"
-	webpresenters "github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink" //nolint:typecheck
+	"github.com/GoPlugin/pluginV2/core/web"
+	webpresenters "github.com/GoPlugin/pluginV2/core/web/presenters"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

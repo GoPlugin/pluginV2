@@ -3,7 +3,7 @@ package chainlink
 import (
 	"time"
 
-	config "github.com/pluginV2/core/config/v2"
+	config "github.com/GoPlugin/pluginV2/core/config/v2"
 )
 
 func (g *generalConfig) AdvisoryLockCheckInterval() time.Duration { panic(config.ErrUnsupported) }

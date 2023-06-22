@@ -4,9 +4,9 @@ package mocks
 
 import (
 	common "github.com/ethereum/go-ethereum/common"
-	assets "github.com/pluginV2/core/assets"
+	assets "github.com/GoPlugin/pluginV2/core/assets"
 
-	config "github.com/pluginV2/core/config"
+	config "github.com/GoPlugin/pluginV2/core/config"
 
 	mock "github.com/stretchr/testify/mock"
 

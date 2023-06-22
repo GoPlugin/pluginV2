@@ -8,7 +8,7 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
 )
 
 func TestUnpackTransmitTxInput(t *testing.T) {

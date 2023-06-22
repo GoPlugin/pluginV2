@@ -5,8 +5,8 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 type TOMLWebhookSpecExternalInitiator struct {

@@ -10,15 +10,15 @@ import (
 	"github.com/graph-gophers/graphql-go"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/chains/evm"
-	"github.com/pluginV2/core/config"
-	config2 "github.com/pluginV2/core/config/v2"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/chains/evm"
+	"github.com/GoPlugin/pluginV2/core/config"
+	config2 "github.com/GoPlugin/pluginV2/core/config/v2"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
 )
 
 // Bridge retrieves a bridges by name.

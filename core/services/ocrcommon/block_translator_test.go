@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/internal/testutils/evmtest"
-	v2 "github.com/pluginV2/core/internal/testutils/evmtest/v2"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/ocrcommon"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest"
+	v2 "github.com/GoPlugin/pluginV2/core/internal/testutils/evmtest/v2"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/ocrcommon"
 )
 
 func Test_BlockTranslator(t *testing.T) {

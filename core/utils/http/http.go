@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 type httpClientConfig interface {

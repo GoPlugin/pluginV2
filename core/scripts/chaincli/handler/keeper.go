@@ -10,17 +10,17 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/pluginV2/core/cmd"
-	registrylogic20 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_logic2_0"
-	registry11 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
-	registry12 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
-	registry20 "github.com/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
-	"github.com/pluginV2/core/gethwrappers/generated/upkeep_counter_wrapper"
-	upkeep "github.com/pluginV2/core/gethwrappers/generated/upkeep_perform_counter_restrictive_wrapper"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/scripts/chaincli/config"
-	helpers "github.com/pluginV2/core/scripts/common"
-	"github.com/pluginV2/core/services/keeper"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	registrylogic20 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_logic2_0"
+	registry11 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_1"
+	registry12 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper1_2"
+	registry20 "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/keeper_registry_wrapper2_0"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/upkeep_counter_wrapper"
+	upkeep "github.com/GoPlugin/pluginV2/core/gethwrappers/generated/upkeep_perform_counter_restrictive_wrapper"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/config"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
+	"github.com/GoPlugin/pluginV2/core/services/keeper"
 )
 
 // Keeper is the keepers commands handler

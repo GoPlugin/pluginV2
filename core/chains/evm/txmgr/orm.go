@@ -15,10 +15,10 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"github.com/smartcontractkit/sqlx"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/null"
-	"github.com/pluginV2/core/services/pg"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/null"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 //go:generate mockery --quiet --name ORM --output ./mocks/ --case=underscore

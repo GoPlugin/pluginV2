@@ -7,8 +7,8 @@ import (
 	p2ppeerstore "github.com/libp2p/go-libp2p-core/peerstore"
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 
 	p2ppeer "github.com/libp2p/go-libp2p-core/peer"
 	"github.com/pkg/errors"
@@ -18,10 +18,10 @@ import (
 	ocr2types "github.com/smartcontractkit/libocr/offchainreporting2/types"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type PeerWrapperConfig interface {

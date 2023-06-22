@@ -6,16 +6,16 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/chains/evm/client"
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	evmcfg "github.com/pluginV2/core/chains/evm/config/v2"
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/store/dialects"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmcfg "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/store/dialects"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // NewTestGeneralConfig returns a new config.GeneralConfig with default test overrides and one chain with evmclient.NullClientChainID.

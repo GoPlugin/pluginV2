@@ -1,7 +1,7 @@
 package presenters
 
 import (
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 )
 
 // P2PKeyResource represents a P2P key JSONAPI resource.

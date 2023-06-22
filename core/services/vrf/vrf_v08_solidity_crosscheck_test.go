@@ -5,9 +5,9 @@ import (
 	mrand "math/rand"
 	"testing"
 
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_v08_verifier_wrapper"
-	"github.com/pluginV2/core/internal/testutils"
-	proof2 "github.com/pluginV2/core/services/vrf/proof"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_v08_verifier_wrapper"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	proof2 "github.com/GoPlugin/pluginV2/core/services/vrf/proof"
 
 	"github.com/ethereum/go-ethereum/eth/ethconfig"
 
@@ -15,11 +15,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
-	"github.com/pluginV2/core/services/signatures/secp256k1"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/signatures/secp256k1"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // Note these tests are identical to the ones in vrf_solidity_crosscheck_test.go,

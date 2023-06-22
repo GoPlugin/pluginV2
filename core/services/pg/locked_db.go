@@ -10,9 +10,9 @@ import (
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/static"
-	"github.com/pluginV2/core/store/dialects"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/store/dialects"
 )
 
 // LockedDB bounds DB connection and DB locks.

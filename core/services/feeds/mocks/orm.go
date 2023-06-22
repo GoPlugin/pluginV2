@@ -3,10 +3,10 @@
 package mocks
 
 import (
-	feeds "github.com/pluginV2/core/services/feeds"
+	feeds "github.com/GoPlugin/pluginV2/core/services/feeds"
 	mock "github.com/stretchr/testify/mock"
 
-	pg "github.com/pluginV2/core/services/pg"
+	pg "github.com/GoPlugin/pluginV2/core/services/pg"
 
 	uuid "github.com/satori/go.uuid"
 )

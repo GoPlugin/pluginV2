@@ -3,7 +3,7 @@ package dkgsignkey
 import (
 	"testing"
 
-	"github.com/pluginV2/core/services/keystore/keys"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys"
 )
 
 func TestDKGSignKeys_ExportImport(t *testing.T) {

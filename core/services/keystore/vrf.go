@@ -6,7 +6,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
 )
 
 //go:generate mockery --quiet --name VRF --output ./mocks/ --case=underscore --filename vrf.go

@@ -11,15 +11,15 @@ import (
 	"github.com/onsi/gomega"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	v2 "github.com/pluginV2/core/chains/evm/config/v2"
-	"github.com/pluginV2/core/gethwrappers/generated/vrf_consumer_v2"
-	"github.com/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/cltest/heavyweight"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	v2 "github.com/GoPlugin/pluginV2/core/chains/evm/config/v2"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_consumer_v2"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/vrf_coordinator_v2"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest/heavyweight"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
 )
 
 func testSingleConsumerHappyPath(

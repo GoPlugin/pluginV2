@@ -14,9 +14,9 @@ import (
 	"github.com/urfave/cli"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func initFowardersSubCmds(client *Client) []cli.Command {

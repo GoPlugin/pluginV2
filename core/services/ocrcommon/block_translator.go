@@ -4,10 +4,10 @@ import (
 	"context"
 	"math/big"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/logger"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 // BlockTranslator converts emitted block numbers (from block.number) into a

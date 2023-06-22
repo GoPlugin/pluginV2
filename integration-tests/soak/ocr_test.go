@@ -13,18 +13,18 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-env/pkg/helm/chainlink"
-	"github.com/pluginV2-env/pkg/helm/ethereum"
-	"github.com/pluginV2-env/pkg/helm/mockserver"
-	mockservercfg "github.com/pluginV2-env/pkg/helm/mockserver-cfg"
-	"github.com/pluginV2-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/chainlink"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/ethereum"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/mockserver"
+	mockservercfg "github.com/smartcontractkit/chainlink-env/pkg/helm/mockserver-cfg"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
 
-	networks "github.com/pluginV2/integration-tests"
-	"github.com/pluginV2/integration-tests/actions"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/config"
-	"github.com/pluginV2/integration-tests/testsetups"
+	networks "github.com/GoPlugin/pluginV2/integration-tests"
+	"github.com/GoPlugin/pluginV2/integration-tests/actions"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/config"
+	"github.com/GoPlugin/pluginV2/integration-tests/testsetups"
 )
 
 func TestOCRSoak(t *testing.T) {

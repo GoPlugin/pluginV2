@@ -3,11 +3,11 @@ package solana
 import (
 	"github.com/smartcontractkit/sqlx"
 
-	soldb "github.com/pluginV2-solana/pkg/solana/db"
+	soldb "github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 
-	"github.com/pluginV2/core/chains"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/chains"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
 )
 
 type DBChain = chains.DBChain[string, *soldb.ChainCfg]

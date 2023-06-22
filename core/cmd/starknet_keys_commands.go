@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	starkkey "github.com/pluginV2-starknet/relayer/pkg/chainlink/keys"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web/presenters"
+	starkkey "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/keys"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 type StarkNetKeyPresenter struct {

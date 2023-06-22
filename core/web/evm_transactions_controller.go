@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"net/http"
 
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/gin-gonic/gin"

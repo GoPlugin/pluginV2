@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	gqlerrors "github.com/graph-gophers/graphql-go/errors"
-	"github.com/pluginV2/core/internal/testutils/keystest"
-	"github.com/pluginV2/core/services/keystore/keys/solkey"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/keystest"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/solkey"
 )
 
 func TestResolver_SolanaKeys(t *testing.T) {

@@ -16,17 +16,17 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2-solana/pkg/solana/client"
-	"github.com/pluginV2-solana/pkg/solana/client/mocks"
-	"github.com/pluginV2-solana/pkg/solana/config"
-	"github.com/pluginV2-solana/pkg/solana/db"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/client"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/client/mocks"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/config"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 
-	"github.com/pluginV2/core/chains/solana/fees"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore"
-	"github.com/pluginV2/core/services/keystore/keys/solkey"
-	keyMocks "github.com/pluginV2/core/services/keystore/mocks"
+	"github.com/GoPlugin/pluginV2/core/chains/solana/fees"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/solkey"
+	keyMocks "github.com/GoPlugin/pluginV2/core/services/keystore/mocks"
 )
 
 type soltxmProm struct {

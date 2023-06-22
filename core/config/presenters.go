@@ -13,9 +13,9 @@ import (
 
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // ConfigPrinter are the non-secret values of the node

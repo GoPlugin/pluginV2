@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"time"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type sessionReaper struct {

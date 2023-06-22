@@ -5,12 +5,12 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 
-	clsessions "github.com/pluginV2/core/sessions"
+	clsessions "github.com/GoPlugin/pluginV2/core/sessions"
 )
 
 type sessionUserKey struct{}

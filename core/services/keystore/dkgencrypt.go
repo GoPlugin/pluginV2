@@ -5,7 +5,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/keystore/keys/dkgencryptkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/dkgencryptkey"
 )
 
 //go:generate mockery --quiet --name DKGEncrypt --output mocks/ --case=underscore

@@ -3,7 +3,7 @@ package keeper
 import (
 	"reflect"
 
-	"github.com/pluginV2/core/chains/evm/log"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/log"
 )
 
 func (rs *RegistrySynchronizer) JobID() int32 {

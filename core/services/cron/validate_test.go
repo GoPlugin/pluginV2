@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/services/cron"
-	"github.com/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/cron"
+	"github.com/GoPlugin/pluginV2/core/services/job"
 )
 
 func TestValidatedCronJobSpec(t *testing.T) {

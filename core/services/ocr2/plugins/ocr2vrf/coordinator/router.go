@@ -8,11 +8,11 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/pkg/errors"
 
-	evmclient "github.com/pluginV2/core/chains/evm/client"
-	"github.com/pluginV2/core/gethwrappers/generated"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
-	"github.com/pluginV2/core/logger"
+	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 var _ VRFBeaconCoordinator = &vrfRouter{}

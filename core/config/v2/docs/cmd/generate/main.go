@@ -8,7 +8,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/pluginV2/core/config/v2/docs"
+	"github.com/GoPlugin/pluginV2/core/config/v2/docs"
 )
 
 var outDir = flag.String("o", "", "output directory")

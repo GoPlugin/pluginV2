@@ -5,7 +5,7 @@ package mocks
 import (
 	big "math/big"
 
-	assets "github.com/pluginV2/core/assets"
+	assets "github.com/GoPlugin/pluginV2/core/assets"
 
 	common "github.com/ethereum/go-ethereum/common"
 
@@ -13,7 +13,7 @@ import (
 
 	ethereum "github.com/ethereum/go-ethereum"
 
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
 
 	mock "github.com/stretchr/testify/mock"
 

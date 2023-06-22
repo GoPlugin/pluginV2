@@ -7,8 +7,8 @@ import (
 	"github.com/graph-gophers/graphql-go"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/feeds"
-	"github.com/pluginV2/core/web/loader"
+	"github.com/GoPlugin/pluginV2/core/services/feeds"
+	"github.com/GoPlugin/pluginV2/core/web/loader"
 )
 
 var notFoundErrorMessage = "spec not found"

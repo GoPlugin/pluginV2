@@ -12,12 +12,12 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/tidwall/gjson"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	_ "github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/services/webhook"
-	webhookmocks "github.com/pluginV2/core/services/webhook/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	_ "github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/services/webhook"
+	webhookmocks "github.com/GoPlugin/pluginV2/core/services/webhook/mocks"
 )
 
 func Test_ExternalInitiatorManager_Load(t *testing.T) {

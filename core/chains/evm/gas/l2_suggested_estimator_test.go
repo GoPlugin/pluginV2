@@ -10,11 +10,11 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/chains/evm/gas"
-	"github.com/pluginV2/core/chains/evm/gas/mocks"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/gas/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 func TestL2SuggestedEstimator(t *testing.T) {

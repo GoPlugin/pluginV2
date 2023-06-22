@@ -8,10 +8,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/webhook"
-	webhookmocks "github.com/pluginV2/core/services/webhook/mocks"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/webhook"
+	webhookmocks "github.com/GoPlugin/pluginV2/core/services/webhook/mocks"
 )
 
 func TestValidatedWebJobSpec(t *testing.T) {

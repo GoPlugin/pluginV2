@@ -6,10 +6,10 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2/integration-tests/contracts/ethereum/mercury/exchanger"
-	"github.com/pluginV2/integration-tests/contracts/ethereum/mercury/verifier"
-	"github.com/pluginV2/integration-tests/contracts/ethereum/mercury/verifier_proxy"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts/ethereum/mercury/exchanger"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts/ethereum/mercury/verifier"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts/ethereum/mercury/verifier_proxy"
 )
 
 type Exchanger interface {

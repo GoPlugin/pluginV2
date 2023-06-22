@@ -7,10 +7,10 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/services/feeds"
-	"github.com/pluginV2/core/services/feeds/mocks"
-	pb "github.com/pluginV2/core/services/feeds/proto"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/services/feeds"
+	"github.com/GoPlugin/pluginV2/core/services/feeds/mocks"
+	pb "github.com/GoPlugin/pluginV2/core/services/feeds/proto"
 )
 
 type TestRPCHandlers struct {

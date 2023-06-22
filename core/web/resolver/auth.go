@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pluginV2/core/sessions"
-	"github.com/pluginV2/core/web/auth"
+	"github.com/GoPlugin/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/web/auth"
 )
 
 // Authenticates the user from the session cookie, presence of user inherently provides 'view' access.

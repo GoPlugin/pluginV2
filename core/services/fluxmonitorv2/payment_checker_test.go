@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/services/fluxmonitorv2"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/services/fluxmonitorv2"
 )
 
 func TestPaymentChecker_SufficientFunds(t *testing.T) {

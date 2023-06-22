@@ -5,7 +5,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/keystore/keys/ocrkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocrkey"
 )
 
 //go:generate mockery --quiet --name OCR --output ./mocks/ --case=underscore

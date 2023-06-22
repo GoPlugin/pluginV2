@@ -20,8 +20,8 @@ import (
 
 	"github.com/tidwall/gjson"
 
-	gethwrappers2 "github.com/pluginV2/core/gethwrappers"
-	"github.com/pluginV2/core/utils"
+	gethwrappers2 "github.com/GoPlugin/pluginV2/core/gethwrappers"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func main() {

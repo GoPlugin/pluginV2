@@ -11,8 +11,8 @@ import (
 	"github.com/urfave/cli"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/store/models/solana"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/store/models/solana"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func initSolanaTxSubCmd(client *Client) cli.Command {

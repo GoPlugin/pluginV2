@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	proto "github.com/pluginV2/core/services/feeds/proto"
+	proto "github.com/GoPlugin/pluginV2/core/services/feeds/proto"
 	mock "github.com/stretchr/testify/mock"
 )
 

@@ -1,7 +1,7 @@
 package presenters
 
 import (
-	starknet "github.com/pluginV2-starknet/relayer/pkg/chainlink/keys"
+	starknet "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/keys"
 )
 
 // StarkNetKeyResource represents a StarkNet key JSONAPI resource.

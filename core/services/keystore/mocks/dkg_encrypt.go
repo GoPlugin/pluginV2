@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	dkgencryptkey "github.com/pluginV2/core/services/keystore/keys/dkgencryptkey"
+	dkgencryptkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/dkgencryptkey"
 
 	mock "github.com/stretchr/testify/mock"
 )

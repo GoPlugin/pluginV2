@@ -11,9 +11,9 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/static"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // logsFile describes the logs file name

@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pluginV2-solana/pkg/solana/config"
+	"github.com/smartcontractkit/chainlink-solana/pkg/solana/config"
 )
 
 var _ Estimator = &fixedPriceEstimator{}

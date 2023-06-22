@@ -10,9 +10,9 @@ import (
 	"golang.org/x/exp/slices"
 	"gopkg.in/guregu/null.v4"
 
-	solcfg "github.com/pluginV2-solana/pkg/solana/config"
-	soldb "github.com/pluginV2-solana/pkg/solana/db"
-	v2 "github.com/pluginV2/core/config/v2"
+	solcfg "github.com/smartcontractkit/chainlink-solana/pkg/solana/config"
+	soldb "github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
+	v2 "github.com/GoPlugin/pluginV2/core/config/v2"
 )
 
 type SolanaConfigs []*SolanaConfig

@@ -1,8 +1,8 @@
 package gas
 
 import (
-	evmtypes "github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/config"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/config"
 )
 
 // chainSpecificIsUsable allows for additional logic specific to a particular

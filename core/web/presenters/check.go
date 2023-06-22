@@ -1,7 +1,7 @@
 package presenters
 
 import (
-	"github.com/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services"
 )
 
 type Check struct {

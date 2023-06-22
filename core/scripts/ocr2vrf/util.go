@@ -24,18 +24,18 @@ import (
 	"go.dedis.ch/kyber/v3/group/edwards25519"
 	"go.dedis.ch/kyber/v3/pairing"
 
-	"github.com/pluginV2/core/cmd"
-	"github.com/pluginV2/core/gethwrappers/generated/authorized_forwarder"
-	"github.com/pluginV2/core/gethwrappers/generated/link_token_interface"
-	dkgContract "github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/load_test_beacon_consumer"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon_consumer"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_router"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/cmd"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/authorized_forwarder"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/link_token_interface"
+	dkgContract "github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/load_test_beacon_consumer"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon_consumer"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_router"
+	"github.com/GoPlugin/pluginV2/core/utils"
 
-	helpers "github.com/pluginV2/core/scripts/common"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
 )
 
 var (

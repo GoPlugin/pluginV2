@@ -9,13 +9,13 @@ import (
 	"github.com/jackc/pgconn"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/auth"
-	"github.com/pluginV2/core/logger/audit"
-	"github.com/pluginV2/core/services/chainlink"
-	clsession "github.com/pluginV2/core/sessions"
-	"github.com/pluginV2/core/utils"
-	webauth "github.com/pluginV2/core/web/auth"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/auth"
+	"github.com/GoPlugin/pluginV2/core/logger/audit"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	clsession "github.com/GoPlugin/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	webauth "github.com/GoPlugin/pluginV2/core/web/auth"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // UserController manages the current Session's User.

@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

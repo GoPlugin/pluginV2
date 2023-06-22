@@ -3,7 +3,7 @@ package ethkey
 import (
 	"time"
 
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type State struct {

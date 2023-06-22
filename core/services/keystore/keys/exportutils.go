@@ -6,7 +6,7 @@ import (
 	keystore "github.com/ethereum/go-ethereum/accounts/keystore"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 type Encrypted interface {

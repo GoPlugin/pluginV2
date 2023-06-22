@@ -6,7 +6,7 @@ import (
 	"github.com/pelletier/go-toml"
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
-	"github.com/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/job"
 )
 
 // ValidatedKeeperSpec analyses the tomlString passed as parameter and

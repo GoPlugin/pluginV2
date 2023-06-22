@@ -6,12 +6,12 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/pluginV2/core/auth"
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	clhttptest "github.com/pluginV2/core/internal/testutils/httptest"
-	"github.com/pluginV2/core/web"
+	"github.com/GoPlugin/pluginV2/core/auth"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	clhttptest "github.com/GoPlugin/pluginV2/core/internal/testutils/httptest"
+	"github.com/GoPlugin/pluginV2/core/web"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

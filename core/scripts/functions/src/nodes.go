@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"strings"
 
-	helpers "github.com/pluginV2/core/scripts/common"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
 )
 
 type node struct {

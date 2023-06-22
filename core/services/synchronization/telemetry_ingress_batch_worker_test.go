@@ -7,10 +7,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/synchronization"
-	"github.com/pluginV2/core/services/synchronization/mocks"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/synchronization"
+	"github.com/GoPlugin/pluginV2/core/services/synchronization/mocks"
 )
 
 func TestTelemetryIngressWorker_BuildTelemBatchReq(t *testing.T) {

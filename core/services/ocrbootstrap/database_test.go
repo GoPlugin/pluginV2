@@ -8,13 +8,13 @@ import (
 
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	"github.com/pluginV2/core/internal/testutils/pgtest"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/job"
-	"github.com/pluginV2/core/services/ocr2/testhelpers"
-	"github.com/pluginV2/core/services/ocrbootstrap"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils/pgtest"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/testhelpers"
+	"github.com/GoPlugin/pluginV2/core/services/ocrbootstrap"
 )
 
 func MustInsertOCRBootstrapSpec(t *testing.T, db *sqlx.DB) job.BootstrapSpec {

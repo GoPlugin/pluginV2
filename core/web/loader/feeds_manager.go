@@ -6,8 +6,8 @@ import (
 
 	"github.com/graph-gophers/dataloader"
 
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/utils/stringutils"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/utils/stringutils"
 )
 
 type feedsBatcher struct {

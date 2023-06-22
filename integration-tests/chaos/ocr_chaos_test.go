@@ -8,28 +8,28 @@ import (
 	"testing"
 
 	"github.com/rs/zerolog/log"
-	a "github.com/pluginV2-env/pkg/alias"
-	"github.com/pluginV2-env/pkg/helm/chainlink"
-	"github.com/pluginV2-env/pkg/helm/ethereum"
+	a "github.com/smartcontractkit/chainlink-env/pkg/alias"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/chainlink"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/ethereum"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pluginV2/integration-tests/config"
+	"github.com/GoPlugin/pluginV2/integration-tests/config"
 
 	"github.com/onsi/gomega"
-	"github.com/pluginV2-env/chaos"
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-env/logging"
-	"github.com/pluginV2-env/pkg/helm/mockserver"
-	mockservercfg "github.com/pluginV2-env/pkg/helm/mockserver-cfg"
-	"github.com/pluginV2-testing-framework/blockchain"
-	ctfClient "github.com/pluginV2-testing-framework/client"
-	"github.com/pluginV2-testing-framework/utils"
+	"github.com/smartcontractkit/chainlink-env/chaos"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-env/logging"
+	"github.com/smartcontractkit/chainlink-env/pkg/helm/mockserver"
+	mockservercfg "github.com/smartcontractkit/chainlink-env/pkg/helm/mockserver-cfg"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	ctfClient "github.com/smartcontractkit/chainlink-testing-framework/client"
+	"github.com/smartcontractkit/chainlink-testing-framework/utils"
 
-	networks "github.com/pluginV2/integration-tests"
-	"github.com/pluginV2/integration-tests/actions"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
+	networks "github.com/GoPlugin/pluginV2/integration-tests"
+	"github.com/GoPlugin/pluginV2/integration-tests/actions"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
 )
 
 var (
@@ -77,7 +77,7 @@ func TestOCRChaos(t *testing.T) {
 		// and chaos.NewNetworkPartition method (https://chaos-mesh.org/docs/simulate-network-chaos-on-kubernetes/)
 		// in order to regenerate Go bindings if k8s version will be updated
 		// you can pull new CRD spec from your current cluster and check README here
-		// https://github.com/pluginV2-env/blob/master/README.md
+		// https://github.com/smartcontractkit/chainlink-env/blob/master/README.md
 		NetworkChaosFailMajorityNetwork: {
 			ethereum.New(nil),
 			chainlink.New(0, defaultOCRSettings),

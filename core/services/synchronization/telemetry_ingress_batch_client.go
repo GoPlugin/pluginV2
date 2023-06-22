@@ -12,11 +12,11 @@ import (
 	"github.com/smartcontractkit/wsrpc"
 	"github.com/smartcontractkit/wsrpc/examples/simple/keys"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services"
-	"github.com/pluginV2/core/services/keystore"
-	telemPb "github.com/pluginV2/core/services/synchronization/telem"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services"
+	"github.com/GoPlugin/pluginV2/core/services/keystore"
+	telemPb "github.com/GoPlugin/pluginV2/core/services/synchronization/telem"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 //go:generate mockery --quiet --dir ./telem --name TelemClient --output ./mocks/ --case=underscore

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/stretchr/testify/require"

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr/config"
 )
 
 func CanAggregate(N int, F int, observations []*ProcessedRequest) bool {

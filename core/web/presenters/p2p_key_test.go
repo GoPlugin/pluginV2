@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/manyminds/api2go/jsonapi"
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

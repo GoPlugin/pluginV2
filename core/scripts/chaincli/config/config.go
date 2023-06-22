@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/viper"
 
-	"github.com/pluginV2/core/services/keeper"
+	"github.com/GoPlugin/pluginV2/core/services/keeper"
 )
 
 // Config represents configuration fields

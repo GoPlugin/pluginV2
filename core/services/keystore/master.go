@@ -6,25 +6,25 @@ import (
 	"reflect"
 	"sync"
 
-	starkkey "github.com/pluginV2-starknet/relayer/pkg/chainlink/keys"
+	starkkey "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/keys"
 
-	"github.com/pluginV2/core/services/keystore/keys/dkgencryptkey"
-	"github.com/pluginV2/core/services/keystore/keys/dkgsignkey"
-	"github.com/pluginV2/core/services/keystore/keys/ocr2key"
-	"github.com/pluginV2/core/services/keystore/keys/solkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/dkgencryptkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/dkgsignkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocr2key"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/solkey"
 
 	"github.com/pkg/errors"
 
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/keystore/keys/csakey"
-	"github.com/pluginV2/core/services/keystore/keys/ethkey"
-	"github.com/pluginV2/core/services/keystore/keys/ocrkey"
-	"github.com/pluginV2/core/services/keystore/keys/p2pkey"
-	"github.com/pluginV2/core/services/keystore/keys/vrfkey"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/csakey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ocrkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/vrfkey"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 var ErrLocked = errors.New("Keystore is locked")

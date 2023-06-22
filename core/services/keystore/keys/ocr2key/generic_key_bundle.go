@@ -11,8 +11,8 @@ import (
 	"github.com/pkg/errors"
 	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
-	"github.com/pluginV2/core/services/keystore/chaintype"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 type (

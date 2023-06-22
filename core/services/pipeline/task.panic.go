@@ -3,7 +3,7 @@ package pipeline
 import (
 	"context"
 
-	"github.com/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
 type PanicTask struct {

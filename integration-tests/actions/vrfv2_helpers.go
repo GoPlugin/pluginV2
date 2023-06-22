@@ -10,10 +10,10 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
 
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
 )
 
 type VRFV2EncodedProvingKey [2]*big.Int

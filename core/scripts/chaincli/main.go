@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/pluginV2/core/scripts/chaincli/command"
+	"github.com/GoPlugin/pluginV2/core/scripts/chaincli/command"
 )
 
 func main() {

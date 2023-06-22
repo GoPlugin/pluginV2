@@ -8,11 +8,11 @@ import (
 
 	"github.com/olekukonko/tablewriter"
 
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/config/envvar"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web"
-	webpresenters "github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/config/envvar"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web"
+	webpresenters "github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 // Renderer implements the Render method.

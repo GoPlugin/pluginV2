@@ -7,8 +7,8 @@ import (
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/fluxmonitorv2"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/fluxmonitorv2"
 )
 
 type outsideDeviationRow struct {

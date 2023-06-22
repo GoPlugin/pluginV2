@@ -13,14 +13,14 @@ import (
 	ocr2vrftypes "github.com/smartcontractkit/ocr2vrf/types"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2/core/services/keystore/chaintype"
-	chainlinkutils "github.com/pluginV2/core/utils"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
+	chainlinkutils "github.com/GoPlugin/pluginV2/core/utils"
 
-	"github.com/pluginV2/integration-tests/actions"
-	"github.com/pluginV2/integration-tests/actions/ocr2vrf_actions/ocr2vrf_constants"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/integration-tests/actions"
+	"github.com/GoPlugin/pluginV2/integration-tests/actions/ocr2vrf_actions/ocr2vrf_constants"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
 )
 
 func SetAndWaitForVRFBeaconProcessToFinish(t *testing.T, ocr2VRFPluginConfig *OCR2VRFPluginConfig, vrfBeacon contracts.VRFBeacon) {

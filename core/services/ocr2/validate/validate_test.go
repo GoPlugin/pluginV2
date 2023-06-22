@@ -10,12 +10,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	configtest2 "github.com/pluginV2/core/internal/testutils/configtest/v2"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/services/job"
-	medianconfig "github.com/pluginV2/core/services/ocr2/plugins/median/config"
-	"github.com/pluginV2/core/services/ocr2/validate"
-	"github.com/pluginV2/core/store/models"
+	configtest2 "github.com/GoPlugin/pluginV2/core/internal/testutils/configtest/v2"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/services/job"
+	medianconfig "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/median/config"
+	"github.com/GoPlugin/pluginV2/core/services/ocr2/validate"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 func TestValidateOracleSpec(t *testing.T) {

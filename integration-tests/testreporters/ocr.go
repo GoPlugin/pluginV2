@@ -14,7 +14,7 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/slack-go/slack"
 
-	"github.com/pluginV2-testing-framework/testreporters"
+	"github.com/smartcontractkit/chainlink-testing-framework/testreporters"
 )
 
 // OCRSoakTestReporter collates all OCRAnswerUpdated events into a single report

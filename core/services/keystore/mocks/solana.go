@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	solkey "github.com/pluginV2/core/services/keystore/keys/solkey"
+	solkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/solkey"
 	mock "github.com/stretchr/testify/mock"
 )
 

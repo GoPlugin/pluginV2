@@ -16,8 +16,8 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	"github.com/pluginV2-env/environment"
-	chainlinkChart "github.com/pluginV2-env/pkg/helm/chainlink"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	chainlinkChart "github.com/smartcontractkit/chainlink-env/pkg/helm/chainlink"
 )
 
 var (

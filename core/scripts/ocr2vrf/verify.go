@@ -15,10 +15,10 @@ import (
 	"go.dedis.ch/kyber/v3/group/mod"
 	"go.dedis.ch/kyber/v3/pairing"
 
-	dkgContract "github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
-	"github.com/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
-	helpers "github.com/pluginV2/core/scripts/common"
+	dkgContract "github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/dkg"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_beacon"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/ocr2vrf/generated/vrf_coordinator"
+	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
 )
 
 func getDKGLatestConfigDetails(e helpers.Environment, dkgAddress string) dkgContract.LatestConfigDetails {

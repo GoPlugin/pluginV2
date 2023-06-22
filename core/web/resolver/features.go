@@ -1,6 +1,6 @@
 package resolver
 
-import "github.com/pluginV2/core/config"
+import "github.com/GoPlugin/pluginV2/core/config"
 
 type FeaturesResolver struct {
 	cfg config.FeatureFlags

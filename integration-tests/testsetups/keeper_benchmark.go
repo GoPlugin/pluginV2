@@ -12,16 +12,16 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/rs/zerolog/log"
 	"github.com/slack-go/slack"
-	"github.com/pluginV2-env/environment"
-	"github.com/pluginV2-testing-framework/blockchain"
-	"github.com/pluginV2-testing-framework/contracts/ethereum"
-	reportModel "github.com/pluginV2-testing-framework/testreporters"
+	"github.com/smartcontractkit/chainlink-env/environment"
+	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
+	"github.com/smartcontractkit/chainlink-testing-framework/contracts/ethereum"
+	reportModel "github.com/smartcontractkit/chainlink-testing-framework/testreporters"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pluginV2/integration-tests/actions"
-	"github.com/pluginV2/integration-tests/client"
-	"github.com/pluginV2/integration-tests/contracts"
-	"github.com/pluginV2/integration-tests/testreporters"
+	"github.com/GoPlugin/pluginV2/integration-tests/actions"
+	"github.com/GoPlugin/pluginV2/integration-tests/client"
+	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
+	"github.com/GoPlugin/pluginV2/integration-tests/testreporters"
 )
 
 // KeeperBenchmarkTest builds a test to check that chainlink nodes are able to upkeep a specified amount of Upkeep

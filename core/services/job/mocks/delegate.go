@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	job "github.com/pluginV2/core/services/job"
+	job "github.com/GoPlugin/pluginV2/core/services/job"
 	mock "github.com/stretchr/testify/mock"
 )
 

@@ -11,7 +11,7 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/slack-go/slack"
 
-	"github.com/pluginV2-testing-framework/testreporters"
+	"github.com/smartcontractkit/chainlink-testing-framework/testreporters"
 )
 
 type VRFV2SoakTestReporter struct {

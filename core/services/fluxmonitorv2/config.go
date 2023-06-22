@@ -3,9 +3,9 @@ package fluxmonitorv2
 import (
 	"time"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/store/models"
 )
 
 // Config defines the Flux Monitor configuration.

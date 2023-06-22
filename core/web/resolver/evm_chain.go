@@ -5,8 +5,8 @@ import (
 
 	"github.com/graph-gophers/graphql-go"
 
-	"github.com/pluginV2/core/chains/evm/types"
-	"github.com/pluginV2/core/web/loader"
+	"github.com/GoPlugin/pluginV2/core/chains/evm/types"
+	"github.com/GoPlugin/pluginV2/core/web/loader"
 )
 
 // ChainResolver resolves the Chain type.

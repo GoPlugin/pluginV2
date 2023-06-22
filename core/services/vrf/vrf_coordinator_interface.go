@@ -7,9 +7,9 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/assets"
-	"github.com/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
-	"github.com/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/assets"
+	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/solidity_vrf_coordinator_interface"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 // RawRandomnessRequestLog is used to parse a RandomnessRequest log into types

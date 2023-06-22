@@ -25,16 +25,16 @@ import (
 	clipkg "github.com/urfave/cli"
 	"go.uber.org/multierr"
 
-	"github.com/pluginV2/core/bridges"
-	"github.com/pluginV2/core/config"
-	"github.com/pluginV2/core/logger"
-	"github.com/pluginV2/core/services/chainlink"
-	"github.com/pluginV2/core/sessions"
-	"github.com/pluginV2/core/static"
-	"github.com/pluginV2/core/store/models"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web"
-	webpresenters "github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/bridges"
+	"github.com/GoPlugin/pluginV2/core/config"
+	"github.com/GoPlugin/pluginV2/core/logger"
+	"github.com/GoPlugin/pluginV2/core/services/chainlink"
+	"github.com/GoPlugin/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/static"
+	"github.com/GoPlugin/pluginV2/core/store/models"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web"
+	webpresenters "github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 func initRemoteConfigSubCmds(client *Client) []cli.Command {

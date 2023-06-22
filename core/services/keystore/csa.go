@@ -5,7 +5,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/pluginV2/core/services/keystore/keys/csakey"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/csakey"
 )
 
 //go:generate mockery --quiet --name CSA --output mocks/ --case=underscore

@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"github.com/pluginV2/core/services/keystore/keys/dkgsignkey"
-	"github.com/pluginV2/core/utils"
-	"github.com/pluginV2/core/web/presenters"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/dkgsignkey"
+	"github.com/GoPlugin/pluginV2/core/utils"
+	"github.com/GoPlugin/pluginV2/core/web/presenters"
 )
 
 type DKGEncryptKeyPresenter struct {

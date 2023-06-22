@@ -3,9 +3,9 @@ package starkkey
 import (
 	"testing"
 
-	starknet "github.com/pluginV2-starknet/relayer/pkg/chainlink/keys"
-	"github.com/pluginV2/core/services/keystore/keys"
-	"github.com/pluginV2/core/utils"
+	starknet "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/keys"
+	"github.com/GoPlugin/pluginV2/core/services/keystore/keys"
+	"github.com/GoPlugin/pluginV2/core/utils"
 )
 
 func TestStarkNetKeys_ExportImport(t *testing.T) {

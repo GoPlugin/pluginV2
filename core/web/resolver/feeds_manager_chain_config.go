@@ -2,7 +2,7 @@ package resolver
 
 import (
 	"github.com/graph-gophers/graphql-go"
-	"github.com/pluginV2/core/services/feeds"
+	"github.com/GoPlugin/pluginV2/core/services/feeds"
 )
 
 type FeedsManagerChainConfigResolver struct {

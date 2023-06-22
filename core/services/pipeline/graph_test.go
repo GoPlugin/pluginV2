@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"gonum.org/v1/gonum/graph"
 
-	"github.com/pluginV2/core/services/pipeline"
+	"github.com/GoPlugin/pluginV2/core/services/pipeline"
 )
 
 func TestGraph_Decode(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/pluginV2/core/config/parse"
+	"github.com/GoPlugin/pluginV2/core/config/parse"
 )
 
 func init() {

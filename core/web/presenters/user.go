@@ -3,7 +3,7 @@ package presenters
 import (
 	"time"
 
-	"github.com/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/sessions"
 )
 
 // UserResource represents a User JSONAPI resource.

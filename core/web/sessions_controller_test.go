@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pluginV2/core/internal/cltest"
-	"github.com/pluginV2/core/internal/testutils"
-	clhttptest "github.com/pluginV2/core/internal/testutils/httptest"
-	"github.com/pluginV2/core/services/pg"
-	"github.com/pluginV2/core/sessions"
-	"github.com/pluginV2/core/web"
+	"github.com/GoPlugin/pluginV2/core/internal/cltest"
+	"github.com/GoPlugin/pluginV2/core/internal/testutils"
+	clhttptest "github.com/GoPlugin/pluginV2/core/internal/testutils/httptest"
+	"github.com/GoPlugin/pluginV2/core/services/pg"
+	"github.com/GoPlugin/pluginV2/core/sessions"
+	"github.com/GoPlugin/pluginV2/core/web"
 
 	"github.com/onsi/gomega"
 	"github.com/stretchr/testify/assert"

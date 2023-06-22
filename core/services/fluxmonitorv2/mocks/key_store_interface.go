@@ -6,7 +6,7 @@ import (
 	big "math/big"
 
 	common "github.com/ethereum/go-ethereum/common"
-	ethkey "github.com/pluginV2/core/services/keystore/keys/ethkey"
+	ethkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"
 
 	mock "github.com/stretchr/testify/mock"
 )

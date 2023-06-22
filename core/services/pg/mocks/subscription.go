@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	pg "github.com/pluginV2/core/services/pg"
+	pg "github.com/GoPlugin/pluginV2/core/services/pg"
 	mock "github.com/stretchr/testify/mock"
 )
 
