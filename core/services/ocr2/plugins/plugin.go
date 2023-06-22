@@ -1,7 +1,7 @@
 package plugins
 
 import (
-	ocr2types "github.com/smartcontractkit/libocr/offchainreporting2/types"
+	ocr2types "github.com/GoPlugin/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/services/job"
 )

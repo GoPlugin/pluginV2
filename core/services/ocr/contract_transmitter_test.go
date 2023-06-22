@@ -9,7 +9,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/GoPlugin/pluginV2/core/internal/testutils"
 	"github.com/GoPlugin/pluginV2/core/services/ocr"
-	"github.com/smartcontractkit/libocr/gethwrappers/offchainaggregator"
+	"github.com/GoPlugin/libocr/gethwrappers/offchainaggregator"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

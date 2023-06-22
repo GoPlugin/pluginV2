@@ -3,7 +3,7 @@ package logger
 import (
 	"testing"
 
-	"github.com/smartcontractkit/libocr/commontypes"
+	"github.com/GoPlugin/libocr/commontypes"
 	"github.com/stretchr/testify/assert"
 )
 

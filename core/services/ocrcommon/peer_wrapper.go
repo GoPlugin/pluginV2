@@ -12,10 +12,10 @@ import (
 
 	p2ppeer "github.com/libp2p/go-libp2p-core/peer"
 	"github.com/pkg/errors"
-	ocrnetworking "github.com/smartcontractkit/libocr/networking"
-	ocrnetworkingtypes "github.com/smartcontractkit/libocr/networking/types"
-	ocr1types "github.com/smartcontractkit/libocr/offchainreporting/types"
-	ocr2types "github.com/smartcontractkit/libocr/offchainreporting2/types"
+	ocrnetworking "github.com/GoPlugin/libocr/networking"
+	ocrnetworkingtypes "github.com/GoPlugin/libocr/networking/types"
+	ocr1types "github.com/GoPlugin/libocr/offchainreporting/types"
+	ocr2types "github.com/GoPlugin/libocr/offchainreporting2/types"
 	"go.uber.org/multierr"
 
 	"github.com/GoPlugin/pluginV2/core/logger"

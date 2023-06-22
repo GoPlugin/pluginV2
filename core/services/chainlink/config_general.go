@@ -19,8 +19,8 @@ import (
 	"go.uber.org/multierr"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/smartcontractkit/libocr/commontypes"
-	ocrnetworking "github.com/smartcontractkit/libocr/networking"
+	"github.com/GoPlugin/libocr/commontypes"
+	ocrnetworking "github.com/GoPlugin/libocr/networking"
 
 	simplelogger "github.com/smartcontractkit/chainlink-relay/pkg/logger"
 

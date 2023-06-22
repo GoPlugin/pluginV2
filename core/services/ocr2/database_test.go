@@ -7,7 +7,7 @@ import (
 
 	medianconfig "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/median/config"
 
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
 	"github.com/smartcontractkit/sqlx"
 	"github.com/stretchr/testify/require"
 

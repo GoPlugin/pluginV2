@@ -10,7 +10,7 @@ import (
 
 	common "github.com/ethereum/go-ethereum/common"
 
-	commontypes "github.com/smartcontractkit/libocr/commontypes"
+	commontypes "github.com/GoPlugin/libocr/commontypes"
 
 	coreconfig "github.com/GoPlugin/pluginV2/core/config"
 
@@ -24,7 +24,7 @@ import (
 
 	net "net"
 
-	networking "github.com/smartcontractkit/libocr/networking"
+	networking "github.com/GoPlugin/libocr/networking"
 
 	p2pkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 

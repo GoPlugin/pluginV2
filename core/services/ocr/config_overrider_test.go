@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
 
 	"github.com/GoPlugin/pluginV2/core/internal/cltest"
 	"github.com/GoPlugin/pluginV2/core/internal/mocks"

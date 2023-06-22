@@ -17,9 +17,9 @@ import (
 	"github.com/ethereum/go-ethereum/core"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/smartcontractkit/libocr/commontypes"
-	confighelper2 "github.com/smartcontractkit/libocr/offchainreporting2/confighelper"
-	ocrtypes2 "github.com/smartcontractkit/libocr/offchainreporting2/types"
+	"github.com/GoPlugin/libocr/commontypes"
+	confighelper2 "github.com/GoPlugin/libocr/offchainreporting2/confighelper"
+	ocrtypes2 "github.com/GoPlugin/libocr/offchainreporting2/types"
 	"github.com/stretchr/testify/require"
 
 	"github.com/GoPlugin/pluginV2/core/assets"

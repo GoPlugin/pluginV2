@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/smartcontractkit/libocr/gethwrappers/offchainaggregator"
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
+	"github.com/GoPlugin/libocr/gethwrappers/offchainaggregator"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
 
 	evmconfig "github.com/GoPlugin/pluginV2/core/chains/evm/config"
 	htmocks "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/mocks"

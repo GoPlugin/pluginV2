@@ -2,7 +2,7 @@ package ocrbootstrap
 
 import (
 	"github.com/pkg/errors"
-	ocr "github.com/smartcontractkit/libocr/offchainreporting2"
+	ocr "github.com/GoPlugin/libocr/offchainreporting2"
 	"github.com/smartcontractkit/sqlx"
 
 	"github.com/smartcontractkit/chainlink-relay/pkg/types"

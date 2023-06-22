@@ -1,7 +1,7 @@
 package configtest
 
 import (
-	ocrcommontypes "github.com/smartcontractkit/libocr/commontypes"
+	ocrcommontypes "github.com/GoPlugin/libocr/commontypes"
 
 	"github.com/GoPlugin/pluginV2/core/config"
 	"github.com/GoPlugin/pluginV2/core/store/models"

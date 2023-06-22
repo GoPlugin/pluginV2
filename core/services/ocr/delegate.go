@@ -10,10 +10,10 @@ import (
 	"github.com/pkg/errors"
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/smartcontractkit/libocr/gethwrappers/offchainaggregator"
-	ocrnetworking "github.com/smartcontractkit/libocr/networking"
-	ocr "github.com/smartcontractkit/libocr/offchainreporting"
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
+	"github.com/GoPlugin/libocr/gethwrappers/offchainaggregator"
+	ocrnetworking "github.com/GoPlugin/libocr/networking"
+	ocr "github.com/GoPlugin/libocr/offchainreporting"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
 
 	"github.com/GoPlugin/pluginV2/core/chains/evm"
 	"github.com/GoPlugin/pluginV2/core/chains/evm/txmgr"

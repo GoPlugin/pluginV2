@@ -8,8 +8,8 @@ import (
 	gethCommon "github.com/ethereum/go-ethereum/common"
 	gethTypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/pkg/errors"
-	"github.com/smartcontractkit/libocr/gethwrappers2/ocr2aggregator"
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
+	"github.com/GoPlugin/libocr/gethwrappers2/ocr2aggregator"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
 	"github.com/smartcontractkit/sqlx"
 
 	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"

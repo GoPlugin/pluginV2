@@ -27,7 +27,7 @@ import (
 	"github.com/GoPlugin/pluginV2/integration-tests/client"
 	"github.com/GoPlugin/pluginV2/integration-tests/config"
 	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
-	"github.com/smartcontractkit/libocr/offchainreporting2/reportingplugin/median"
+	"github.com/GoPlugin/libocr/offchainreporting2/reportingplugin/median"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/guregu/null.v4"

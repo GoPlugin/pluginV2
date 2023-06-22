@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/smartcontractkit/libocr/gethwrappers/offchainaggregator"
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
+	"github.com/GoPlugin/libocr/gethwrappers/offchainaggregator"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 

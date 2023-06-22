@@ -17,8 +17,8 @@ import (
 
 	"github.com/smartcontractkit/chainlink-testing-framework/blockchain"
 	ctfClient "github.com/smartcontractkit/chainlink-testing-framework/client"
-	"github.com/smartcontractkit/libocr/offchainreporting2/confighelper"
-	"github.com/smartcontractkit/libocr/offchainreporting2/types"
+	"github.com/GoPlugin/libocr/offchainreporting2/confighelper"
+	"github.com/GoPlugin/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/services/keystore/chaintype"
 	"github.com/GoPlugin/pluginV2/integration-tests/client"

@@ -7,7 +7,7 @@ import (
 	"io"
 
 	"github.com/ethereum/go-ethereum/crypto/secp256k1"
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
 
 	starknet "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/keys"
 

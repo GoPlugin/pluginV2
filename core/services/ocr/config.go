@@ -1,7 +1,7 @@
 package ocr
 
 import (
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
 
 	"github.com/GoPlugin/pluginV2/core/services/job"
 	"github.com/GoPlugin/pluginV2/core/services/pg"

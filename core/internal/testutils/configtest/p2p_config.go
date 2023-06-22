@@ -1,7 +1,7 @@
 package configtest
 
 import (
-	ocrnetworking "github.com/smartcontractkit/libocr/networking"
+	ocrnetworking "github.com/GoPlugin/libocr/networking"
 
 	"github.com/GoPlugin/pluginV2/core/config"
 	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"

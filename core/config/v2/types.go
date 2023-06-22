@@ -13,8 +13,8 @@ import (
 	"go.uber.org/multierr"
 	"go.uber.org/zap/zapcore"
 
-	ocrcommontypes "github.com/smartcontractkit/libocr/commontypes"
-	ocrnetworking "github.com/smartcontractkit/libocr/networking"
+	ocrcommontypes "github.com/GoPlugin/libocr/commontypes"
+	ocrnetworking "github.com/GoPlugin/libocr/networking"
 
 	"github.com/GoPlugin/pluginV2/core/config"
 	"github.com/GoPlugin/pluginV2/core/logger/audit"

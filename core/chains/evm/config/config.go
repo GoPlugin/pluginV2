@@ -12,8 +12,8 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/multierr"
 
-	ocr "github.com/smartcontractkit/libocr/offchainreporting"
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
+	ocr "github.com/GoPlugin/libocr/offchainreporting"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
 
 	"github.com/GoPlugin/pluginV2/core/assets"
 	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"

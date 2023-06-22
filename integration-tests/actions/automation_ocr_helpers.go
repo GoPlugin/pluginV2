@@ -18,7 +18,7 @@ import (
 	"github.com/GoPlugin/pluginV2/core/store/models"
 	"github.com/GoPlugin/pluginV2/integration-tests/client"
 	"github.com/GoPlugin/pluginV2/integration-tests/contracts"
-	"github.com/smartcontractkit/libocr/offchainreporting2/confighelper"
+	"github.com/GoPlugin/libocr/offchainreporting2/confighelper"
 	types2 "github.com/smartcontractkit/ocr2keepers/pkg/types"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/guregu/null.v4"

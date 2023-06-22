@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/smartcontractkit/libocr/commontypes"
-	"github.com/smartcontractkit/libocr/offchainreporting2/reportingplugin/median"
-	"github.com/smartcontractkit/libocr/offchainreporting2/types"
+	"github.com/GoPlugin/libocr/commontypes"
+	"github.com/GoPlugin/libocr/offchainreporting2/reportingplugin/median"
+	"github.com/GoPlugin/libocr/offchainreporting2/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

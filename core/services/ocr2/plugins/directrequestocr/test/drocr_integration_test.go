@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/onsi/gomega"
-	"github.com/smartcontractkit/libocr/commontypes"
-	confighelper2 "github.com/smartcontractkit/libocr/offchainreporting2/confighelper"
+	"github.com/GoPlugin/libocr/commontypes"
+	confighelper2 "github.com/GoPlugin/libocr/offchainreporting2/confighelper"
 	"github.com/stretchr/testify/require"
 
 	"github.com/GoPlugin/pluginV2/core/internal/cltest"

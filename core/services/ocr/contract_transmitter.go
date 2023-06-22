@@ -12,8 +12,8 @@ import (
 	gethCommon "github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
 	"github.com/GoPlugin/pluginV2/core/chains/evm/log"
-	"github.com/smartcontractkit/libocr/gethwrappers/offchainaggregator"
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
+	"github.com/GoPlugin/libocr/gethwrappers/offchainaggregator"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
 )
 
 var (

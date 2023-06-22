@@ -7,8 +7,8 @@ import (
 	"math/big"
 
 	"github.com/pkg/errors"
-	"github.com/smartcontractkit/libocr/commontypes"
-	libocr2 "github.com/smartcontractkit/libocr/offchainreporting2"
+	"github.com/GoPlugin/libocr/commontypes"
+	libocr2 "github.com/GoPlugin/libocr/offchainreporting2"
 	"github.com/smartcontractkit/ocr2vrf/altbn_128"
 	"github.com/smartcontractkit/ocr2vrf/dkg"
 	"github.com/smartcontractkit/sqlx"

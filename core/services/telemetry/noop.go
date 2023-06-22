@@ -1,7 +1,7 @@
 package telemetry
 
 import (
-	ocrtypes "github.com/smartcontractkit/libocr/commontypes"
+	ocrtypes "github.com/GoPlugin/libocr/commontypes"
 
 	"github.com/GoPlugin/pluginV2/core/services/synchronization"
 )

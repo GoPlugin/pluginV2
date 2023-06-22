@@ -7,7 +7,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	gethcommon "github.com/ethereum/go-ethereum/common"
-	"github.com/smartcontractkit/libocr/gethwrappers2/ocr2aggregator"
+	"github.com/GoPlugin/libocr/gethwrappers2/ocr2aggregator"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"

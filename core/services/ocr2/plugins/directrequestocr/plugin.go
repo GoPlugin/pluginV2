@@ -6,8 +6,8 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
 
-	"github.com/smartcontractkit/libocr/commontypes"
-	ocr2types "github.com/smartcontractkit/libocr/offchainreporting2/types"
+	"github.com/GoPlugin/libocr/commontypes"
+	ocr2types "github.com/GoPlugin/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/chains/evm"
 	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/ocr2dr_oracle"

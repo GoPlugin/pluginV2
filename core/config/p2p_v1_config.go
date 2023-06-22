@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	ocrnetworking "github.com/smartcontractkit/libocr/networking"
+	ocrnetworking "github.com/GoPlugin/libocr/networking"
 
 	"github.com/GoPlugin/pluginV2/core/config/envvar"
 	"github.com/GoPlugin/pluginV2/core/config/parse"

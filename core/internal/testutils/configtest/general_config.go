@@ -13,8 +13,8 @@ import (
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/guregu/null.v4"
 
-	ocrcommontypes "github.com/smartcontractkit/libocr/commontypes"
-	ocrnetworking "github.com/smartcontractkit/libocr/networking"
+	ocrcommontypes "github.com/GoPlugin/libocr/commontypes"
+	ocrnetworking "github.com/GoPlugin/libocr/networking"
 
 	"github.com/GoPlugin/pluginV2/core/assets"
 	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"

@@ -8,13 +8,13 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
-	"github.com/smartcontractkit/libocr/gethwrappers2/ocr2aggregator"
-	"github.com/smartcontractkit/libocr/offchainreporting2/chains/evmutil"
+	"github.com/GoPlugin/libocr/gethwrappers2/ocr2aggregator"
+	"github.com/GoPlugin/libocr/offchainreporting2/chains/evmutil"
 	"github.com/smartcontractkit/sqlx"
 
 	relaytypes "github.com/smartcontractkit/chainlink-relay/pkg/types"
 
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/chains/evm"
 	"github.com/GoPlugin/pluginV2/core/logger"

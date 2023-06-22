@@ -7,7 +7,7 @@ import (
 	"github.com/lib/pq"
 	p2ppeer "github.com/libp2p/go-libp2p-core/peer"
 	"github.com/pkg/errors"
-	ocrnetworking "github.com/smartcontractkit/libocr/networking/types"
+	ocrnetworking "github.com/GoPlugin/libocr/networking/types"
 	"go.uber.org/multierr"
 )
 

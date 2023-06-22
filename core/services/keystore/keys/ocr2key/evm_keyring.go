@@ -7,8 +7,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/smartcontractkit/libocr/offchainreporting2/chains/evmutil"
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
+	"github.com/GoPlugin/libocr/offchainreporting2/chains/evmutil"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
 )
 
 var _ ocrtypes.OnchainKeyring = &evmKeyring{}

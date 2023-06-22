@@ -5,7 +5,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/smartcontractkit/libocr/commontypes"
+	"github.com/GoPlugin/libocr/commontypes"
 
 	"github.com/GoPlugin/pluginV2/core/config"
 	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"

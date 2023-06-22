@@ -8,8 +8,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
-	"github.com/smartcontractkit/libocr/offchainreporting2/reportingplugin/median"
+	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
+	"github.com/GoPlugin/libocr/offchainreporting2/reportingplugin/median"
 
 	"github.com/GoPlugin/pluginV2/core/bridges"
 	"github.com/GoPlugin/pluginV2/core/logger"
