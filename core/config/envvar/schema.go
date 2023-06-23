@@ -42,7 +42,7 @@ type ConfigSchema struct {
 
 	// General/misc
 	ChainType                    string          `env:"CHAIN_TYPE"`
-	Dev                          bool            `env:"CHAINLINK_DEV" default:"false"`
+	Dev                          bool            `env:"PLUGIN_DEV" default:"false"`
 	ExplorerAccessKey            string          `env:"EXPLORER_ACCESS_KEY"`
 	ExplorerSecret               string          `env:"EXPLORER_SECRET"`
 	ExplorerURL                  *url.URL        `env:"EXPLORER_URL"`
@@ -118,7 +118,7 @@ type ConfigSchema struct {
 	TLSCertPath string `env:"TLS_CERT_PATH"`
 	TLSHost     string `env:"CHAINLINK_TLS_HOST"`
 	TLSKeyPath  string `env:"TLS_KEY_PATH"`
-	TLSPort     uint16 `env:"CHAINLINK_TLS_PORT" default:"6689"`
+	TLSPort     uint16 `env:"PLUGIN_TLS_PORT" default:"6689"`
 	TLSRedirect bool   `env:"CHAINLINK_TLS_REDIRECT" default:"false"`
 
 	// Feeds manager

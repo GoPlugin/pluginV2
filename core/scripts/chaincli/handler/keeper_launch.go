@@ -52,7 +52,7 @@ func (k *Keeper) LaunchAndTest(ctx context.Context, withdraw bool, printLogs boo
 			"FEATURE_OFFCHAIN_REPORTING2=true",
 			"FEATURE_LOG_POLLER=true",
 			"P2P_NETWORKING_STACK=V2",
-			"CHAINLINK_TLS_PORT=0",
+			"PLUGIN_TLS_PORT=0",
 			"P2PV2_LISTEN_ADDRESSES=0.0.0.0:8000",
 		}
 	}

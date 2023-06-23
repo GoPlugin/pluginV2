@@ -210,7 +210,7 @@ func (g *generalConfig) Validate() error {
 var emptyStringsEnv string
 
 var legacyEnvToV2 = map[string]string{
-	"CHAINLINK_DEV": "CL_DEV",
+	"PLUGIN_DEV": "CL_DEV",
 
 	"DATABASE_URL":                            "CL_DATABASE_URL",
 	"DATABASE_BACKUP_URL":                     "CL_DATABASE_BACKUP_URL",

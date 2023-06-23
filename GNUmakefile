@@ -8,14 +8,14 @@ GO_LDFLAGS := $(shell tools/bin/ldflags)
 GOFLAGS = -ldflags "$(GO_LDFLAGS)"
 
 .PHONY: install
-install: operator-ui-autoinstall install-chainlink-autoinstall ## Install chainlink and all its dependencies.
+install: operator-ui-autoinstall install-plugin-autoinstall ## Install plugin and all its dependencies.
 
 .PHONY: install-git-hooks
 install-git-hooks: ## Install git hooks.
 	git config core.hooksPath .githooks
 
-.PHONY: install-chainlink-autoinstall
-install-chainlink-autoinstall: | pnpmdep gomod install-chainlink ## Autoinstall chainlink.
+.PHONY: install-plugin-autoinstall
+install-plugin-autoinstall: | pnpmdep gomod install-plugin ## Autoinstall plugin.
 .PHONY: operator-ui-autoinstall
 operator-ui-autoinstall: | operator-ui ## Autoinstall frontend UI.
 
@@ -35,27 +35,26 @@ gomodtidy: ## Run go mod tidy on all modules.
 	go mod tidy
 	cd ./integration-tests && go mod tidy
 
-.PHONY: install-chainlink
-install-chainlink: chainlink ## Install the chainlink binary.
+.PHONY: install-plugin
+install-plugin: plugin ## Install the plugin binary.
 	mkdir -p $(GOBIN)
-	rm -f $(GOBIN)/chainlink
-	cp $< $(GOBIN)/chainlink
+	rm -f $(GOBIN)/plugin
+	cp $< $(GOBIN)/plugin
 
-chainlink: operator-ui ## Build the chainlink binary.
+plugin: operator-ui ## Build the plugin binary.
 	go build $(GOFLAGS) -o $@ ./core/
 
-.PHONY: docker ## Build the chainlink docker image
+.PHONY: docker ## Build the plugin docker image
 docker:
 	docker buildx build \
 	--build-arg COMMIT_SHA=$(COMMIT_SHA) \
-	-f core/chainlink.Dockerfile .
+	-f core/plugin.Dockerfile .
 
-.PHONY: chainlink-build
-chainlink-build: operator-ui ## Build & install the chainlink binary.
-	go build -o pluginV2 ./core/
-	#go build -o chainlink ./core/
-	rm -f $(GOBIN)/chainlink
-	cp chainlink $(GOBIN)/chainlink
+.PHONY: plugin-build
+plugin-build: operator-ui ## Build & install the plugin binary.
+	go build -o plugin ./core/
+	rm -f $(GOBIN)/plugin
+	cp plugin $(GOBIN)/plugin
 
 .PHONY: operator-ui
 operator-ui: ## Fetch the frontend
@@ -139,13 +138,6 @@ goreleaser-dev-release: ## run goreleaser snapshot release
 	./tools/bin/goreleaser_wrapper release --snapshot --rm-dist --config ${GORELEASER_CONFIG}
 
 help:
-	@echo ""
-	@echo "         .__           .__       .__  .__        __"
-	@echo "    ____ |  |__ _____  |__| ____ |  | |__| ____ |  | __"
-	@echo "  _/ ___\|  |  \\\\\\__  \ |  |/    \|  | |  |/    \|  |/ /"
-	@echo "  \  \___|   Y  \/ __ \|  |   |  \  |_|  |   |  \    <"
-	@echo "   \___  >___|  (____  /__|___|  /____/__|___|  /__|_ \\"
-	@echo "       \/     \/     \/        \/             \/     \/"
 	@echo ""
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
 	awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

@@ -28,10 +28,10 @@ func init() {
 // https://app.shortcut.com/chainlinklabs/story/33622/remove-legacy-config
 func isDevMode() bool {
 	var clDev string
-	v1, v2 := os.Getenv("CHAINLINK_DEV"), os.Getenv("CL_DEV")
+	v1, v2 := os.Getenv("PLUGIN_DEV"), os.Getenv("CL_DEV")
 	if v1 != "" && v2 != "" {
 		if v1 != v2 {
-			panic("you may only set one of CHAINLINK_DEV and CL_DEV environment variables, not both")
+			panic("you may only set one of PLUGIN_DEV and CL_DEV environment variables, not both")
 		}
 	} else if v1 == "" {
 		clDev = v2

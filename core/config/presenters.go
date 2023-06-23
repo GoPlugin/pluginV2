@@ -45,7 +45,7 @@ type EnvPrinter struct {
 	DefaultChainID                             string          `json:"ETH_CHAIN_ID"`
 	DefaultHTTPLimit                           int64           `json:"DEFAULT_HTTP_LIMIT"`
 	DefaultHTTPTimeout                         models.Duration `json:"DEFAULT_HTTP_TIMEOUT"`
-	Dev                                        bool            `json:"CHAINLINK_DEV"`
+	Dev                                        bool            `json:"PLUGIN_DEV"`
 	ShutdownGracePeriod                        time.Duration   `json:"SHUTDOWN_GRACE_PERIOD"`
 	EVMRPCEnabled                              bool            `json:"EVM_RPC_ENABLED"`
 	EthereumHTTPURL                            string          `json:"ETH_HTTP_URL"`
@@ -125,7 +125,7 @@ type EnvPrinter struct {
 	TelemetryIngressServerPubKey string          `json:"TELEMETRY_INGRESS_SERVER_PUB_KEY"`
 	TelemetryIngressURL          string          `json:"TELEMETRY_INGRESS_URL"`
 	TLSHost                      string          `json:"CHAINLINK_TLS_HOST"`
-	TLSPort                      uint16          `json:"CHAINLINK_TLS_PORT"`
+	TLSPort                      uint16          `json:"PLUGIN_TLS_PORT"`
 	TLSRedirect                  bool            `json:"CHAINLINK_TLS_REDIRECT"`
 }
 

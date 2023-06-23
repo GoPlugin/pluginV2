@@ -253,7 +253,7 @@ func TestResolver_Config(t *testing.T) {
         "value": "15s"
       },
       {
-        "key": "CHAINLINK_DEV",
+        "key": "PLUGIN_DEV",
         "value": "true"
       },
 	  {
@@ -521,7 +521,7 @@ func TestResolver_Config(t *testing.T) {
         "value": ""
       },
       {
-        "key": "CHAINLINK_TLS_PORT",
+        "key": "PLUGIN_TLS_PORT",
         "value": "6689"
       },
       {

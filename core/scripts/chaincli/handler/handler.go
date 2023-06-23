@@ -274,7 +274,7 @@ func (h *baseHandler) launchChainlinkNode(ctx context.Context, port int, contain
 			"DATABASE_BACKUP_MODE=lite",
 			"SKIP_DATABASE_PASSWORD_COMPLEXITY_CHECK=true",
 			"LOG_LEVEL=debug",
-			"CHAINLINK_TLS_PORT=0",
+			"PLUGIN_TLS_PORT=0",
 			"SECURE_COOKIES=false",
 			"ALLOW_ORIGINS=*",
 		}, extraEnvVars...),

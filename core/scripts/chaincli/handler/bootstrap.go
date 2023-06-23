@@ -37,7 +37,7 @@ func (h *baseHandler) StartBootstrapNode(ctx context.Context, addr string, uiPor
 		"FEATURE_OFFCHAIN_REPORTING2=true",
 		"FEATURE_LOG_POLLER=true",
 		"P2P_NETWORKING_STACK=V2",
-		"CHAINLINK_TLS_PORT=0",
+		"PLUGIN_TLS_PORT=0",
 		fmt.Sprintf("P2PV2_LISTEN_ADDRESSES=0.0.0.0:%d", p2pv2Port),
 	)
 	if err != nil {
