@@ -8,8 +8,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
-	ocrConfigHelper "github.com/GoPlugin/libocr/offchainreporting/confighelper"
-	ocrConfigHelper2 "github.com/GoPlugin/libocr/offchainreporting2/confighelper"
+	ocrConfigHelper "github.com/smartcontractkit/libocr/offchainreporting/confighelper"
+	ocrConfigHelper2 "github.com/smartcontractkit/libocr/offchainreporting2/confighelper"
 
 	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/operator_factory"
 

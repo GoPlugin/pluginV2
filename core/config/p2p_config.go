@@ -5,7 +5,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	ocrnetworking "github.com/GoPlugin/libocr/networking"
+	ocrnetworking "github.com/smartcontractkit/libocr/networking"
 
 	"github.com/GoPlugin/pluginV2/core/config/envvar"
 	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"

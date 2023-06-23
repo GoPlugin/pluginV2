@@ -1,7 +1,7 @@
 package logger
 
 import (
-	ocrtypes "github.com/GoPlugin/libocr/commontypes"
+	ocrtypes "github.com/smartcontractkit/libocr/commontypes"
 )
 
 var _ ocrtypes.Logger = &ocrWrapper{}

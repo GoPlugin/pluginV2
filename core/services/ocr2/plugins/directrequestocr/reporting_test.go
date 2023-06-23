@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/GoPlugin/libocr/commontypes"
-	"github.com/GoPlugin/libocr/offchainreporting2/types"
+	"github.com/smartcontractkit/libocr/commontypes"
+	"github.com/smartcontractkit/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/internal/testutils"
 	"github.com/GoPlugin/pluginV2/core/logger"

@@ -4,7 +4,7 @@ import (
 	"database/sql"
 
 	"github.com/ethereum/go-ethereum/common"
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/chains/evm/logpoller"
 	"github.com/GoPlugin/pluginV2/core/services/pg"
@@ -18,7 +18,7 @@ import (
 	"github.com/GoPlugin/pluginV2/core/logger"
 )
 
-// Common to all OCR2 evm based contracts: https://github.com/GoPlugin/libocr/blob/master/contract2/OCR2Abstract.sol#L23
+// Common to all OCR2 evm based contracts: https://github.com/smartcontractkit/libocr/blob/master/contract2/OCR2Abstract.sol#L23
 var ConfigSet = common.HexToHash("0x1591690b8638f5fb2dbec82ac741805ac5da8b45dc5263f4875b0496fdce4e05")
 
 type OCR2AbstractConfigSet struct {

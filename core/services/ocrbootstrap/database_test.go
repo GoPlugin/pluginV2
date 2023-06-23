@@ -6,7 +6,7 @@ import (
 	"github.com/smartcontractkit/sqlx"
 	"github.com/stretchr/testify/require"
 
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/internal/cltest"
 	"github.com/GoPlugin/pluginV2/core/internal/testutils"

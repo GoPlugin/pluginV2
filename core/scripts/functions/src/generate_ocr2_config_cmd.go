@@ -13,8 +13,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/GoPlugin/libocr/offchainreporting2/confighelper"
-	"github.com/GoPlugin/libocr/offchainreporting2/types"
+	"github.com/smartcontractkit/libocr/offchainreporting2/confighelper"
+	"github.com/smartcontractkit/libocr/offchainreporting2/types"
 
 	helpers "github.com/GoPlugin/pluginV2/core/scripts/common"
 	"github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/directrequestocr/config"

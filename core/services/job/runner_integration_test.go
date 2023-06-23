@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/GoPlugin/libocr/commontypes"
+	"github.com/smartcontractkit/libocr/commontypes"
 
 	evmconfigmocks "github.com/GoPlugin/pluginV2/core/chains/evm/config/mocks"
 	evmmocks "github.com/GoPlugin/pluginV2/core/chains/evm/mocks"

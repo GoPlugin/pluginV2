@@ -9,7 +9,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/pkg/errors"
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
 )
 
 const onChainSigningAddressPrefix = "ocrsad_"

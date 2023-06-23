@@ -1,7 +1,7 @@
 package evm
 
 import (
-	"github.com/GoPlugin/libocr/offchainreporting2/types"
+	"github.com/smartcontractkit/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/chains/evm"
 	"github.com/GoPlugin/pluginV2/core/logger"

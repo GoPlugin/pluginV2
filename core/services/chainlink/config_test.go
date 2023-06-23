@@ -10,7 +10,7 @@ import (
 
 	"github.com/kylelemons/godebug/diff"
 	"github.com/shopspring/decimal"
-	ocrcommontypes "github.com/GoPlugin/libocr/commontypes"
+	ocrcommontypes "github.com/smartcontractkit/libocr/commontypes"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zapcore"

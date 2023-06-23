@@ -8,7 +8,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
-	libocr2 "github.com/GoPlugin/libocr/offchainreporting2"
+	libocr2 "github.com/smartcontractkit/libocr/offchainreporting2"
 	ocr2keepers "github.com/smartcontractkit/ocr2keepers/pkg"
 	"github.com/smartcontractkit/ocr2vrf/altbn_128"
 	dkgpkg "github.com/smartcontractkit/ocr2vrf/dkg"
@@ -22,7 +22,7 @@ import (
 	"github.com/GoPlugin/pluginV2/core/services/synchronization"
 	"github.com/GoPlugin/pluginV2/core/utils"
 
-	ocr2types "github.com/GoPlugin/libocr/offchainreporting2/types"
+	ocr2types "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/chains/evm"
 	"github.com/GoPlugin/pluginV2/core/logger"

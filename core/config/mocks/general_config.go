@@ -8,7 +8,7 @@ import (
 
 	big "math/big"
 
-	commontypes "github.com/GoPlugin/libocr/commontypes"
+	commontypes "github.com/smartcontractkit/libocr/commontypes"
 
 	config "github.com/GoPlugin/pluginV2/core/config"
 
@@ -22,7 +22,7 @@ import (
 
 	net "net"
 
-	networking "github.com/GoPlugin/libocr/networking"
+	networking "github.com/smartcontractkit/libocr/networking"
 
 	p2pkey "github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 

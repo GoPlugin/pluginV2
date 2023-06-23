@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 
 	"github.com/pkg/errors"
-	"github.com/GoPlugin/libocr/gethwrappers2/ocr2aggregator"
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
+	"github.com/smartcontractkit/libocr/gethwrappers2/ocr2aggregator"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/logger"
 	"github.com/GoPlugin/pluginV2/core/services/pg"

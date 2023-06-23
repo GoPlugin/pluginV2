@@ -12,7 +12,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/rs/zerolog/log"
-	ocrConfigHelper "github.com/GoPlugin/libocr/offchainreporting/confighelper"
+	ocrConfigHelper "github.com/smartcontractkit/libocr/offchainreporting/confighelper"
 
 	"github.com/GoPlugin/pluginV2/core/gethwrappers/generated/operator_factory"
 

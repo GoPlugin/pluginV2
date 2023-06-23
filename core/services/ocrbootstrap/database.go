@@ -6,7 +6,7 @@ import (
 
 	"github.com/lib/pq"
 	"github.com/pkg/errors"
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/logger"
 )

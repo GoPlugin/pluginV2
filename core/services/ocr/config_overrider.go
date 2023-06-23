@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
 
 	"github.com/GoPlugin/pluginV2/core/logger"
 	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/ethkey"

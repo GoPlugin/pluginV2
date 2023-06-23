@@ -8,7 +8,7 @@ import (
 	"github.com/lib/pq"
 	"github.com/pelletier/go-toml"
 	"github.com/pkg/errors"
-	libocr2 "github.com/GoPlugin/libocr/offchainreporting2"
+	libocr2 "github.com/smartcontractkit/libocr/offchainreporting2"
 
 	"github.com/GoPlugin/pluginV2/core/services/job"
 	dkgconfig "github.com/GoPlugin/pluginV2/core/services/ocr2/plugins/dkg/config"

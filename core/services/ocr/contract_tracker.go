@@ -15,9 +15,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/smartcontractkit/sqlx"
 
-	"github.com/GoPlugin/libocr/gethwrappers/offchainaggregator"
-	"github.com/GoPlugin/libocr/offchainreporting/confighelper"
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
+	"github.com/smartcontractkit/libocr/gethwrappers/offchainaggregator"
+	"github.com/smartcontractkit/libocr/offchainreporting/confighelper"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
 
 	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
 	httypes "github.com/GoPlugin/pluginV2/core/chains/evm/headtracker/types"

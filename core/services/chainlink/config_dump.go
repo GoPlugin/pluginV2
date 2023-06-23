@@ -10,8 +10,8 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/shopspring/decimal"
-	ocrcommontypes "github.com/GoPlugin/libocr/commontypes"
-	ocrnetworking "github.com/GoPlugin/libocr/networking"
+	ocrcommontypes "github.com/smartcontractkit/libocr/commontypes"
+	ocrnetworking "github.com/smartcontractkit/libocr/networking"
 
 	soldb "github.com/smartcontractkit/chainlink-solana/pkg/solana/db"
 	stkdb "github.com/smartcontractkit/chainlink-starknet/relayer/pkg/chainlink/db"

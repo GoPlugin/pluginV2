@@ -2,7 +2,8 @@
 
 cd "$(dirname "$0")"
 
-COMMIT_SHA=${COMMIT_SHA:-$(git rev-parse HEAD)}
+#COMMIT_SHA=${COMMIT_SHA:-$(git rev-parse HEAD)}
+COMMIT_SHA=123fb28ff8b68d114905289c3fa4c3aed7b11f04
 VERSION=${VERSION:-$(cat "../../VERSION")}
 
 echo "-X github.com/GoPlugin/pluginV2/core/static.Version=$VERSION -X github.com/GoPlugin/pluginV2/core/static.Sha=$COMMIT_SHA"

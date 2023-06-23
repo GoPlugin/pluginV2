@@ -11,7 +11,7 @@ import (
 
 	"go.uber.org/zap/zapcore"
 
-	ocrnetworking "github.com/GoPlugin/libocr/networking"
+	ocrnetworking "github.com/smartcontractkit/libocr/networking"
 
 	"github.com/GoPlugin/pluginV2/core/services/keystore/keys/p2pkey"
 

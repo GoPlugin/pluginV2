@@ -7,8 +7,8 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"go.uber.org/multierr"
 
-	ocr "github.com/GoPlugin/libocr/offchainreporting"
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
+	ocr "github.com/smartcontractkit/libocr/offchainreporting"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
 
 	"github.com/GoPlugin/pluginV2/core/assets"
 	gencfg "github.com/GoPlugin/pluginV2/core/config"

@@ -32,12 +32,12 @@ import (
 	"go.uber.org/zap/zaptest/observer"
 	"gopkg.in/guregu/null.v4"
 
-	ocrcommontypes "github.com/GoPlugin/libocr/commontypes"
-	"github.com/GoPlugin/libocr/gethwrappers/offchainaggregator"
-	"github.com/GoPlugin/libocr/gethwrappers/testoffchainaggregator"
-	ocrnetworking "github.com/GoPlugin/libocr/networking"
-	"github.com/GoPlugin/libocr/offchainreporting/confighelper"
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting/types"
+	ocrcommontypes "github.com/smartcontractkit/libocr/commontypes"
+	"github.com/smartcontractkit/libocr/gethwrappers/offchainaggregator"
+	"github.com/smartcontractkit/libocr/gethwrappers/testoffchainaggregator"
+	ocrnetworking "github.com/smartcontractkit/libocr/networking"
+	"github.com/smartcontractkit/libocr/offchainreporting/confighelper"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting/types"
 
 	"github.com/GoPlugin/pluginV2/core/assets"
 	"github.com/GoPlugin/pluginV2/core/auth"

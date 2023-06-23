@@ -8,7 +8,7 @@ import (
 	"github.com/multiformats/go-multiaddr"
 	"github.com/pelletier/go-toml"
 	"github.com/pkg/errors"
-	"github.com/GoPlugin/libocr/offchainreporting"
+	"github.com/smartcontractkit/libocr/offchainreporting"
 
 	"github.com/GoPlugin/pluginV2/core/chains/evm"
 	config2 "github.com/GoPlugin/pluginV2/core/chains/evm/config"

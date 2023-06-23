@@ -8,8 +8,8 @@ import (
 
 	"github.com/lib/pq"
 	"github.com/pkg/errors"
-	ocrcommon "github.com/GoPlugin/libocr/commontypes"
-	ocrtypes "github.com/GoPlugin/libocr/offchainreporting2/types"
+	ocrcommon "github.com/smartcontractkit/libocr/commontypes"
+	ocrtypes "github.com/smartcontractkit/libocr/offchainreporting2/types"
 	"github.com/smartcontractkit/sqlx"
 
 	"github.com/GoPlugin/pluginV2/core/logger"

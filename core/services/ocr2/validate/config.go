@@ -3,7 +3,7 @@ package validate
 import (
 	"time"
 
-	"github.com/GoPlugin/libocr/offchainreporting2/types"
+	"github.com/smartcontractkit/libocr/offchainreporting2/types"
 
 	"github.com/GoPlugin/pluginV2/core/config"
 	"github.com/GoPlugin/pluginV2/core/services/job"
