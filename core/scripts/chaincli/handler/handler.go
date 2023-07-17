@@ -270,7 +270,7 @@ func (h *baseHandler) launchChainlinkNode(ctx context.Context, port int, contain
 			"DATABASE_URL=postgresql://postgres:development_password@" + postgresContainerName + ":5432/postgres?sslmode=disable",
 			"ETH_URL=" + h.cfg.NodeURL,
 			fmt.Sprintf("ETH_CHAIN_ID=%d", h.cfg.ChainID),
-			"LINK_CONTRACT_ADDRESS=" + h.cfg.LinkTokenAddr,
+			"PLUGIN_CONTRACT_ADDRESS=" + h.cfg.LinkTokenAddr,
 			"DATABASE_BACKUP_MODE=lite",
 			"SKIP_DATABASE_PASSWORD_COMPLEXITY_CHECK=true",
 			"LOG_LEVEL=debug",

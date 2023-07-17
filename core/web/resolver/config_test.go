@@ -369,7 +369,7 @@ func TestResolver_Config(t *testing.T) {
         "value": ""
       },
       {
-        "key": "LINK_CONTRACT_ADDRESS",
+        "key": "PLUGIN_CONTRACT_ADDRESS",
         "value": ""
       },
       {
