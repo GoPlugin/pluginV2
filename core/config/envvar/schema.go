@@ -49,7 +49,7 @@ type ConfigSchema struct {
 	FlagsContractAddress         string          `env:"FLAGS_CONTRACT_ADDRESS"`               //nodoc
 	InsecureFastScrypt           bool            `env:"INSECURE_FAST_SCRYPT" default:"false"` //nodoc
 	ReaperExpiration             models.Duration `env:"REAPER_EXPIRATION" default:"240h"`     //nodoc
-	RootDir                      string          `env:"ROOT" default:"~/.chainlink"`
+	RootDir                      string          `env:"ROOT" default:"~/.plugin"`
 	TelemetryIngressUniConn      bool            `env:"TELEMETRY_INGRESS_UNICONN" default:"true"`
 	TelemetryIngressLogging      bool            `env:"TELEMETRY_INGRESS_LOGGING" default:"false"`
 	TelemetryIngressServerPubKey string          `env:"TELEMETRY_INGRESS_SERVER_PUB_KEY"`

@@ -4,7 +4,7 @@ ExplorerURL = 'ws://explorer.url' # Example
 # InsecureFastScrypt causes all key stores to encrypt using "fast" scrypt params instead. This is insecure and only useful for local testing. DO NOT ENABLE THIS IN PRODUCTION.
 InsecureFastScrypt = false # Default
 # RootDir is the Chainlink node's root directory. This is the default directory for logging, database backups, cookies, and other misc Chainlink node files. Chainlink nodes will always ensure this directory has 700 permissions because it might contain sensitive data.
-RootDir = '~/.chainlink' # Default
+RootDir = '~/.plugin' # Default
 # ShutdownGracePeriod is the maximum time allowed to shut down gracefully. If exceeded, the node will terminate immediately to avoid being SIGKILLed.
 ShutdownGracePeriod = '5s' # Default
 
@@ -201,7 +201,7 @@ CertPath = '~/.cl/certs' # Example
 # Host is the hostname configured for TLS to be used by the Chainlink node. This is useful if you configured a domain name specific for your Chainlink node.
 Host = 'tls-host' # Example
 # KeyPath is the location of the TLS private key file.
-KeyPath = '/home/$USER/.chainlink/tls/server.key' # Example
+KeyPath = '/home/$USER/.plugin/tls/server.key' # Example
 # HTTPSPort is the port used for HTTPS connections. Set this to `0` to disable HTTPS. Disabling HTTPS also relieves Chainlink nodes of the requirement for a TLS certificate.
 HTTPSPort = 6689 # Default
 # ForceRedirect forces TLS redirect for unencrypted connections.
