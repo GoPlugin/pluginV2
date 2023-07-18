@@ -42,7 +42,8 @@ install-plugin: plugin ## Install the plugin binary.
 	cp $< $(GOBIN)/plugin
 
 plugin: operator-ui ## Build the plugin binary.
-	go build $(GOFLAGS) -o $@ ./core/
+	go build -o $@ ./core/
+	#go build $(GOFLAGS) -o $@ ./core/
 
 .PHONY: docker ## Build the plugin docker image
 docker:

@@ -74,7 +74,7 @@ type EnvPrinter struct {
 	LeaseLockDuration                          time.Duration   `json:"LEASE_LOCK_DURATION"`
 	LeaseLockRefreshInterval                   time.Duration   `json:"LEASE_LOCK_REFRESH_INTERVAL"`
 	FlagsContractAddress                       string          `json:"FLAGS_CONTRACT_ADDRESS"`
-	PluginContractAddress                      string          `json:"PLUGIN_CONTRACT_ADDRESS"`
+	LinkContractAddress                        string          `json:"LINK_CONTRACT_ADDRESS"`
 	LogFileDir                                 string          `json:"LOG_FILE_DIR"`
 	LogLevel                                   zapcore.Level   `json:"LOG_LEVEL"`
 	LogSQL                                     bool            `json:"LOG_SQL"`
