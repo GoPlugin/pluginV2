@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-owner=smartcontractkit
+owner=GoPlugin
 repo=operator-ui
 fullRepo=${owner}/${repo}
 gitRoot=$(git rev-parse --show-toplevel || pwd)
