@@ -44,7 +44,8 @@ msg ""
 curl -L -o "$asset_name" "$download_url"
 
 msg "Unpacking asset $asset_name"
-tar -xvzf "$asset_name"
+#tar -xvzf "$asset_name"
+tar -xf "$asset_name"
 
 msg ""
 msg "Removing old contents of $unpack_dir"
