@@ -1,16 +1,23 @@
 [Log]
 Level = 'debug'
+
 [WebServer]
-AllowOrigins = '*'
+AllowOrigins = 'http://localhost:3000,http://localhost:6688' # Default
 SecureCookies = false
+SessionTimeout = '15m' # Default
+
 [WebServer.TLS]
 HTTPSPort = 0 # Default
 ForceRedirect = false # Default
+
 [[EVM]]
 ChainID = '51'
+Enabled = true #Default
+
 [[EVM.Nodes]]
-Name = 'XdcApothem'
-WSURL = 'wss://ws.apothem.network/ws'
-HTTPURL = 'https://erpc.apothem.network'
-[[Feature]]
-FeedsManager = true # Default
+name = "XdcApothem"
+wsUrl = "wss://ws.apothem.network/ws"
+httpUrl = 'https://erpc.apothem.network'
+
+[Feature]
+FeedsManager = false # Default
