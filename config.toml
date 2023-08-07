@@ -13,6 +13,8 @@ ForceRedirect = false # Default
 [[EVM]]
 ChainID = '51'
 Enabled = true #Default
+LinkContractAddress = "0x33f4212b027E22aF7e6BA21Fc572843C0D701CD1"
+
 
 [[EVM.Nodes]]
 name = "XdcApothem"
