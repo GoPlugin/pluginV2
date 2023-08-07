@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.6;
 
-import "../../interfaces/LinkTokenInterface.sol";
+import "../../interfaces/PliTokenInterface.sol";
 import "../../interfaces/automation/1_2/KeeperRegistryInterface1_2.sol";
 import "../../interfaces/TypeAndVersionInterface.sol";
 import "../../ConfirmedOwner.sol";
@@ -33,7 +33,7 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
 
   mapping(bytes32 => PendingRequest) private s_pendingRequests;
 
-  LinkTokenInterface public immutable LINK;
+  PliTokenInterface public immutable PLI;
 
   /**
    * @notice versions:
@@ -48,7 +48,7 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
     uint32 autoApproveMaxAllowed;
     uint32 approvedCount;
     KeeperRegistryBaseInterface keeperRegistry;
-    uint96 minLINKJuels;
+    uint96 minPLIJuels;
   }
 
   struct PendingRequest {
@@ -82,7 +82,7 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
     AutoApproveType autoApproveConfigType,
     uint32 autoApproveMaxAllowed,
     address keeperRegistry,
-    uint96 minLINKJuels
+    uint96 minPLIJuels
   );
 
   error InvalidAdminAddress();
@@ -91,42 +91,42 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
   error OnlyAdminOrOwner();
   error InsufficientPayment();
   error RegistrationRequestFailed();
-  error OnlyLink();
+  error OnlyPli();
   error AmountMismatch();
   error SenderMismatch();
   error FunctionNotPermitted();
-  error LinkTransferFailed(address to);
+  error PliTransferFailed(address to);
   error InvalidDataLength();
 
   /*
-   * @param LINKAddress Address of Link token
+   * @param PLIAddress Address of Pli token
    * @param autoApproveConfigType setting for auto-approve registrations
    * @param autoApproveMaxAllowed max number of registrations that can be auto approved
    * @param keeperRegistry keeper registry address
-   * @param minLINKJuels minimum LINK that new registrations should fund their upkeep with
+   * @param minPLIJuels minimum PLI that new registrations should fund their upkeep with
    */
   constructor(
-    address LINKAddress,
+    address PLIAddress,
     AutoApproveType autoApproveConfigType,
     uint16 autoApproveMaxAllowed,
     address keeperRegistry,
-    uint96 minLINKJuels
+    uint96 minPLIJuels
   ) ConfirmedOwner(msg.sender) {
-    LINK = LinkTokenInterface(LINKAddress);
-    setRegistrationConfig(autoApproveConfigType, autoApproveMaxAllowed, keeperRegistry, minLINKJuels);
+    PLI = PliTokenInterface(PLIAddress);
+    setRegistrationConfig(autoApproveConfigType, autoApproveMaxAllowed, keeperRegistry, minPLIJuels);
   }
 
   //EXTERNAL
 
   /**
-   * @notice register can only be called through transferAndCall on LINK contract
+   * @notice register can only be called through transferAndCall on PLI contract
    * @param name string of the upkeep to be registered
    * @param encryptedEmail email address of upkeep contact
    * @param upkeepContract address to perform upkeep on
    * @param gasLimit amount of gas to provide the target contract when performing upkeep
    * @param adminAddress address to cancel upkeep and withdraw remaining funds
    * @param checkData data passed to the contract when checking for upkeep
-   * @param amount quantity of LINK upkeep is funded with (specified in Juels)
+   * @param amount quantity of PLI upkeep is funded with (specified in Juels)
    * @param source application sending this request
    * @param sender address of the sender making the request
    */
@@ -140,7 +140,7 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
     uint96 amount,
     uint8 source,
     address sender
-  ) external onlyLINK {
+  ) external onlyPLI {
     if (adminAddress == address(0)) {
       revert InvalidAdminAddress();
     }
@@ -205,9 +205,9 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
       revert RequestNotFound();
     }
     delete s_pendingRequests[hash];
-    bool success = LINK.transfer(msg.sender, request.balance);
+    bool success = PLI.transfer(msg.sender, request.balance);
     if (!success) {
-      revert LinkTransferFailed(msg.sender);
+      revert PliTransferFailed(msg.sender);
     }
     emit RegistrationRejected(hash);
   }
@@ -218,24 +218,24 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
    *                   note: autoApproveAllowedSenders list persists across config changes irrespective of type
    * @param autoApproveMaxAllowed max number of registrations that can be auto approved
    * @param keeperRegistry new keeper registry address
-   * @param minLINKJuels minimum LINK that new registrations should fund their upkeep with
+   * @param minPLIJuels minimum PLI that new registrations should fund their upkeep with
    */
   function setRegistrationConfig(
     AutoApproveType autoApproveConfigType,
     uint16 autoApproveMaxAllowed,
     address keeperRegistry,
-    uint96 minLINKJuels
+    uint96 minPLIJuels
   ) public onlyOwner {
     uint32 approvedCount = s_config.approvedCount;
     s_config = Config({
       autoApproveConfigType: autoApproveConfigType,
       autoApproveMaxAllowed: autoApproveMaxAllowed,
       approvedCount: approvedCount,
-      minLINKJuels: minLINKJuels,
+      minPLIJuels: minPLIJuels,
       keeperRegistry: KeeperRegistryBaseInterface(keeperRegistry)
     });
 
-    emit ConfigChanged(autoApproveConfigType, autoApproveMaxAllowed, keeperRegistry, minLINKJuels);
+    emit ConfigChanged(autoApproveConfigType, autoApproveMaxAllowed, keeperRegistry, minPLIJuels);
   }
 
   /**
@@ -268,7 +268,7 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
       uint32 autoApproveMaxAllowed,
       uint32 approvedCount,
       address keeperRegistry,
-      uint256 minLINKJuels
+      uint256 minPLIJuels
     )
   {
     Config memory config = s_config;
@@ -277,7 +277,7 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
       config.autoApproveMaxAllowed,
       config.approvedCount,
       address(config.keeperRegistry),
-      config.minLINKJuels
+      config.minPLIJuels
     );
   }
 
@@ -290,9 +290,9 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
   }
 
   /**
-   * @notice Called when LINK is sent to the contract via `transferAndCall`
-   * @param sender Address of the sender transfering LINK
-   * @param amount Amount of LINK sent (specified in Juels)
+   * @notice Called when PLI is sent to the contract via `transferAndCall`
+   * @param sender Address of the sender transfering PLI
+   * @param amount Amount of PLI sent (specified in Juels)
    * @param data Payload of the transaction
    */
   function onTokenTransfer(
@@ -302,13 +302,13 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
   )
     external
     override
-    onlyLINK
-    permittedFunctionsForLINK(data)
+    onlyPLI
+    permittedFunctionsForPLI(data)
     isActualAmount(amount, data)
     isActualSender(sender, data)
   {
     if (data.length < 292) revert InvalidDataLength();
-    if (amount < s_config.minLINKJuels) {
+    if (amount < s_config.minPLIJuels) {
       revert InsufficientPayment();
     }
     (bool success, ) = address(this).delegatecall(data);
@@ -337,9 +337,9 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
     // register upkeep
     uint256 upkeepId = keeperRegistry.registerUpkeep(upkeepContract, gasLimit, adminAddress, checkData);
     // fund upkeep
-    bool success = LINK.transferAndCall(address(keeperRegistry), amount, abi.encode(upkeepId));
+    bool success = PLI.transferAndCall(address(keeperRegistry), amount, abi.encode(upkeepId));
     if (!success) {
-      revert LinkTransferFailed(address(keeperRegistry));
+      revert PliTransferFailed(address(keeperRegistry));
     }
 
     emit RegistrationApproved(hash, name, upkeepId);
@@ -366,11 +366,11 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
   //MODIFIERS
 
   /**
-   * @dev Reverts if not sent from the LINK token
+   * @dev Reverts if not sent from the PLI token
    */
-  modifier onlyLINK() {
-    if (msg.sender != address(LINK)) {
-      revert OnlyLink();
+  modifier onlyPLI() {
+    if (msg.sender != address(PLI)) {
+      revert OnlyPli();
     }
     _;
   }
@@ -379,7 +379,7 @@ contract KeeperRegistrar is TypeAndVersionInterface, ConfirmedOwner, ERC677Recei
    * @dev Reverts if the given data does not begin with the `register` function selector
    * @param _data The data payload of the request
    */
-  modifier permittedFunctionsForLINK(bytes memory _data) {
+  modifier permittedFunctionsForPLI(bytes memory _data) {
     bytes4 funcSelector;
     assembly {
       // solhint-disable-next-line avoid-low-level-calls

@@ -31,7 +31,7 @@ pragma solidity ^0.8.4;
  * @dev shown:
  *
  * @dev   contract VRFConsumer {
- * @dev     constructor(<other arguments>, address _vrfCoordinator, address _link)
+ * @dev     constructor(<other arguments>, address _vrfCoordinator, address _pli)
  * @dev       VRFConsumerBase(_vrfCoordinator) public {
  * @dev         <initialization with other arguments goes here>
  * @dev       }

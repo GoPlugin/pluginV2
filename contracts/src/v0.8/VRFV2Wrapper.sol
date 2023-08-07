@@ -4,7 +4,7 @@ pragma solidity ^0.8.6;
 import "./ConfirmedOwner.sol";
 import "./interfaces/TypeAndVersionInterface.sol";
 import "./VRFConsumerBaseV2.sol";
-import "./interfaces/LinkTokenInterface.sol";
+import "@goplugin/contractsv2/src/v0.8/interfaces/PliTokenInterface.sol";
 import "./interfaces/AggregatorV3Interface.sol";
 import "./interfaces/VRFCoordinatorV2Interface.sol";
 import "./interfaces/VRFV2WrapperInterface.sol";
@@ -17,7 +17,7 @@ import "./VRFV2WrapperConsumerBase.sol";
 contract VRFV2Wrapper is ConfirmedOwner, TypeAndVersionInterface, VRFConsumerBaseV2, VRFV2WrapperInterface {
   event WrapperFulfillmentFailed(uint256 indexed requestId, address indexed consumer);
 
-  LinkTokenInterface public immutable LINK;
+  PliTokenInterface public immutable LINK;
   AggregatorV3Interface public immutable LINK_ETH_FEED;
   ExtendedVRFCoordinatorV2Interface public immutable COORDINATOR;
   uint64 public immutable SUBSCRIPTION_ID;
@@ -90,7 +90,7 @@ contract VRFV2Wrapper is ConfirmedOwner, TypeAndVersionInterface, VRFConsumerBas
     address _linkEthFeed,
     address _coordinator
   ) ConfirmedOwner(msg.sender) VRFConsumerBaseV2(_coordinator) {
-    LINK = LinkTokenInterface(_link);
+    LINK = PliTokenInterface(_link);
     LINK_ETH_FEED = AggregatorV3Interface(_linkEthFeed);
     COORDINATOR = ExtendedVRFCoordinatorV2Interface(_coordinator);
 

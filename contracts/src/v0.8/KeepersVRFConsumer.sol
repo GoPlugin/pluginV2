@@ -7,7 +7,7 @@ import "./interfaces/VRFCoordinatorV2Interface.sol";
 
 /**
  * @title KeepersVRFConsumer
- * @notice KeepersVRFConsumer is a Chainlink Keepers compatible contract that also acts as a
+ * @notice KeepersVRFConsumer is a Plugin Keepers compatible contract that also acts as a
  * VRF V2 requester and consumer. In particular, a random words request is made when `performUpkeep`
  * is called in a cadence provided by the upkeep interval.
  */
@@ -90,7 +90,7 @@ contract KeepersVRFConsumer is KeeperCompatibleInterface, VRFConsumerBaseV2 {
   /**
    * @notice VRF callback implementation
    * @param requestId the VRF V2 request ID, provided at request time.
-   * @param randomWords the randomness provided by Chainlink VRF.
+   * @param randomWords the randomness provided by Plugin VRF.
    */
   function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal override {
     // Check that the request exists. If not, revert.
@@ -103,7 +103,7 @@ contract KeepersVRFConsumer is KeeperCompatibleInterface, VRFConsumerBaseV2 {
   }
 
   /**
-   * @notice Requests random words from Chainlink VRF.
+   * @notice Requests random words from Plugin VRF.
    */
   function requestRandomWords() internal {
     uint256 requestId = COORDINATOR.requestRandomWords(

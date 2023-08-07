@@ -17,7 +17,7 @@ import "../../OCR2Abstract.sol";
                                                           /
  */
 /**
- * @notice Registry for adding work for Chainlink Keepers to perform on client
+ * @notice Registry for adding work for Plugin Keepers to perform on client
  * contracts. Clients must support the Upkeep interface.
  */
 contract KeeperRegistry2_0 is
@@ -47,7 +47,7 @@ contract KeeperRegistry2_0 is
    *                       : add function to let admin change upkeep gas limit
    *                       : add minUpkeepSpend requirement
    *                       : upgrade to solidity v0.8
-   * - KeeperRegistry 1.1.0: added flatFeeMicroLink
+   * - KeeperRegistry 1.1.0: added flatFeeMicroPli
    * - KeeperRegistry 1.0.0: initial release
    */
   string public constant override typeAndVersion = "KeeperRegistry 2.0.1";
@@ -68,8 +68,8 @@ contract KeeperRegistry2_0 is
   constructor(KeeperRegistryBase2_0 keeperRegistryLogic)
     KeeperRegistryBase2_0(
       keeperRegistryLogic.getPaymentModel(),
-      keeperRegistryLogic.getLinkAddress(),
-      keeperRegistryLogic.getLinkNativeFeedAddress(),
+      keeperRegistryLogic.getPliAddress(),
+      keeperRegistryLogic.getPliNativeFeedAddress(),
       keeperRegistryLogic.getFastGasFeedAddress()
     )
   {
@@ -91,7 +91,7 @@ contract KeeperRegistry2_0 is
   struct UpkeepTransmitInfo {
     Upkeep upkeep;
     bool earlyChecksPassed;
-    uint96 maxLinkPayment;
+    uint96 maxPliPayment;
     bool performSuccess;
     uint256 gasUsed;
     uint256 gasOverhead;
@@ -120,19 +120,19 @@ contract KeeperRegistry2_0 is
     for (uint256 i = 0; i < report.upkeepIds.length; i++) {
       upkeepTransmitInfo[i].upkeep = s_upkeep[report.upkeepIds[i]];
 
-      upkeepTransmitInfo[i].maxLinkPayment = _getMaxLinkPayment(
+      upkeepTransmitInfo[i].maxPliPayment = _getMaxPliPayment(
         hotVars,
         upkeepTransmitInfo[i].upkeep.executeGas,
         uint32(report.wrappedPerformDatas[i].performData.length),
         report.fastGasWei,
-        report.linkNative,
+        report.pliNative,
         true
       );
       upkeepTransmitInfo[i].earlyChecksPassed = _prePerformChecks(
         report.upkeepIds[i],
         report.wrappedPerformDatas[i],
         upkeepTransmitInfo[i].upkeep,
-        upkeepTransmitInfo[i].maxLinkPayment
+        upkeepTransmitInfo[i].maxPliPayment
       );
 
       if (upkeepTransmitInfo[i].earlyChecksPassed) {
@@ -196,7 +196,7 @@ contract KeeperRegistry2_0 is
             report.upkeepIds[i],
             upkeepTransmitInfo[i],
             report.fastGasWei,
-            report.linkNative,
+            report.pliNative,
             numUpkeepsPassedChecks
           );
           totalPremium += premium;
@@ -242,23 +242,23 @@ contract KeeperRegistry2_0 is
   }
 
   /**
-   * @notice uses LINK's transferAndCall to LINK and add funding to an upkeep
-   * @dev safe to cast uint256 to uint96 as total LINK supply is under UINT96MAX
+   * @notice uses PLI's transferAndCall to PLI and add funding to an upkeep
+   * @dev safe to cast uint256 to uint96 as total PLI supply is under UINT96MAX
    * @param sender the account which transferred the funds
-   * @param amount number of LINK transfer
+   * @param amount number of PLI transfer
    */
   function onTokenTransfer(
     address sender,
     uint256 amount,
     bytes calldata data
   ) external override {
-    if (msg.sender != address(i_link)) revert OnlyCallableByLINKToken();
+    if (msg.sender != address(i_pli)) revert OnlyCallableByPLIToken();
     if (data.length != 32) revert InvalidDataLength();
     uint256 id = abi.decode(data, (uint256));
     if (s_upkeep[id].maxValidBlocknumber != UINT32_MAX) revert UpkeepCancelled();
 
     s_upkeep[id].balance = s_upkeep[id].balance + uint96(amount);
-    s_expectedLinkBalance = s_expectedLinkBalance + amount;
+    s_expectedPliBalance = s_expectedPliBalance + amount;
 
     emit FundsAdded(id, sender, uint96(amount));
   }
@@ -332,7 +332,7 @@ contract KeeperRegistry2_0 is
     s_hotVars = HotVars({
       f: f,
       paymentPremiumPPB: onchainConfigStruct.paymentPremiumPPB,
-      flatFeeMicroLink: onchainConfigStruct.flatFeeMicroLink,
+      flatFeeMicroPli: onchainConfigStruct.flatFeeMicroPli,
       stalenessSeconds: onchainConfigStruct.stalenessSeconds,
       gasCeilingMultiplier: onchainConfigStruct.gasCeilingMultiplier,
       paused: false,
@@ -352,10 +352,10 @@ contract KeeperRegistry2_0 is
       nonce: s_storage.nonce,
       configCount: s_storage.configCount,
       latestConfigBlockNumber: s_storage.latestConfigBlockNumber,
-      ownerLinkBalance: s_storage.ownerLinkBalance
+      ownerPliBalance: s_storage.ownerPliBalance
     });
     s_fallbackGasPrice = onchainConfigStruct.fallbackGasPrice;
-    s_fallbackLinkPrice = onchainConfigStruct.fallbackLinkPrice;
+    s_fallbackPliPrice = onchainConfigStruct.fallbackPliPrice;
 
     uint32 previousConfigBlockNumber = s_storage.latestConfigBlockNumber;
     s_storage.latestConfigBlockNumber = uint32(block.number);
@@ -483,8 +483,8 @@ contract KeeperRegistry2_0 is
   {
     state = State({
       nonce: s_storage.nonce,
-      ownerLinkBalance: s_storage.ownerLinkBalance,
-      expectedLinkBalance: s_expectedLinkBalance,
+      ownerPliBalance: s_storage.ownerPliBalance,
+      expectedPliBalance: s_expectedPliBalance,
       totalPremium: s_hotVars.totalPremium,
       numUpkeeps: s_upkeepIDs.length(),
       configCount: s_storage.configCount,
@@ -496,7 +496,7 @@ contract KeeperRegistry2_0 is
 
     config = OnchainConfig({
       paymentPremiumPPB: s_hotVars.paymentPremiumPPB,
-      flatFeeMicroLink: s_hotVars.flatFeeMicroLink,
+      flatFeeMicroPli: s_hotVars.flatFeeMicroPli,
       checkGasLimit: s_storage.checkGasLimit,
       stalenessSeconds: s_hotVars.stalenessSeconds,
       gasCeilingMultiplier: s_hotVars.gasCeilingMultiplier,
@@ -505,7 +505,7 @@ contract KeeperRegistry2_0 is
       maxCheckDataSize: s_storage.maxCheckDataSize,
       maxPerformDataSize: s_storage.maxPerformDataSize,
       fallbackGasPrice: s_fallbackGasPrice,
-      fallbackLinkPrice: s_fallbackLinkPrice,
+      fallbackPliPrice: s_fallbackPliPrice,
       transcoder: s_storage.transcoder,
       registrar: s_storage.registrar
     });
@@ -527,8 +527,8 @@ contract KeeperRegistry2_0 is
    */
   function getMaxPaymentForGas(uint32 gasLimit) public view returns (uint96 maxPayment) {
     HotVars memory hotVars = s_hotVars;
-    (uint256 fastGasWei, uint256 linkNative) = _getFeedData(hotVars);
-    return _getMaxLinkPayment(hotVars, gasLimit, s_storage.maxPerformDataSize, fastGasWei, linkNative, false);
+    (uint256 fastGasWei, uint256 pliNative) = _getFeedData(hotVars);
+    return _getMaxPliPayment(hotVars, gasLimit, s_storage.maxPerformDataSize, fastGasWei, pliNative, false);
   }
 
   /**
@@ -625,7 +625,7 @@ contract KeeperRegistry2_0 is
   function _decodeReport(bytes memory rawReport) internal pure returns (Report memory) {
     (
       uint256 fastGasWei,
-      uint256 linkNative,
+      uint256 pliNative,
       uint256[] memory upkeepIds,
       PerformDataWrapper[] memory wrappedPerformDatas
     ) = abi.decode(rawReport, (uint256, uint256, uint256[], PerformDataWrapper[]));
@@ -634,7 +634,7 @@ contract KeeperRegistry2_0 is
     return
       Report({
         fastGasWei: fastGasWei,
-        linkNative: linkNative,
+        pliNative: pliNative,
         upkeepIds: upkeepIds,
         wrappedPerformDatas: wrappedPerformDatas
       });
@@ -647,7 +647,7 @@ contract KeeperRegistry2_0 is
     uint256 upkeepId,
     PerformDataWrapper memory wrappedPerformData,
     Upkeep memory upkeep,
-    uint96 maxLinkPayment
+    uint96 maxPliPayment
   ) internal returns (bool) {
     if (wrappedPerformData.checkBlockNumber < upkeep.lastPerformBlockNumber) {
       // Can happen when another report performed this upkeep after this report was generated
@@ -670,8 +670,8 @@ contract KeeperRegistry2_0 is
       return false;
     }
 
-    if (upkeep.balance < maxLinkPayment) {
-      // Can happen due to flucutations in gas / link prices
+    if (upkeep.balance < maxPliPayment) {
+      // Can happen due to flucutations in gas / pli prices
       emit InsufficientFundsUpkeepReport(upkeepId);
       return false;
     }
@@ -733,7 +733,7 @@ contract KeeperRegistry2_0 is
     uint256 upkeepId,
     UpkeepTransmitInfo memory upkeepTransmitInfo,
     uint256 fastGasWei,
-    uint256 linkNative,
+    uint256 pliNative,
     uint16 numBatchedUpkeeps
   ) internal returns (uint96 gasReimbursement, uint96 premium) {
     (gasReimbursement, premium) = _calculatePaymentAmount(
@@ -741,7 +741,7 @@ contract KeeperRegistry2_0 is
       upkeepTransmitInfo.gasUsed,
       upkeepTransmitInfo.gasOverhead,
       fastGasWei,
-      linkNative,
+      pliNative,
       numBatchedUpkeeps,
       true
     );
@@ -807,7 +807,7 @@ contract KeeperRegistry2_0 is
       UpkeepFailureReason upkeepFailureReason,
       uint256 gasUsed,
       uint256 fastGasWei,
-      uint256 linkNative
+      uint256 pliNative
     )
   {
     // Executed through logic contract
@@ -852,10 +852,10 @@ contract KeeperRegistry2_0 is
   }
 
   /**
-   * @notice adds LINK funding for an upkeep by transferring from the sender's
-   * LINK balance
+   * @notice adds PLI funding for an upkeep by transferring from the sender's
+   * PLI balance
    * @param id upkeep to fund
-   * @param amount number of LINK to transfer
+   * @param amount number of PLI to transfer
    */
   function addFunds(uint256 id, uint96 amount) external override {
     // Executed through logic contract
@@ -968,7 +968,7 @@ contract KeeperRegistry2_0 is
   ////////
 
   /**
-   * @notice recovers LINK funds improperly transferred to the registry
+   * @notice recovers PLI funds improperly transferred to the registry
    * @dev In principle this function’s execution cost could exceed block
    * gas limit. However, in our anticipated deployment, the number of upkeeps and
    * transmitters will be low enough to avoid this problem.
@@ -980,7 +980,7 @@ contract KeeperRegistry2_0 is
   }
 
   /**
-   * @notice withdraws LINK funds collected through cancellation fees
+   * @notice withdraws PLI funds collected through cancellation fees
    */
   function withdrawOwnerFunds() external {
     // Executed through logic contract

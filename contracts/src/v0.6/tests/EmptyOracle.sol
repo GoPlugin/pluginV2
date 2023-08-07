@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
-import "../interfaces/ChainlinkRequestInterface.sol";
+import "../interfaces/PluginRequestInterface.sol";
 import "../interfaces/OracleInterface.sol";
 
 /* solhint-disable no-empty-blocks */
 
-contract EmptyOracle is ChainlinkRequestInterface, OracleInterface {
+contract EmptyOracle is PluginRequestInterface, OracleInterface {
 
   function cancelOracleRequest(bytes32, uint256, bytes4, uint256) external override {}
   function fulfillOracleRequest(bytes32, uint256, address, bytes4, uint256, bytes32) external override returns (bool) {}

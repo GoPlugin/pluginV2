@@ -9,18 +9,18 @@ import "./vendor/Address.sol";
 contract AuthorizedForwarder is ConfirmedOwnerWithProposal, AuthorizedReceiver {
   using Address for address;
 
-  address public immutable getChainlinkToken;
+  address public immutable getPluginToken;
 
   event OwnershipTransferRequestedWithMessage(address indexed from, address indexed to, bytes message);
 
   constructor(
-    address link,
+    address pli,
     address owner,
     address recipient,
     bytes memory message
   ) ConfirmedOwnerWithProposal(owner, recipient) {
-    require(link != address(0));
-    getChainlinkToken = link;
+    require(pli != address(0));
+    getPluginToken = pli;
     if (recipient != address(0)) {
       emit OwnershipTransferRequestedWithMessage(owner, recipient, message);
     }
@@ -41,7 +41,7 @@ contract AuthorizedForwarder is ConfirmedOwnerWithProposal, AuthorizedReceiver {
    * @param data to forward
    */
   function forward(address to, bytes calldata data) external validateAuthorizedSender {
-    require(to != getChainlinkToken, "Cannot forward to Link token");
+    require(to != getPluginToken, "Cannot forward to Pli token");
     _forward(to, data);
   }
 

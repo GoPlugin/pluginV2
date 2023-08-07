@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity >0.7.6 <0.8.21;
 
-import "./interfaces/LinkTokenInterface.sol";
+import "@goplugin/contractsv2/src/v0.8/interfaces/PliTokenInterface.sol";
 import "./interfaces/BlockhashStoreInterface.sol";
 import "./interfaces/AggregatorV3Interface.sol";
 import "./interfaces/VRFCoordinatorV2Interface.sol";
@@ -18,8 +18,8 @@ contract VRFCoordinatorV2 is
   VRFCoordinatorV2Interface,
   ERC677ReceiverInterface
 {
-  LinkTokenInterface public immutable LINK;
-  AggregatorV3Interface public immutable LINK_ETH_FEED;
+  PliTokenInterface public immutable PLI;
+  AggregatorV3Interface public immutable PLI_ETH_FEED;
   BlockhashStoreInterface public immutable BLOCKHASH_STORE;
 
   // We need to maintain a list of consuming addresses.
@@ -41,7 +41,7 @@ contract VRFCoordinatorV2 is
   // at fulfillment time.
   struct Subscription {
     // There are only 1e9*1e18 = 1e27 juels in existence, so the balance can fit in uint96 (2^96 ~ 7e28)
-    uint96 balance; // Common link balance used for all consumer requests.
+    uint96 balance; // Common pli balance used for all consumer requests.
     uint64 reqCount; // For fee tiers
   }
   // We use the config for the mgmt APIs
@@ -66,9 +66,9 @@ contract VRFCoordinatorV2 is
   // We make the sub count public so that its possible to
   // get all the current subscriptions via getSubscription.
   uint64 private s_currentSubId;
-  // s_totalBalance tracks the total link sent to/from
+  // s_totalBalance tracks the total pli sent to/from
   // this contract through onTokenTransfer, cancelSubscription and oracleWithdraw.
-  // A discrepancy with this contract's link balance indicates someone
+  // A discrepancy with this contract's pli balance indicates someone
   // sent tokens using transfer and so we may need to use recoverFunds.
   uint96 private s_totalBalance;
   event SubscriptionCreated(uint64 indexed subId, address owner);
@@ -168,7 +168,7 @@ contract VRFCoordinatorV2 is
     address blockhashStore,
     address linkEthFeed
   ) ConfirmedOwner(msg.sender) {
-    LINK = LinkTokenInterface(link);
+    LINK = PliTokenInterface(link);
     LINK_ETH_FEED = AggregatorV3Interface(linkEthFeed);
     BLOCKHASH_STORE = BlockhashStoreInterface(blockhashStore);
   }

@@ -9,7 +9,7 @@ import "./AuthorizedForwarder.sol";
  * @notice Creates Operator contracts for node operators
  */
 contract OperatorFactory {
-  address public immutable getChainlinkToken;
+  address public immutable getPluginToken;
   mapping(address => bool) private s_created;
 
   event OperatorCreated(address indexed operator, address indexed owner, address indexed sender);
@@ -19,7 +19,7 @@ contract OperatorFactory {
    * @param linkAddress address
    */
   constructor(address linkAddress) {
-    getChainlinkToken = linkAddress;
+    getPluginToken = linkAddress;
   }
 
   /**
@@ -34,7 +34,7 @@ contract OperatorFactory {
    * @notice creates a new Operator contract with the msg.sender as owner
    */
   function deployNewOperator() external returns (address) {
-    Operator operator = new Operator(getChainlinkToken, msg.sender);
+    Operator operator = new Operator(getPluginToken, msg.sender);
 
     s_created[address(operator)] = true;
     emit OperatorCreated(address(operator), msg.sender, msg.sender);
@@ -47,12 +47,12 @@ contract OperatorFactory {
    * new Operator Forwarder with the Operator as the owner
    */
   function deployNewOperatorAndForwarder() external returns (address, address) {
-    Operator operator = new Operator(getChainlinkToken, msg.sender);
+    Operator operator = new Operator(getPluginToken, msg.sender);
     s_created[address(operator)] = true;
     emit OperatorCreated(address(operator), msg.sender, msg.sender);
 
     bytes memory tmp = new bytes(0);
-    AuthorizedForwarder forwarder = new AuthorizedForwarder(getChainlinkToken, address(this), address(operator), tmp);
+    AuthorizedForwarder forwarder = new AuthorizedForwarder(getPluginToken, address(this), address(operator), tmp);
     s_created[address(forwarder)] = true;
     emit AuthorizedForwarderCreated(address(forwarder), address(this), msg.sender);
 
@@ -64,7 +64,7 @@ contract OperatorFactory {
    */
   function deployNewForwarder() external returns (address) {
     bytes memory tmp = new bytes(0);
-    AuthorizedForwarder forwarder = new AuthorizedForwarder(getChainlinkToken, msg.sender, address(0), tmp);
+    AuthorizedForwarder forwarder = new AuthorizedForwarder(getPluginToken, msg.sender, address(0), tmp);
 
     s_created[address(forwarder)] = true;
     emit AuthorizedForwarderCreated(address(forwarder), msg.sender, msg.sender);
@@ -76,7 +76,7 @@ contract OperatorFactory {
    * @notice creates a new Forwarder contract with the msg.sender as owner
    */
   function deployNewForwarderAndTransferOwnership(address to, bytes calldata message) external returns (address) {
-    AuthorizedForwarder forwarder = new AuthorizedForwarder(getChainlinkToken, msg.sender, to, message);
+    AuthorizedForwarder forwarder = new AuthorizedForwarder(getPluginToken, msg.sender, to, message);
 
     s_created[address(forwarder)] = true;
     emit AuthorizedForwarderCreated(address(forwarder), msg.sender, msg.sender);

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.7.0;
 
-import "./interfaces/LinkTokenInterface.sol";
+import "./interfaces/PliTokenInterface.sol";
 import "./interfaces/KeeperRegistryInterface.sol";
 import "./interfaces/TypeAndVersionInterface.sol";
 import "./vendor/SafeMath96.sol";
@@ -22,10 +22,10 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
 
   bytes4 private constant REGISTER_REQUEST_SELECTOR = this.register.selector;
 
-  uint256 private s_minLINKJuels;
+  uint256 private s_minPLIJuels;
   mapping(bytes32 => PendingRequest) private s_pendingRequests;
 
-  LinkTokenInterface public immutable LINK;
+  PliTokenInterface public immutable PLI;
 
   /**
    * @notice versions:
@@ -70,25 +70,25 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
     uint32 windowSizeInBlocks,
     uint16 allowedPerWindow,
     address keeperRegistry,
-    uint256 minLINKJuels
+    uint256 minPLIJuels
   );
 
-  constructor(address LINKAddress, uint256 minimumLINKJuels) ConfirmedOwner(msg.sender) {
-    LINK = LinkTokenInterface(LINKAddress);
-    s_minLINKJuels = minimumLINKJuels;
+  constructor(address PLIAddress, uint256 minimumPLIJuels) ConfirmedOwner(msg.sender) {
+    PLI = PliTokenInterface(PLIAddress);
+    s_minPLIJuels = minimumPLIJuels;
   }
 
   //EXTERNAL
 
   /**
-   * @notice register can only be called through transferAndCall on LINK contract
+   * @notice register can only be called through transferAndCall on PLI contract
    * @param name string of the upkeep to be registered
    * @param encryptedEmail email address of upkeep contact
    * @param upkeepContract address to perform upkeep on
    * @param gasLimit amount of gas to provide the target contract when performing upkeep
    * @param adminAddress address to cancel upkeep and withdraw remaining funds
    * @param checkData data passed to the contract when checking for upkeep
-   * @param amount quantity of LINK upkeep is funded with (specified in Juels)
+   * @param amount quantity of PLI upkeep is funded with (specified in Juels)
    * @param source application sending this request
    */
   function register(
@@ -100,7 +100,7 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
     bytes calldata checkData,
     uint96 amount,
     uint8 source
-  ) external onlyLINK {
+  ) external onlyPLI {
     require(adminAddress != address(0), "invalid admin address");
     bytes32 hash = keccak256(abi.encode(upkeepContract, gasLimit, adminAddress, checkData));
 
@@ -155,7 +155,7 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
     require(msg.sender == request.admin || msg.sender == owner(), "only admin / owner can cancel");
     require(request.admin != address(0), "request not found");
     delete s_pendingRequests[hash];
-    require(LINK.transfer(msg.sender, request.balance), "LINK token transfer failed");
+    require(PLI.transfer(msg.sender, request.balance), "PLI token transfer failed");
     emit RegistrationRejected(hash);
   }
 
@@ -171,7 +171,7 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
     uint32 windowSizeInBlocks,
     uint16 allowedPerWindow,
     address keeperRegistry,
-    uint256 minLINKJuels
+    uint256 minPLIJuels
   ) external onlyOwner {
     s_config = AutoApprovedConfig({
       enabled: enabled,
@@ -180,10 +180,10 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
       windowStart: 0,
       approvedInCurrentWindow: 0
     });
-    s_minLINKJuels = minLINKJuels;
+    s_minPLIJuels = minPLIJuels;
     s_keeperRegistry = KeeperRegistryBaseInterface(keeperRegistry);
 
-    emit ConfigChanged(enabled, windowSizeInBlocks, allowedPerWindow, keeperRegistry, minLINKJuels);
+    emit ConfigChanged(enabled, windowSizeInBlocks, allowedPerWindow, keeperRegistry, minPLIJuels);
   }
 
   /**
@@ -197,7 +197,7 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
       uint32 windowSizeInBlocks,
       uint16 allowedPerWindow,
       address keeperRegistry,
-      uint256 minLINKJuels,
+      uint256 minPLIJuels,
       uint64 windowStart,
       uint16 approvedInCurrentWindow
     )
@@ -208,7 +208,7 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
       config.windowSizeInBlocks,
       config.allowedPerWindow,
       address(s_keeperRegistry),
-      s_minLINKJuels,
+      s_minPLIJuels,
       config.windowStart,
       config.approvedInCurrentWindow
     );
@@ -223,16 +223,16 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
   }
 
   /**
-   * @notice Called when LINK is sent to the contract via `transferAndCall`
-   * @param amount Amount of LINK sent (specified in Juels)
+   * @notice Called when PLI is sent to the contract via `transferAndCall`
+   * @param amount Amount of PLI sent (specified in Juels)
    * @param data Payload of the transaction
    */
   function onTokenTransfer(
     address, /* sender */
     uint256 amount,
     bytes calldata data
-  ) external onlyLINK permittedFunctionsForLINK(data) isActualAmount(amount, data) {
-    require(amount >= s_minLINKJuels, "Insufficient payment");
+  ) external onlyPLI permittedFunctionsForPLI(data) isActualAmount(amount, data) {
+    require(amount >= s_minPLIJuels, "Insufficient payment");
     (bool success, ) = address(this).delegatecall(data);
     // calls register
     require(success, "Unable to create request");
@@ -269,7 +269,7 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
     // register upkeep
     uint256 upkeepId = keeperRegistry.registerUpkeep(upkeepContract, gasLimit, adminAddress, checkData);
     // fund upkeep
-    bool success = LINK.transferAndCall(address(keeperRegistry), amount, abi.encode(upkeepId));
+    bool success = PLI.transferAndCall(address(keeperRegistry), amount, abi.encode(upkeepId));
     require(success, "failed to fund upkeep");
 
     emit RegistrationApproved(hash, name, upkeepId);
@@ -297,10 +297,10 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
   //MODIFIERS
 
   /**
-   * @dev Reverts if not sent from the LINK token
+   * @dev Reverts if not sent from the PLI token
    */
-  modifier onlyLINK() {
-    require(msg.sender == address(LINK), "Must use LINK token");
+  modifier onlyPLI() {
+    require(msg.sender == address(PLI), "Must use PLI token");
     _;
   }
 
@@ -308,7 +308,7 @@ contract UpkeepRegistrationRequests is TypeAndVersionInterface, ConfirmedOwner {
    * @dev Reverts if the given data does not begin with the `register` function selector
    * @param _data The data payload of the request
    */
-  modifier permittedFunctionsForLINK(bytes memory _data) {
+  modifier permittedFunctionsForPLI(bytes memory _data) {
     bytes4 funcSelector;
     assembly {
       // solhint-disable-next-line avoid-low-level-calls

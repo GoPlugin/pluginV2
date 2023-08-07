@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 /**
-  The Cron contract is a chainlink keepers-powered cron job runner for smart contracts.
+  The Cron contract is a plugin keepers-powered cron job runner for smart contracts.
   The contract enables developers to trigger actions on various targets using cron
   strings to specify the cadence. For example, a user may have 3 tasks that require
   regular service in their dapp ecosystem:
@@ -9,7 +9,7 @@
     2) 0xAB..CD, update(2), "30 12 * * 0-4" --> runs update(2) on 0xAB..CD weekdays at 12:30
     3) 0x12..34, trigger(), "0 * * * *"     --> runs trigger() on 0x12..34 hourly
 
-  To use this contract, a user first deploys this contract and registers it on the chainlink
+  To use this contract, a user first deploys this contract and registers it on the plugin
   keeper registry. Then the user adds cron jobs by following these steps:
     1) Convert a cron string to an encoded cron spec by calling encodeCronString()
     2) Take the encoding, target, and handler, and create a job by sending a tx to createCronJob()

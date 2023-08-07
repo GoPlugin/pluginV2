@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./interfaces/LinkTokenInterface.sol";
+import "@goplugin/contractsv2/src/v0.8/interfaces/PliTokenInterface.sol";
 import "./interfaces/VRFV2WrapperInterface.sol";
 
 /** *******************************************************************************
@@ -28,7 +28,7 @@ import "./interfaces/VRFV2WrapperInterface.sol";
  * @dev fulfillment with the randomness result.
  */
 abstract contract VRFV2WrapperConsumerBase {
-  LinkTokenInterface internal immutable LINK;
+  PliTokenInterface internal immutable LINK;
   VRFV2WrapperInterface internal immutable VRF_V2_WRAPPER;
 
   /**
@@ -36,7 +36,7 @@ abstract contract VRFV2WrapperConsumerBase {
    * @param _vrfV2Wrapper is the address of the VRFV2Wrapper contract
    */
   constructor(address _link, address _vrfV2Wrapper) {
-    LINK = LinkTokenInterface(_link);
+    LINK = PliTokenInterface(_link);
     VRF_V2_WRAPPER = VRFV2WrapperInterface(_vrfV2Wrapper);
   }
 

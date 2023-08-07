@@ -2,8 +2,8 @@
 pragma solidity ^0.8.0;
 
 /**
- * @title Chainlink Proof-of-Reserve address list interface.
- * @notice This interface enables Chainlink nodes to get the list addresses to be used in a PoR feed. A single
+ * @title Plugin Proof-of-Reserve address list interface.
+ * @notice This interface enables Plugin nodes to get the list addresses to be used in a PoR feed. A single
  * contract that implements this interface can only store an address list for a single PoR feed.
  * @dev All functions in this interface are expected to be called off-chain, so gas usage is not a big concern.
  * This makes it possible to store addresses in optimized data types and convert them to human-readable strings

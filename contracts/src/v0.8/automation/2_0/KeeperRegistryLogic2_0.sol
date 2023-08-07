@@ -16,16 +16,16 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
 
   /**
    * @param paymentModel one of Default, Arbitrum, Optimism
-   * @param link address of the LINK Token
-   * @param linkNativeFeed address of the LINK/Native price feed
+   * @param pli address of the PLI Token
+   * @param pliNativeFeed address of the PLI/Native price feed
    * @param fastGasFeed address of the Fast Gas price feed
    */
   constructor(
     PaymentModel paymentModel,
-    address link,
-    address linkNativeFeed,
+    address pli,
+    address pliNativeFeed,
     address fastGasFeed
-  ) KeeperRegistryBase2_0(paymentModel, link, linkNativeFeed, fastGasFeed) {}
+  ) KeeperRegistryBase2_0(paymentModel, pli, pliNativeFeed, fastGasFeed) {}
 
   function checkUpkeep(uint256 id)
     external
@@ -36,7 +36,7 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
       UpkeepFailureReason upkeepFailureReason,
       uint256 gasUsed,
       uint256 fastGasWei,
-      uint256 linkNative
+      uint256 pliNative
     )
   {
     HotVars memory hotVars = s_hotVars;
@@ -45,31 +45,31 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
       return (false, bytes(""), UpkeepFailureReason.UPKEEP_CANCELLED, gasUsed, 0, 0);
     if (upkeep.paused) return (false, bytes(""), UpkeepFailureReason.UPKEEP_PAUSED, gasUsed, 0, 0);
 
-    (fastGasWei, linkNative) = _getFeedData(hotVars);
-    uint96 maxLinkPayment = _getMaxLinkPayment(
+    (fastGasWei, pliNative) = _getFeedData(hotVars);
+    uint96 maxPliPayment = _getMaxPliPayment(
       hotVars,
       upkeep.executeGas,
       s_storage.maxPerformDataSize,
       fastGasWei,
-      linkNative,
+      pliNative,
       false
     );
-    if (upkeep.balance < maxLinkPayment)
-      return (false, bytes(""), UpkeepFailureReason.INSUFFICIENT_BALANCE, gasUsed, fastGasWei, linkNative);
+    if (upkeep.balance < maxPliPayment)
+      return (false, bytes(""), UpkeepFailureReason.INSUFFICIENT_BALANCE, gasUsed, fastGasWei, pliNative);
 
     gasUsed = gasleft();
     bytes memory callData = abi.encodeWithSelector(CHECK_SELECTOR, s_checkData[id]);
     (bool success, bytes memory result) = upkeep.target.call{gas: s_storage.checkGasLimit}(callData);
     gasUsed = gasUsed - gasleft();
 
-    if (!success) return (false, bytes(""), UpkeepFailureReason.TARGET_CHECK_REVERTED, gasUsed, fastGasWei, linkNative);
+    if (!success) return (false, bytes(""), UpkeepFailureReason.TARGET_CHECK_REVERTED, gasUsed, fastGasWei, pliNative);
 
     bytes memory userPerformData;
     (upkeepNeeded, userPerformData) = abi.decode(result, (bool, bytes));
     if (!upkeepNeeded)
-      return (false, bytes(""), UpkeepFailureReason.UPKEEP_NOT_NEEDED, gasUsed, fastGasWei, linkNative);
+      return (false, bytes(""), UpkeepFailureReason.UPKEEP_NOT_NEEDED, gasUsed, fastGasWei, pliNative);
     if (userPerformData.length > s_storage.maxPerformDataSize)
-      return (false, bytes(""), UpkeepFailureReason.PERFORM_DATA_EXCEEDS_LIMIT, gasUsed, fastGasWei, linkNative);
+      return (false, bytes(""), UpkeepFailureReason.PERFORM_DATA_EXCEEDS_LIMIT, gasUsed, fastGasWei, pliNative);
 
     performData = abi.encode(
       PerformDataWrapper({
@@ -78,28 +78,28 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
         performData: userPerformData
       })
     );
-    return (true, performData, UpkeepFailureReason.NONE, gasUsed, fastGasWei, linkNative);
+    return (true, performData, UpkeepFailureReason.NONE, gasUsed, fastGasWei, pliNative);
   }
 
   /**
    * @dev Called through KeeperRegistry main contract
    */
   function withdrawOwnerFunds() external onlyOwner {
-    uint96 amount = s_storage.ownerLinkBalance;
+    uint96 amount = s_storage.ownerPliBalance;
 
-    s_expectedLinkBalance = s_expectedLinkBalance - amount;
-    s_storage.ownerLinkBalance = 0;
+    s_expectedPliBalance = s_expectedPliBalance - amount;
+    s_storage.ownerPliBalance = 0;
 
     emit OwnerFundsWithdrawn(amount);
-    i_link.transfer(msg.sender, amount);
+    i_pli.transfer(msg.sender, amount);
   }
 
   /**
    * @dev Called through KeeperRegistry main contract
    */
   function recoverFunds() external onlyOwner {
-    uint256 total = i_link.balanceOf(address(this));
-    i_link.transfer(msg.sender, total - s_expectedLinkBalance);
+    uint256 total = i_pli.balanceOf(address(this));
+    i_pli.transfer(msg.sender, total - s_expectedPliBalance);
   }
 
   /**
@@ -195,7 +195,7 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
       }
     }
     s_upkeep[id].balance = upkeep.balance - cancellationFee;
-    s_storage.ownerLinkBalance = s_storage.ownerLinkBalance + cancellationFee;
+    s_storage.ownerPliBalance = s_storage.ownerPliBalance + cancellationFee;
 
     emit UpkeepCanceled(id, uint64(height));
   }
@@ -208,8 +208,8 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
     if (upkeep.maxValidBlocknumber != UINT32_MAX) revert UpkeepCancelled();
 
     s_upkeep[id].balance = upkeep.balance + amount;
-    s_expectedLinkBalance = s_expectedLinkBalance + amount;
-    i_link.transferFrom(msg.sender, address(this), amount);
+    s_expectedPliBalance = s_expectedPliBalance + amount;
+    i_pli.transferFrom(msg.sender, address(this), amount);
     emit FundsAdded(id, msg.sender, amount);
   }
 
@@ -223,9 +223,9 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
     if (upkeep.maxValidBlocknumber > block.number) revert UpkeepNotCanceled();
 
     uint96 amountToWithdraw = s_upkeep[id].balance;
-    s_expectedLinkBalance = s_expectedLinkBalance - amountToWithdraw;
+    s_expectedPliBalance = s_expectedPliBalance - amountToWithdraw;
     s_upkeep[id].balance = 0;
-    i_link.transfer(to, amountToWithdraw);
+    i_pli.transfer(to, amountToWithdraw);
     emit FundsWithdrawn(id, amountToWithdraw, to);
   }
 
@@ -260,9 +260,9 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
 
     uint96 balance = _updateTransmitterBalanceFromPool(from, s_hotVars.totalPremium, uint96(s_transmittersList.length));
     s_transmitters[from].balance = 0;
-    s_expectedLinkBalance = s_expectedLinkBalance - balance;
+    s_expectedPliBalance = s_expectedPliBalance - balance;
 
-    i_link.transfer(to, balance);
+    i_pli.transfer(to, balance);
 
     emit PaymentWithdrawn(from, balance, to, msg.sender);
   }
@@ -385,7 +385,7 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
       s_upkeepIDs.remove(id);
       emit UpkeepMigrated(id, upkeep.balance, destination);
     }
-    s_expectedLinkBalance = s_expectedLinkBalance - totalBalanceRemaining;
+    s_expectedPliBalance = s_expectedPliBalance - totalBalanceRemaining;
     bytes memory encodedUpkeeps = abi.encode(ids, upkeeps, checkDatas, admins);
     MigratableKeeperRegistryInterfaceV2(destination).receiveUpkeeps(
       UpkeepTranscoderInterfaceV2(s_storage.transcoder).transcodeUpkeeps(
@@ -394,7 +394,7 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
         encodedUpkeeps
       )
     );
-    i_link.transfer(destination, totalBalanceRemaining);
+    i_pli.transfer(destination, totalBalanceRemaining);
   }
 
   /**
@@ -454,7 +454,7 @@ contract KeeperRegistryLogic2_0 is KeeperRegistryBase2_0 {
       paused: paused
     });
     s_upkeepAdmin[id] = admin;
-    s_expectedLinkBalance = s_expectedLinkBalance + balance;
+    s_expectedPliBalance = s_expectedPliBalance + balance;
     s_checkData[id] = checkData;
     s_upkeepIDs.add(id);
   }

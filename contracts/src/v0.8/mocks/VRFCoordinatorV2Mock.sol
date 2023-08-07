@@ -2,13 +2,13 @@
 // A mock for testing code that relies on VRFCoordinatorV2.
 pragma solidity ^0.8.4;
 
-import "../interfaces/LinkTokenInterface.sol";
+import "../interfaces/PliTokenInterface.sol";
 import "../interfaces/VRFCoordinatorV2Interface.sol";
 import "../VRFConsumerBaseV2.sol";
 
 contract VRFCoordinatorV2Mock is VRFCoordinatorV2Interface {
   uint96 public immutable BASE_FEE;
-  uint96 public immutable GAS_PRICE_LINK;
+  uint96 public immutable GAS_PRICE_PLI;
   uint16 public immutable MAX_CONSUMERS = 100;
 
   error InvalidSubscription();
@@ -52,9 +52,9 @@ contract VRFCoordinatorV2Mock is VRFCoordinatorV2Interface {
   }
   mapping(uint256 => Request) s_requests; /* requestId */ /* request */
 
-  constructor(uint96 _baseFee, uint96 _gasPriceLink) {
+  constructor(uint96 _baseFee, uint96 _gasPricePli) {
     BASE_FEE = _baseFee;
-    GAS_PRICE_LINK = _gasPriceLink;
+    GAS_PRICE_PLI = _gasPricePli;
   }
 
   function consumerIsAdded(uint64 _subId, address _consumer) public view returns (bool) {
@@ -80,7 +80,7 @@ contract VRFCoordinatorV2Mock is VRFCoordinatorV2Interface {
    *
    * @dev This mock uses a simplified formula for calculating payment amount and gas usage, and does
    * @dev not account for all edge cases handled in the real VRF coordinator. When making requests
-   * @dev against the real coordinator a small amount of additional LINK is required.
+   * @dev against the real coordinator a small amount of additional PLI is required.
    *
    * @param _requestId the request to fulfill
    * @param _consumer the VRF randomness consumer to send the result to
@@ -120,7 +120,7 @@ contract VRFCoordinatorV2Mock is VRFCoordinatorV2Interface {
     bytes memory callReq = abi.encodeWithSelector(v.rawFulfillRandomWords.selector, _requestId, _words);
     (bool success, ) = _consumer.call{gas: req.callbackGasLimit}(callReq);
 
-    uint96 payment = uint96(BASE_FEE + ((startGas - gasleft()) * GAS_PRICE_LINK));
+    uint96 payment = uint96(BASE_FEE + ((startGas - gasleft()) * GAS_PRICE_PLI));
     if (s_subscriptions[req.subId].balance < payment) {
       revert InsufficientBalance();
     }
@@ -275,11 +275,11 @@ contract VRFCoordinatorV2Mock is VRFCoordinatorV2Interface {
     external
     view
     returns (
-      uint32 fulfillmentFlatFeeLinkPPMTier1,
-      uint32 fulfillmentFlatFeeLinkPPMTier2,
-      uint32 fulfillmentFlatFeeLinkPPMTier3,
-      uint32 fulfillmentFlatFeeLinkPPMTier4,
-      uint32 fulfillmentFlatFeeLinkPPMTier5,
+      uint32 fulfillmentFlatFeePliPPMTier1,
+      uint32 fulfillmentFlatFeePliPPMTier2,
+      uint32 fulfillmentFlatFeePliPPMTier3,
+      uint32 fulfillmentFlatFeePliPPMTier4,
+      uint32 fulfillmentFlatFeePliPPMTier5,
       uint24 reqsForTier2,
       uint24 reqsForTier3,
       uint24 reqsForTier4,
@@ -287,11 +287,11 @@ contract VRFCoordinatorV2Mock is VRFCoordinatorV2Interface {
     )
   {
     return (
-      100000, // 0.1 LINK
-      100000, // 0.1 LINK
-      100000, // 0.1 LINK
-      100000, // 0.1 LINK
-      100000, // 0.1 LINK
+      100000, // 0.1 PLI
+      100000, // 0.1 PLI
+      100000, // 0.1 PLI
+      100000, // 0.1 PLI
+      100000, // 0.1 PLI
       0,
       0,
       0,
@@ -299,7 +299,7 @@ contract VRFCoordinatorV2Mock is VRFCoordinatorV2Interface {
     );
   }
 
-  function getFallbackWeiPerUnitLink() external view returns (int256) {
+  function getFallbackWeiPerUnitPli() external view returns (int256) {
     return 4000000000000000; // 0.004 Ether
   }
 
