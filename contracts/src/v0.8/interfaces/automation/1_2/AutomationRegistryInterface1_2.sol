@@ -6,8 +6,8 @@ pragma solidity ^0.8.0;
  * @dev only used in params and return values
  * @member paymentPremiumPPB payment premium rate oracles receive on top of
  * being reimbursed for gas, measured in parts per billion
- * @member flatFeeMicroLink flat fee paid to oracles for performing upkeeps,
- * priced in MicroLink; can be used in conjunction with or independently of
+ * @member flatFeeMicroPli flat fee paid to oracles for performing upkeeps,
+ * priced in MicroPli; can be used in conjunction with or independently of
  * paymentPremiumPPB
  * @member blockCountPerTurn number of blocks each oracle has during their turn to
  * perform upkeep before it will be the next keeper's turn to submit
@@ -16,16 +16,16 @@ pragma solidity ^0.8.0;
  * be stale before switching to the fallback pricing
  * @member gasCeilingMultiplier multiplier to apply to the fast gas feed price
  * when calculating the payment ceiling for keepers
- * @member minUpkeepSpend minimum LINK that an upkeep must spend before cancelling
+ * @member minUpkeepSpend minimum PLI that an upkeep must spend before cancelling
  * @member maxPerformGas max executeGas allowed for an upkeep on this registry
  * @member fallbackGasPrice gas price used if the gas price feed is stale
- * @member fallbackLinkPrice LINK price used if the LINK price feed is stale
+ * @member fallbackPliPrice PLI price used if the PLI price feed is stale
  * @member transcoder address of the transcoder contract
  * @member registrar address of the registrar contract
  */
 struct Config {
   uint32 paymentPremiumPPB;
-  uint32 flatFeeMicroLink; // min 0.000001 LINK, max 4294 LINK
+  uint32 flatFeeMicroPli; // min 0.000001 PLI, max 4294 PLI
   uint24 blockCountPerTurn;
   uint32 checkGasLimit;
   uint24 stalenessSeconds;
@@ -33,7 +33,7 @@ struct Config {
   uint96 minUpkeepSpend;
   uint32 maxPerformGas;
   uint256 fallbackGasPrice;
-  uint256 fallbackLinkPrice;
+  uint256 fallbackPliPrice;
   address transcoder;
   address registrar;
 }
@@ -42,14 +42,14 @@ struct Config {
  * @notice state of the registry
  * @dev only used in params and return values
  * @member nonce used for ID generation
- * @member ownerLinkBalance withdrawable balance of LINK by contract owner
- * @member expectedLinkBalance the expected balance of LINK of the registry
+ * @member ownerPliBalance withdrawable balance of PLI by contract owner
+ * @member expectedPliBalance the expected balance of PLI of the registry
  * @member numUpkeeps total number of upkeeps on the registry
  */
 struct State {
   uint32 nonce;
-  uint96 ownerLinkBalance;
-  uint256 expectedLinkBalance;
+  uint96 ownerPliBalance;
+  uint256 expectedPliBalance;
   uint256 numUpkeeps;
 }
 
@@ -115,10 +115,10 @@ interface AutomationRegistryInterface is AutomationRegistryBaseInterface {
     view
     returns (
       bytes memory performData,
-      uint256 maxLinkPayment,
+      uint256 maxPliPayment,
       uint256 gasLimit,
       int256 gasWei,
-      int256 linkEth
+      int256 pliEth
     );
 }
 
@@ -127,9 +127,9 @@ interface AutomationRegistryExecutableInterface is AutomationRegistryBaseInterfa
     external
     returns (
       bytes memory performData,
-      uint256 maxLinkPayment,
+      uint256 maxPliPayment,
       uint256 gasLimit,
       uint256 adjustedGasWei,
-      uint256 linkEth
+      uint256 pliEth
     );
 }

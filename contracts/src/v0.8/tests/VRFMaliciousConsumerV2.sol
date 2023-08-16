@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "../interfaces/LinkTokenInterface.sol";
+import "../interfaces/PliTokenInterface.sol";
 import "../interfaces/VRFCoordinatorV2Interface.sol";
 import "../VRFConsumerBaseV2.sol";
 
@@ -9,14 +9,14 @@ contract VRFMaliciousConsumerV2 is VRFConsumerBaseV2 {
   uint256[] public s_randomWords;
   uint256 public s_requestId;
   VRFCoordinatorV2Interface COORDINATOR;
-  LinkTokenInterface LINKTOKEN;
+  PliTokenInterface PLITOKEN;
   uint64 public s_subId;
   uint256 public s_gasAvailable;
   bytes32 s_keyHash;
 
-  constructor(address vrfCoordinator, address link) VRFConsumerBaseV2(vrfCoordinator) {
+  constructor(address vrfCoordinator, address pli) VRFConsumerBaseV2(vrfCoordinator) {
     COORDINATOR = VRFCoordinatorV2Interface(vrfCoordinator);
-    LINKTOKEN = LinkTokenInterface(link);
+    PLITOKEN = PliTokenInterface(pli);
   }
 
   function setKeyHash(bytes32 keyHash) public {
@@ -36,8 +36,8 @@ contract VRFMaliciousConsumerV2 is VRFConsumerBaseV2 {
       s_subId = COORDINATOR.createSubscription();
       COORDINATOR.addConsumer(s_subId, address(this));
     }
-    // Approve the link transfer.
-    LINKTOKEN.transferAndCall(address(COORDINATOR), amount, abi.encode(s_subId));
+    // Approve the pli transfer.
+    PLITOKEN.transferAndCall(address(COORDINATOR), amount, abi.encode(s_subId));
   }
 
   function updateSubscription(address[] memory consumers) external {

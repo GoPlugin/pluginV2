@@ -6,24 +6,24 @@ pragma solidity ^0.8.0;
  * @dev only used in params and return values
  * @member paymentPremiumPPB payment premium rate oracles receive on top of
  * being reimbursed for gas, measured in parts per billion
- * @member flatFeeMicroLink flat fee paid to oracles for performing upkeeps,
- * priced in MicroLink; can be used in conjunction with or independently of
+ * @member flatFeeMicroPli flat fee paid to oracles for performing upkeeps,
+ * priced in MicroPli; can be used in conjunction with or independently of
  * paymentPremiumPPB
  * @member checkGasLimit gas limit when checking for upkeep
  * @member stalenessSeconds number of seconds that is allowed for feed data to
  * be stale before switching to the fallback pricing
  * @member gasCeilingMultiplier multiplier to apply to the fast gas feed price
  * when calculating the payment ceiling for keepers
- * @member minUpkeepSpend minimum LINK that an upkeep must spend before cancelling
+ * @member minUpkeepSpend minimum PLI that an upkeep must spend before cancelling
  * @member maxPerformGas max executeGas allowed for an upkeep on this registry
  * @member fallbackGasPrice gas price used if the gas price feed is stale
- * @member fallbackLinkPrice LINK price used if the LINK price feed is stale
+ * @member fallbackPliPrice PLI price used if the PLI price feed is stale
  * @member transcoder address of the transcoder contract
  * @member registrar address of the registrar contract
  */
 struct OnchainConfig {
   uint32 paymentPremiumPPB;
-  uint32 flatFeeMicroLink; // min 0.000001 LINK, max 4294 LINK
+  uint32 flatFeeMicroPli; // min 0.000001 PLI, max 4294 PLI
   uint32 checkGasLimit;
   uint24 stalenessSeconds;
   uint16 gasCeilingMultiplier;
@@ -32,7 +32,7 @@ struct OnchainConfig {
   uint32 maxCheckDataSize;
   uint32 maxPerformDataSize;
   uint256 fallbackGasPrice;
-  uint256 fallbackLinkPrice;
+  uint256 fallbackPliPrice;
   address transcoder;
   address registrar;
 }
@@ -41,8 +41,8 @@ struct OnchainConfig {
  * @notice state of the registry
  * @dev only used in params and return values
  * @member nonce used for ID generation
- * @member ownerLinkBalance withdrawable balance of LINK by contract owner
- * @member expectedLinkBalance the expected balance of LINK of the registry
+ * @member ownerPliBalance withdrawable balance of PLI by contract owner
+ * @member expectedPliBalance the expected balance of PLI of the registry
  * @member totalPremium the total premium collected on registry so far
  * @member numUpkeeps total number of upkeeps on the registry
  * @member configCount ordinal number of current config, out of all configs applied to this contract so far
@@ -53,8 +53,8 @@ struct OnchainConfig {
  */
 struct State {
   uint32 nonce;
-  uint96 ownerLinkBalance;
-  uint256 expectedLinkBalance;
+  uint96 ownerPliBalance;
+  uint256 expectedPliBalance;
   uint96 totalPremium;
   uint256 numUpkeeps;
   uint32 configCount;
@@ -170,7 +170,7 @@ interface AutomationRegistryInterface is AutomationRegistryBaseInterface {
       UpkeepFailureReason upkeepFailureReason,
       uint256 gasUsed,
       uint256 fastGasWei,
-      uint256 linkNative
+      uint256 pliNative
     );
 }
 
@@ -183,6 +183,6 @@ interface AutomationRegistryExecutableInterface is AutomationRegistryBaseInterfa
       UpkeepFailureReason upkeepFailureReason,
       uint256 gasUsed,
       uint256 fastGasWei,
-      uint256 linkNative
+      uint256 pliNative
     );
 }

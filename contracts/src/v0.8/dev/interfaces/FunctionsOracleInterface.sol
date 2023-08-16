@@ -4,18 +4,18 @@ pragma solidity ^0.8.6;
 import "./FunctionsBillingRegistryInterface.sol";
 
 /**
- * @title Chainlink Functions oracle interface.
+ * @title Plugin Functions oracle interface.
  */
 interface FunctionsOracleInterface {
   /**
    * @notice Gets the stored billing registry address
-   * @return registryAddress The address of Chainlink Functions billing registry contract
+   * @return registryAddress The address of Plugin Functions billing registry contract
    */
   function getRegistry() external view returns (address);
 
   /**
    * @notice Sets the stored billing registry address
-   * @param registryAddress The new address of Chainlink Functions billing registry contract
+   * @param registryAddress The new address of Plugin Functions billing registry contract
    */
   function setRegistry(address registryAddress) external;
 
@@ -57,9 +57,9 @@ interface FunctionsOracleInterface {
 
   /**
    * @notice Determine the fee charged by the DON that will be split between signing Node Operators for servicing the request
-   * @param data Encoded Chainlink Functions request data, use FunctionsClient API to encode a request
+   * @param data Encoded Plugin Functions request data, use FunctionsClient API to encode a request
    * @param billing The request's billing configuration
-   * @return fee Cost in Juels (1e18) of LINK
+   * @return fee Cost in Juels (1e18) of PLI
    */
   function getRequiredFee(bytes calldata data, FunctionsBillingRegistryInterface.RequestBilling calldata billing)
     external
@@ -70,9 +70,9 @@ interface FunctionsOracleInterface {
    * @notice Estimate the total cost that will be charged to a subscription to make a request: gas re-imbursement, plus DON fee, plus Registry fee
    * @param subscriptionId A unique subscription ID allocated by billing system,
    * a client can make requests from different contracts referencing the same subscription
-   * @param data Encoded Chainlink Functions request data, use FunctionsClient API to encode a request
+   * @param data Encoded Plugin Functions request data, use FunctionsClient API to encode a request
    * @param gasLimit Gas limit for the fulfillment callback
-   * @return billedCost Cost in Juels (1e18) of LINK
+   * @return billedCost Cost in Juels (1e18) of PLI
    */
   function estimateCost(
     uint64 subscriptionId,
@@ -85,7 +85,7 @@ interface FunctionsOracleInterface {
    * @notice Sends a request (encoded as data) using the provided subscriptionId
    * @param subscriptionId A unique subscription ID allocated by billing system,
    * a client can make requests from different contracts referencing the same subscription
-   * @param data Encoded Chainlink Functions request data, use FunctionsClient API to encode a request
+   * @param data Encoded Plugin Functions request data, use FunctionsClient API to encode a request
    * @param gasLimit Gas limit for the fulfillment callback
    * @return requestId A unique request identifier (unique per DON)
    */

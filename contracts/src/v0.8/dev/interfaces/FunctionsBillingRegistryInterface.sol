@@ -2,7 +2,7 @@
 pragma solidity ^0.8.6;
 
 /**
- * @title Chainlink Functions billing subscription registry interface.
+ * @title Plugin Functions billing subscription registry interface.
  */
 interface FunctionsBillingRegistryInterface {
   struct RequestBilling {
@@ -26,9 +26,9 @@ interface FunctionsBillingRegistryInterface {
 
   /**
    * @notice Determine the charged fee that will be paid to the Registry owner
-   * @param data Encoded Chainlink Functions request data, use FunctionsClient API to encode a request
+   * @param data Encoded Plugin Functions request data, use FunctionsClient API to encode a request
    * @param billing The request's billing configuration
-   * @return fee Cost in Juels (1e18) of LINK
+   * @return fee Cost in Juels (1e18) of PLI
    */
   function getRequiredFee(bytes calldata data, FunctionsBillingRegistryInterface.RequestBilling memory billing)
     external
@@ -37,11 +37,11 @@ interface FunctionsBillingRegistryInterface {
 
   /**
    * @notice Estimate the total cost to make a request: gas re-imbursement, plus DON fee, plus Registry fee
-   * @param gasLimit Encoded Chainlink Functions request data, use FunctionsClient API to encode a request
+   * @param gasLimit Encoded Plugin Functions request data, use FunctionsClient API to encode a request
    * @param gasPrice The request's billing configuration
    * @param donFee Fee charged by the DON that is paid to Oracle Node
    * @param registryFee Fee charged by the DON that is paid to Oracle Node
-   * @return costEstimate Cost in Juels (1e18) of LINK
+   * @return costEstimate Cost in Juels (1e18) of PLI
    */
   function estimateCost(
     uint32 gasLimit,
@@ -52,7 +52,7 @@ interface FunctionsBillingRegistryInterface {
 
   /**
    * @notice Initiate the billing process for an Functions request
-   * @param data Encoded Chainlink Functions request data, use FunctionsClient API to encode a request
+   * @param data Encoded Plugin Functions request data, use FunctionsClient API to encode a request
    * @param billing Billing configuration for the request
    * @return requestId - A unique identifier of the request. Can be used to match a request to a response in fulfillRequest.
    * @dev Only callable by a node that has been approved on the Registry

@@ -133,7 +133,7 @@ contract KeeperRegistry1_1 is
 
   /**
    * @param pli address of the PLI Token
-   * @param lpliEthFeed address of the PLI/ETH price feed
+   * @param pliEthFeed address of the PLI/ETH price feed
    * @param fastGasFeed address of the Fast Gas price feed
    * @param paymentPremiumPPB payment premium rate oracles receive on top of
    * being reimbursed for gas, measured in parts per billion

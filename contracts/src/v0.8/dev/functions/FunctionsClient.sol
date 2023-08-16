@@ -6,8 +6,8 @@ import {FunctionsClientInterface} from "../interfaces/FunctionsClientInterface.s
 import {FunctionsOracleInterface} from "../interfaces/FunctionsOracleInterface.sol";
 
 /**
- * @title The Chainlink Functions client contract
- * @notice Contract writers can inherit this contract in order to create Chainlink Functions requests
+ * @title The Plugin Functions client contract
+ * @notice Contract writers can inherit this contract in order to create Plugin Functions requests
  */
 abstract contract FunctionsClient is FunctionsClientInterface {
   FunctionsOracleInterface internal s_oracle;
@@ -36,7 +36,7 @@ abstract contract FunctionsClient is FunctionsClientInterface {
    * @param req The initialized Functions.Request
    * @param subscriptionId The subscription ID
    * @param gasLimit gas limit for the fulfillment callback
-   * @return billedCost Cost in Juels (1e18) of LINK
+   * @return billedCost Cost in Juels (1e18) of PLI
    */
   function estimateCost(
     Functions.Request memory req,
@@ -48,7 +48,7 @@ abstract contract FunctionsClient is FunctionsClientInterface {
   }
 
   /**
-   * @notice Sends a Chainlink Functions request to the stored oracle address
+   * @notice Sends a Plugin Functions request to the stored oracle address
    * @param req The initialized Functions.Request
    * @param subscriptionId The subscription ID
    * @param gasLimit gas limit for the fulfillment callback
@@ -85,7 +85,7 @@ abstract contract FunctionsClient is FunctionsClientInterface {
     bytes32 requestId,
     bytes memory response,
     bytes memory err
-  ) external override recordChainlinkFulfillment(requestId) {
+  ) external override recordPluginFulfillment(requestId) {
     fulfillRequest(requestId, response, err);
   }
 
@@ -101,7 +101,7 @@ abstract contract FunctionsClient is FunctionsClientInterface {
    * @notice Gets the stored address of the oracle contract
    * @return The address of the oracle contract
    */
-  function getChainlinkOracleAddress() internal view returns (address) {
+  function getPluginOracleAddress() internal view returns (address) {
     return address(s_oracle);
   }
 
@@ -120,7 +120,7 @@ abstract contract FunctionsClient is FunctionsClientInterface {
    * Emits RequestFulfilled event.
    * @param requestId The request ID for fulfillment
    */
-  modifier recordChainlinkFulfillment(bytes32 requestId) {
+  modifier recordPluginFulfillment(bytes32 requestId) {
     if (msg.sender != s_pendingRequests[requestId]) {
       revert SenderIsNotRegistry();
     }

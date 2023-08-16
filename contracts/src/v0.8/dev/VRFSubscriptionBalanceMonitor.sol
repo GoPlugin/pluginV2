@@ -5,7 +5,7 @@ pragma solidity 0.8.6;
 import "../ConfirmedOwner.sol";
 import "../interfaces/automation/KeeperCompatibleInterface.sol";
 import "../interfaces/VRFCoordinatorV2Interface.sol";
-import "../interfaces/LinkTokenInterface.sol";
+import "../interfaces/PliTokenInterface.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
 /**
@@ -14,7 +14,7 @@ import "@openzeppelin/contracts/security/Pausable.sol";
  */
 contract VRFSubscriptionBalanceMonitor is ConfirmedOwner, Pausable, KeeperCompatibleInterface {
   VRFCoordinatorV2Interface public COORDINATOR;
-  LinkTokenInterface public LINKTOKEN;
+  PliTokenInterface public PLITOKEN;
 
   uint256 private constant MIN_GAS_FOR_TRANSFER = 55_000;
 
@@ -24,7 +24,7 @@ contract VRFSubscriptionBalanceMonitor is ConfirmedOwner, Pausable, KeeperCompat
   event TopUpFailed(uint64 indexed subscriptionId);
   event KeeperRegistryAddressUpdated(address oldAddress, address newAddress);
   event VRFCoordinatorV2AddressUpdated(address oldAddress, address newAddress);
-  event LinkTokenAddressUpdated(address oldAddress, address newAddress);
+  event PliTokenAddressUpdated(address oldAddress, address newAddress);
   event MinWaitPeriodUpdated(uint256 oldMinWaitPeriod, uint256 newMinWaitPeriod);
   event OutOfGas(uint256 lastId);
 
@@ -45,18 +45,18 @@ contract VRFSubscriptionBalanceMonitor is ConfirmedOwner, Pausable, KeeperCompat
   mapping(uint64 => Target) internal s_targets;
 
   /**
-   * @param linkTokenAddress the Link token address
+   * @param pliTokenAddress the Pli token address
    * @param coordinatorAddress the address of the vrf coordinator contract
    * @param keeperRegistryAddress the address of the keeper registry contract
    * @param minWaitPeriodSeconds the minimum wait period for addresses between funding
    */
   constructor(
-    address linkTokenAddress,
+    address pliTokenAddress,
     address coordinatorAddress,
     address keeperRegistryAddress,
     uint256 minWaitPeriodSeconds
   ) ConfirmedOwner(msg.sender) {
-    setLinkTokenAddress(linkTokenAddress);
+    setPliTokenAddress(pliTokenAddress);
     setVRFCoordinatorV2Address(coordinatorAddress);
     setKeeperRegistryAddress(keeperRegistryAddress);
     setMinWaitPeriodSeconds(minWaitPeriodSeconds);
@@ -109,7 +109,7 @@ contract VRFSubscriptionBalanceMonitor is ConfirmedOwner, Pausable, KeeperCompat
     uint64[] memory needsFunding = new uint64[](watchList.length);
     uint256 count = 0;
     uint256 minWaitPeriod = s_minWaitPeriodSeconds;
-    uint256 contractBalance = LINKTOKEN.balanceOf(address(this));
+    uint256 contractBalance = PLITOKEN.balanceOf(address(this));
     Target memory target;
     for (uint256 idx = 0; idx < watchList.length; idx++) {
       target = s_targets[watchList[idx]];
@@ -138,7 +138,7 @@ contract VRFSubscriptionBalanceMonitor is ConfirmedOwner, Pausable, KeeperCompat
    */
   function topUp(uint64[] memory needsFunding) public whenNotPaused {
     uint256 minWaitPeriodSeconds = s_minWaitPeriodSeconds;
-    uint256 contractBalance = LINKTOKEN.balanceOf(address(this));
+    uint256 contractBalance = PLITOKEN.balanceOf(address(this));
     Target memory target;
     for (uint256 idx = 0; idx < needsFunding.length; idx++) {
       target = s_targets[needsFunding[idx]];
@@ -149,7 +149,7 @@ contract VRFSubscriptionBalanceMonitor is ConfirmedOwner, Pausable, KeeperCompat
         subscriptionBalance < target.minBalanceJuels &&
         contractBalance >= target.topUpAmountJuels
       ) {
-        bool success = LINKTOKEN.transferAndCall(
+        bool success = PLITOKEN.transferAndCall(
           address(COORDINATOR),
           target.topUpAmountJuels,
           abi.encode(needsFunding[idx])
@@ -196,23 +196,23 @@ contract VRFSubscriptionBalanceMonitor is ConfirmedOwner, Pausable, KeeperCompat
   }
 
   /**
-   * @notice Withdraws the contract balance in LINK.
-   * @param amount the amount of LINK (in juels) to withdraw
+   * @notice Withdraws the contract balance in PLI.
+   * @param amount the amount of PLI (in juels) to withdraw
    * @param payee the address to pay
    */
   function withdraw(uint256 amount, address payable payee) external onlyOwner {
     require(payee != address(0));
     emit FundsWithdrawn(amount, payee);
-    LINKTOKEN.transfer(payee, amount);
+    PLITOKEN.transfer(payee, amount);
   }
 
   /**
-   * @notice Sets the LINK token address.
+   * @notice Sets the PLI token address.
    */
-  function setLinkTokenAddress(address linkTokenAddress) public onlyOwner {
-    require(linkTokenAddress != address(0));
-    emit LinkTokenAddressUpdated(address(LINKTOKEN), linkTokenAddress);
-    LINKTOKEN = LinkTokenInterface(linkTokenAddress);
+  function setPliTokenAddress(address pliTokenAddress) public onlyOwner {
+    require(pliTokenAddress != address(0));
+    emit PliTokenAddressUpdated(address(PLITOKEN), pliTokenAddress);
+    PLITOKEN = PliTokenInterface(pliTokenAddress);
   }
 
   /**

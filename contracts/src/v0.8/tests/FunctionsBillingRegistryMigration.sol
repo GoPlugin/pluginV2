@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
-import {LinkTokenInterface} from "../interfaces/LinkTokenInterface.sol";
+import {PliTokenInterface} from "../interfaces/PliTokenInterface.sol";
 import {AggregatorV3Interface} from "../interfaces/AggregatorV3Interface.sol";
 import {FunctionsBillingRegistryInterface} from "../dev/interfaces/FunctionsBillingRegistryInterface.sol";
 import {FunctionsOracleInterface} from "../dev/interfaces/FunctionsOracleInterface.sol";
@@ -28,8 +28,8 @@ contract FunctionsBillingRegistryMigration is
   ERC677ReceiverInterface,
   AuthorizedReceiver
 {
-  LinkTokenInterface public LINK;
-  AggregatorV3Interface public LINK_ETH_FEED;
+  PliTokenInterface public PLI;
+  AggregatorV3Interface public PLI_ETH_FEED;
   AuthorizedOriginReceiverInterface private ORACLE_WITH_ALLOWLIST;
 
   // We need to maintain a list of consuming addresses.
@@ -41,7 +41,7 @@ contract FunctionsBillingRegistryMigration is
   error InsufficientBalance();
   error InvalidConsumer(uint64 subscriptionId, address consumer);
   error InvalidSubscription();
-  error OnlyCallableFromLink();
+  error OnlyCallableFromPli();
   error InvalidCalldata();
   error MustBeSubOwner(address owner);
   error PendingRequestExists();
@@ -51,8 +51,8 @@ contract FunctionsBillingRegistryMigration is
 
   struct Subscription {
     // There are only 1e9*1e18 = 1e27 juels in existence, so the balance can fit in uint96 (2^96 ~ 7e28)
-    uint96 balance; // Common LINK balance that is controlled by the Registry to be used for all consumer requests.
-    uint96 blockedBalance; // LINK balance that is reserved to pay for pending consumer requests.
+    uint96 balance; // Common PLI balance that is controlled by the Registry to be used for all consumer requests.
+    uint96 blockedBalance; // PLI balance that is reserved to pay for pending consumer requests.
   }
   // We use the config for the mgmt APIs
   struct SubscriptionConfig {
@@ -76,9 +76,9 @@ contract FunctionsBillingRegistryMigration is
   // We make the sub count public so that its possible to
   // get all the current subscriptions via getSubscription.
   uint64 private s_currentsubscriptionId;
-  // s_totalBalance tracks the total link sent to/from
+  // s_totalBalance tracks the total pli sent to/from
   // this contract through onTokenTransfer, cancelSubscription and oracleWithdraw.
-  // A discrepancy with this contract's link balance indicates someone
+  // A discrepancy with this contract's pli balance indicates someone
   // sent tokens using transfer and so we may need to use recoverFunds.
   uint96 private s_totalBalance;
   event SubscriptionCreated(uint64 indexed subscriptionId, address owner);
@@ -90,12 +90,12 @@ contract FunctionsBillingRegistryMigration is
   event SubscriptionOwnerTransferred(uint64 indexed subscriptionId, address from, address to);
 
   error GasLimitTooBig(uint32 have, uint32 want);
-  error InvalidLinkWeiPrice(int256 linkWei);
+  error InvalidPliWeiPrice(int256 pliWei);
   error IncorrectRequestID();
   error PaymentTooLarge();
   error Reentrant();
 
-  mapping(address => uint96) /* oracle node */ /* LINK balance */
+  mapping(address => uint96) /* oracle node */ /* PLI balance */
     private s_withdrawableTokens;
   struct Commitment {
     uint64 subscriptionId;
@@ -132,7 +132,7 @@ contract FunctionsBillingRegistryMigration is
     // Reentrancy protection.
     bool reentrancyLock;
     // stalenessSeconds is how long before we consider the feed price to be stale
-    // and fallback to fallbackWeiPerUnitLink.
+    // and fallback to fallbackWeiPerUnitPli.
     uint32 stalenessSeconds;
     // Gas to cover transmitter oracle payment after we calculate the payment.
     // We make it configurable in case those operations are repriced.
@@ -142,13 +142,13 @@ contract FunctionsBillingRegistryMigration is
     // how many seconds it takes before we consider a request to be timed out
     uint32 requestTimeoutSeconds;
   }
-  int256 private s_fallbackWeiPerUnitLink;
+  int256 private s_fallbackWeiPerUnitPli;
   Config private s_config;
   event ConfigSet(
     uint32 maxGasLimit,
     uint32 stalenessSeconds,
     uint256 gasAfterPaymentCalculation,
-    int256 fallbackWeiPerUnitLink,
+    int256 fallbackWeiPerUnitPli,
     uint32 gasOverhead
   );
 
@@ -156,23 +156,23 @@ contract FunctionsBillingRegistryMigration is
    * @dev Initializes the contract.
    */
   function initialize(
-    address link,
-    address linkEthFeed,
+    address pli,
+    address pliEthFeed,
     address oracle
   ) public initializer {
     __Pausable_init();
     __ConfirmedOwner_initialize(msg.sender, address(0));
-    LINK = LinkTokenInterface(link);
-    LINK_ETH_FEED = AggregatorV3Interface(linkEthFeed);
+    PLI = PliTokenInterface(pli);
+    PLI_ETH_FEED = AggregatorV3Interface(pliEthFeed);
     ORACLE_WITH_ALLOWLIST = AuthorizedOriginReceiverInterface(oracle);
   }
 
   /**
-   * @notice Sets the configuration of the Chainlink Functions billing registry
+   * @notice Sets the configuration of the Plugin Functions billing registry
    * @param maxGasLimit global max for request gas limit
-   * @param stalenessSeconds if the eth/link feed is more stale then this, use the fallback price
+   * @param stalenessSeconds if the eth/pli feed is more stale then this, use the fallback price
    * @param gasAfterPaymentCalculation gas used in doing accounting after completing the gas measurement
-   * @param fallbackWeiPerUnitLink fallback eth/link price in the case of a stale feed
+   * @param fallbackWeiPerUnitPli fallback eth/pli price in the case of a stale feed
    * @param gasOverhead average gas execution cost used in estimating total cost
    * @param requestTimeoutSeconds e2e timeout after which user won't be charged
    */
@@ -180,12 +180,12 @@ contract FunctionsBillingRegistryMigration is
     uint32 maxGasLimit,
     uint32 stalenessSeconds,
     uint256 gasAfterPaymentCalculation,
-    int256 fallbackWeiPerUnitLink,
+    int256 fallbackWeiPerUnitPli,
     uint32 gasOverhead,
     uint32 requestTimeoutSeconds
   ) external onlyOwner {
-    if (fallbackWeiPerUnitLink <= 0) {
-      revert InvalidLinkWeiPrice(fallbackWeiPerUnitLink);
+    if (fallbackWeiPerUnitPli <= 0) {
+      revert InvalidPliWeiPrice(fallbackWeiPerUnitPli);
     }
     s_config = Config({
       maxGasLimit: maxGasLimit,
@@ -195,16 +195,16 @@ contract FunctionsBillingRegistryMigration is
       gasOverhead: gasOverhead,
       requestTimeoutSeconds: requestTimeoutSeconds
     });
-    s_fallbackWeiPerUnitLink = fallbackWeiPerUnitLink;
-    emit ConfigSet(maxGasLimit, stalenessSeconds, gasAfterPaymentCalculation, fallbackWeiPerUnitLink, gasOverhead);
+    s_fallbackWeiPerUnitPli = fallbackWeiPerUnitPli;
+    emit ConfigSet(maxGasLimit, stalenessSeconds, gasAfterPaymentCalculation, fallbackWeiPerUnitPli, gasOverhead);
   }
 
   /**
-   * @notice Gets the configuration of the Chainlink Functions billing registry
+   * @notice Gets the configuration of the Plugin Functions billing registry
    * @return maxGasLimit global max for request gas limit
-   * @return stalenessSeconds if the eth/link feed is more stale then this, use the fallback price
+   * @return stalenessSeconds if the eth/pli feed is more stale then this, use the fallback price
    * @return gasAfterPaymentCalculation gas used in doing accounting after completing the gas measurement
-   * @return fallbackWeiPerUnitLink fallback eth/link price in the case of a stale feed
+   * @return fallbackWeiPerUnitPli fallback eth/pli price in the case of a stale feed
    * @return gasOverhead average gas execution cost used in estimating total cost
    */
   function getConfig()
@@ -214,7 +214,7 @@ contract FunctionsBillingRegistryMigration is
       uint32 maxGasLimit,
       uint32 stalenessSeconds,
       uint256 gasAfterPaymentCalculation,
-      int256 fallbackWeiPerUnitLink,
+      int256 fallbackWeiPerUnitPli,
       uint32 gasOverhead
     )
   {
@@ -222,7 +222,7 @@ contract FunctionsBillingRegistryMigration is
       s_config.maxGasLimit,
       s_config.stalenessSeconds,
       s_config.gasAfterPaymentCalculation,
-      s_fallbackWeiPerUnitLink,
+      s_fallbackWeiPerUnitPli,
       s_config.gasOverhead
     );
   }
@@ -240,7 +240,7 @@ contract FunctionsBillingRegistryMigration is
   }
 
   /**
-   * @notice Owner cancel subscription, sends remaining link directly to the subscription owner.
+   * @notice Owner cancel subscription, sends remaining pli directly to the subscription owner.
    * @param subscriptionId subscription id
    * @dev notably can be called even if there are pending requests, outstanding ones may fail onchain
    */
@@ -253,18 +253,18 @@ contract FunctionsBillingRegistryMigration is
   }
 
   /**
-   * @notice Recover link sent with transfer instead of transferAndCall.
-   * @param to address to send link to
+   * @notice Recover pli sent with transfer instead of transferAndCall.
+   * @param to address to send pli to
    */
   function recoverFunds(address to) external onlyOwner {
-    uint256 externalBalance = LINK.balanceOf(address(this));
+    uint256 externalBalance = PLI.balanceOf(address(this));
     uint256 internalBalance = uint256(s_totalBalance);
     if (internalBalance > externalBalance) {
       revert BalanceInvariantViolated(internalBalance, externalBalance);
     }
     if (internalBalance < externalBalance) {
       uint256 amount = externalBalance - internalBalance;
-      LINK.transfer(to, amount);
+      PLI.transfer(to, amount);
       emit FundsRecovered(to, amount);
     }
     // If the balances are equal, nothing to be done.
@@ -296,17 +296,17 @@ contract FunctionsBillingRegistryMigration is
     uint96 donFee,
     uint96 registryFee
   ) public view override returns (uint96) {
-    int256 weiPerUnitLink;
-    weiPerUnitLink = getFeedData();
-    if (weiPerUnitLink <= 0) {
-      revert InvalidLinkWeiPrice(weiPerUnitLink);
+    int256 weiPerUnitPli;
+    weiPerUnitPli = getFeedData();
+    if (weiPerUnitPli <= 0) {
+      revert InvalidPliWeiPrice(weiPerUnitPli);
     }
     uint256 executionGas = s_config.gasOverhead + s_config.gasAfterPaymentCalculation + gasLimit;
-    // (1e18 juels/link) (wei/gas * gas) / (wei/link) = juels
-    uint256 paymentNoFee = (1e18 * gasPrice * executionGas) / uint256(weiPerUnitLink);
+    // (1e18 juels/pli) (wei/gas * gas) / (wei/pli) = juels
+    uint256 paymentNoFee = (1e18 * gasPrice * executionGas) / uint256(weiPerUnitPli);
     uint256 fee = uint256(donFee) + uint256(registryFee);
     if (paymentNoFee > (1e27 - fee)) {
-      revert PaymentTooLarge(); // Payment + fee cannot be more than all of the link in existence.
+      revert PaymentTooLarge(); // Payment + fee cannot be more than all of the plugin in existence.
     }
     return uint96(paymentNoFee + fee);
   }
@@ -503,18 +503,18 @@ contract FunctionsBillingRegistryMigration is
     uint256 reportValidationGas,
     uint256 weiPerUnitGas
   ) private view returns (ItemizedBill memory) {
-    int256 weiPerUnitLink;
-    weiPerUnitLink = getFeedData();
-    if (weiPerUnitLink <= 0) {
-      revert InvalidLinkWeiPrice(weiPerUnitLink);
+    int256 weiPerUnitPli;
+    weiPerUnitPli = getFeedData();
+    if (weiPerUnitPli <= 0) {
+      revert InvalidPliWeiPrice(weiPerUnitPli);
     }
-    // (1e18 juels/link) (wei/gas * gas) / (wei/link) = juels
+    // (1e18 juels/pli) (wei/gas * gas) / (wei/pli) = juels
     uint256 paymentNoFee = (1e18 *
       weiPerUnitGas *
-      (reportValidationGas + gasAfterPaymentCalculation + startGas - gasleft())) / uint256(weiPerUnitLink);
+      (reportValidationGas + gasAfterPaymentCalculation + startGas - gasleft())) / uint256(weiPerUnitPli);
     uint256 fee = uint256(donFee) + uint256(registryFee);
     if (paymentNoFee > (1e27 - fee)) {
-      revert PaymentTooLarge(); // Payment + fee cannot be more than all of the link in existence.
+      revert PaymentTooLarge(); // Payment + fee cannot be more than all of the pli in existence.
     }
     uint96 signerPayment = donFee / uint96(signerCount);
     uint96 transmitterPayment = uint96(paymentNoFee) + signerPayment;
@@ -525,16 +525,16 @@ contract FunctionsBillingRegistryMigration is
   function getFeedData() private view returns (int256) {
     uint32 stalenessSeconds = s_config.stalenessSeconds;
     bool staleFallback = stalenessSeconds > 0;
-    (, int256 weiPerUnitLink, , uint256 timestamp, ) = LINK_ETH_FEED.latestRoundData();
+    (, int256 weiPerUnitPli, , uint256 timestamp, ) = PLI_ETH_FEED.latestRoundData();
     // solhint-disable-next-line not-rely-on-time
     if (staleFallback && stalenessSeconds < block.timestamp - timestamp) {
-      weiPerUnitLink = s_fallbackWeiPerUnitLink;
+      weiPerUnitPli = s_fallbackWeiPerUnitPli;
     }
-    return weiPerUnitLink;
+    return weiPerUnitPli;
   }
 
   /*
-   * @notice Oracle withdraw LINK earned through fulfilling requests
+   * @notice Oracle withdraw PLI earned through fulfilling requests
    * @notice If amount is 0 the full balance will be withdrawn
    * @param recipient where to send the funds
    * @param amount amount to withdraw
@@ -548,7 +548,7 @@ contract FunctionsBillingRegistryMigration is
     }
     s_withdrawableTokens[msg.sender] -= amount;
     s_totalBalance -= amount;
-    if (!LINK.transfer(recipient, amount)) {
+    if (!PLI.transfer(recipient, amount)) {
       revert InsufficientBalance();
     }
   }
@@ -558,8 +558,8 @@ contract FunctionsBillingRegistryMigration is
     uint256 amount,
     bytes calldata data
   ) external override nonReentrant whenNotPaused {
-    if (msg.sender != address(LINK)) {
-      revert OnlyCallableFromLink();
+    if (msg.sender != address(PLI)) {
+      revert OnlyCallableFromPli();
     }
     if (data.length != 32) {
       revert InvalidCalldata();
@@ -583,7 +583,7 @@ contract FunctionsBillingRegistryMigration is
   /**
    * @notice Get details about a subscription.
    * @param subscriptionId - ID of the subscription
-   * @return balance - LINK balance of the subscription in juels.
+   * @return balance - PLI balance of the subscription in juels.
    * @return owner - owner of the subscription.
    * @return consumers - list of consumer address which are able to use this subscription.
    */
@@ -611,7 +611,7 @@ contract FunctionsBillingRegistryMigration is
    * @return subscriptionId - A unique subscription id.
    * @dev You can manage the consumer set dynamically with addConsumer/removeConsumer.
    * @dev Note to fund the subscription, use transferAndCall. For example
-   * @dev  LINKTOKEN.transferAndCall(
+   * @dev  PLITOKEN.transferAndCall(
    * @dev    address(REGISTRY),
    * @dev    amount,
    * @dev    abi.encode(subscriptionId));
@@ -686,7 +686,7 @@ contract FunctionsBillingRegistryMigration is
   }
 
   /**
-   * @notice Remove a consumer from a Chainlink Functions subscription.
+   * @notice Remove a consumer from a Chainpli Functions subscription.
    * @param subscriptionId - ID of the subscription
    * @param consumer - Consumer to remove from the subscription
    */
@@ -717,7 +717,7 @@ contract FunctionsBillingRegistryMigration is
   }
 
   /**
-   * @notice Add a consumer to a Chainlink Functions subscription.
+   * @notice Add a consumer to a Chainpli Functions subscription.
    * @param subscriptionId - ID of the subscription
    * @param consumer - New consumer which can use the subscription
    */
@@ -746,7 +746,7 @@ contract FunctionsBillingRegistryMigration is
   /**
    * @notice Cancel a subscription
    * @param subscriptionId - ID of the subscription
-   * @param to - Where to send the remaining LINK to
+   * @param to - Where to send the remaining PLI to
    */
   function cancelSubscription(uint64 subscriptionId, address to)
     external
@@ -771,7 +771,7 @@ contract FunctionsBillingRegistryMigration is
     delete s_subscriptionConfigs[subscriptionId];
     delete s_subscriptions[subscriptionId];
     s_totalBalance -= balance;
-    if (!LINK.transfer(to, uint256(balance))) {
+    if (!PLI.transfer(to, uint256(balance))) {
       revert InsufficientBalance();
     }
     emit SubscriptionCanceled(subscriptionId, to, balance);

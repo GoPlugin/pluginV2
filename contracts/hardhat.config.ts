@@ -32,10 +32,13 @@ export default {
   },
   typechain: {
     outDir: './typechain',
-    target: 'ethers-v5',
+    target: 'ethers-v4',
   },
   networks: {
-    hardhat: {},
+    apothem: {
+      url: 'https://erpc.apothem.network',
+      accounts: [''],
+    },
   },
   solidity: {
     compilers: [

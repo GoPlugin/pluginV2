@@ -5,10 +5,7 @@ pragma solidity ^0.8.7;
 import "./ConfirmedOwner.sol";
 import "./VRFV2WrapperConsumerBase.sol";
 
-/**
- * Request testnet PLI and ETH here: https://faucets.chain.link/
- * Find information on PLI Token Contracts and get the latest ETH and PLI faucets here: https://docs.chain.link/docs/link-token-contracts/
- */
+
 
 /**
  * THIS IS AN EXAMPLE CONTRACT THAT USES HARDCODED VALUES FOR CLARITY.
@@ -28,7 +25,7 @@ contract VRFv2DirectFundingConsumer is
     );
 
     struct RequestStatus {
-        uint256 paid; // amount paid in link
+        uint256 paid; // amount paid in pli
         bool fulfilled; // whether the request has been successfully fulfilled
         uint256[] randomWords;
     }

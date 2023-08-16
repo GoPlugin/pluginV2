@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
-import "./vendor/SafeMathPluginsol";
+import "./vendor/SafeMathPlugin.sol";
 import "./SignedSafeMath.sol";
 
 library Median {

@@ -33,9 +33,9 @@ abstract contract PluginClient {
   uint256 private s_requestCount = 1;
   mapping(bytes32 => address) private s_pendingRequests;
 
-  event PluginRequested(bytes32 indexed id);
-  event PluginFulfilled(bytes32 indexed id);
-  event PluginCancelled(bytes32 indexed id);
+  event ChainlinkRequested(bytes32 indexed id);
+  event ChainlinkFulfilled(bytes32 indexed id);
+  event ChainlinkCancelled(bytes32 indexed id);
 
   /**
    * @notice Creates a request that can hold additional parameters
@@ -169,7 +169,7 @@ abstract contract PluginClient {
   ) private returns (bytes32 requestId) {
     requestId = keccak256(abi.encodePacked(this, nonce));
     s_pendingRequests[requestId] = oracleAddress;
-    emit PluginRequested(requestId);
+    emit ChainlinkRequested(requestId);
     require(s_pli.transferAndCall(oracleAddress, payment, encodedRequest), "unable to transferAndCall to oracle");
   }
 
@@ -191,7 +191,7 @@ abstract contract PluginClient {
   ) internal {
     OperatorInterface requested = OperatorInterface(s_pendingRequests[requestId]);
     delete s_pendingRequests[requestId];
-    emit PluginCancelled(requestId);
+    emit ChainlinkCancelled(requestId);
     requested.cancelOracleRequest(requestId, payment, callbackFunc, expiration);
   }
 
@@ -300,7 +300,7 @@ abstract contract PluginClient {
   modifier recordPluginFulfillment(bytes32 requestId) {
     require(msg.sender == s_pendingRequests[requestId], "Source must be the oracle of the request");
     delete s_pendingRequests[requestId];
-    emit PluginFulfilled(requestId);
+    emit ChainlinkFulfilled(requestId);
     _;
   }
 

@@ -29,7 +29,7 @@ contract MaliciousPluginClient is PluginClient {
     requestId = keccak256(abi.encodePacked(_target, maliciousRequests));
     _req.nonce = maliciousRequests;
     maliciousPendingRequests[requestId] = pluginOracleAddress();
-    emit PluginRequested(requestId);
+    emit ChainlinkRequested(requestId);
     PliTokenInterface _pli = PliTokenInterface(pluginTokenAddress());
     require(_pli.transferAndCall(pluginOracleAddress(), _amount, encodeTargetRequest(_req)), "Unable to transferAndCall to oracle");
     maliciousRequests += 1;
@@ -44,7 +44,7 @@ contract MaliciousPluginClient is PluginClient {
     requestId = keccak256(abi.encodePacked(this, maliciousRequests));
     _req.nonce = maliciousRequests;
     maliciousPendingRequests[requestId] = pluginOracleAddress();
-    emit PluginRequested(requestId);
+    emit ChainlinkRequested(requestId);
     PliTokenInterface _pli = PliTokenInterface(pluginTokenAddress());
     require(_pli.transferAndCall(pluginOracleAddress(), _amount, encodePriceRequest(_req)), "Unable to transferAndCall to oracle");
     maliciousRequests += 1;
@@ -59,7 +59,7 @@ contract MaliciousPluginClient is PluginClient {
     requestId = keccak256(abi.encodePacked(this, maliciousRequests));
     _req.nonce = maliciousRequests;
     maliciousPendingRequests[requestId] = pluginOracleAddress();
-    emit PluginRequested(requestId);
+    emit ChainlinkRequested(requestId);
     PliTokenInterface _pli = PliTokenInterface(pluginTokenAddress());
     require(_pli.transferAndCall(pluginOracleAddress(), _wei, encodeWithdrawRequest(_req)), "Unable to transferAndCall to oracle");
     maliciousRequests += 1;

@@ -2,15 +2,15 @@
 pragma solidity ^0.8.0;
 
 import "../ConfirmedOwner.sol";
-import "../interfaces/LinkTokenInterface.sol";
+import "../interfaces/PliTokenInterface.sol";
 import "../interfaces/VRFV2WrapperInterface.sol";
 
 contract VRFV2WrapperUnderFundingConsumer is ConfirmedOwner {
-  LinkTokenInterface internal immutable LINK;
+  PliTokenInterface internal immutable PLI;
   VRFV2WrapperInterface internal immutable VRF_V2_WRAPPER;
 
-  constructor(address _link, address _vrfV2Wrapper) ConfirmedOwner(msg.sender) {
-    LINK = LinkTokenInterface(_link);
+  constructor(address _pli, address _vrfV2Wrapper) ConfirmedOwner(msg.sender) {
+    PLI = PliTokenInterface(_pli);
     VRF_V2_WRAPPER = VRFV2WrapperInterface(_vrfV2Wrapper);
   }
 
@@ -19,7 +19,7 @@ contract VRFV2WrapperUnderFundingConsumer is ConfirmedOwner {
     uint16 _requestConfirmations,
     uint32 _numWords
   ) external onlyOwner {
-    LINK.transferAndCall(
+    PLI.transferAndCall(
       address(VRF_V2_WRAPPER),
       // Pay less than the needed amount
       VRF_V2_WRAPPER.calculateRequestPrice(_callbackGasLimit) - 1,

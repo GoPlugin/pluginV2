@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// An example VRF V1 consumer contract that can be triggered using a transferAndCall from the link
+// An example VRF V1 consumer contract that can be triggered using a transferAndCall from the pli
 // contract.
 pragma solidity ^0.8.4;
 
@@ -10,9 +10,9 @@ contract VRFOwnerlessConsumerExample is VRFConsumerBase, ERC677ReceiverInterface
   uint256 public s_randomnessOutput;
   bytes32 public s_requestId;
 
-  error OnlyCallableFromLink();
+  error OnlyCallableFromPli();
 
-  constructor(address _vrfCoordinator, address _link) VRFConsumerBase(_vrfCoordinator, _link) {
+  constructor(address _vrfCoordinator, address _pli) VRFConsumerBase(_vrfCoordinator, _pli) {
     /* empty */
   }
 
@@ -23,17 +23,17 @@ contract VRFOwnerlessConsumerExample is VRFConsumerBase, ERC677ReceiverInterface
 
   /**
    * @dev Creates a new randomness request. This function can only be used by calling
-   * transferAndCall on the LinkToken contract.
-   * @param _amount The amount of LINK transferred to pay for this request.
-   * @param _data The data passed to transferAndCall on LinkToken. Must be an abi-encoded key hash.
+   * transferAndCall on the PliToken contract.
+   * @param _amount The amount of PLI transferred to pay for this request.
+   * @param _data The data passed to transferAndCall on PliToken. Must be an abi-encoded key hash.
    */
   function onTokenTransfer(
     address, /* sender */
     uint256 _amount,
     bytes calldata _data
   ) external override {
-    if (msg.sender != address(LINK)) {
-      revert OnlyCallableFromLink();
+    if (msg.sender != address(PLI)) {
+      revert OnlyCallableFromPli();
     }
 
     bytes32 keyHash = abi.decode(_data, (bytes32));

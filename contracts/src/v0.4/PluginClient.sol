@@ -30,9 +30,9 @@ contract PluginClient {
   uint256 private requests = 1;
   mapping(bytes32 => address) private pendingRequests;
 
-  event PluginRequested(bytes32 indexed id);
-  event PluginFulfilled(bytes32 indexed id);
-  event PluginCancelled(bytes32 indexed id);
+  event ChainlinkRequested(bytes32 indexed id);
+  event ChainlinkFulfilled(bytes32 indexed id);
+  event ChainlinkCancelled(bytes32 indexed id);
 
   /**
    * @notice Creates a request that can hold additional parameters
@@ -68,7 +68,7 @@ contract PluginClient {
    * @notice Creates a Plugin request to the specified oracle address
    * @dev Generates and stores a request ID, increments the local nonce, and uses `transferAndCall` to
    * send PLI which creates a request on the target oracle contract.
-   * Emits PluginRequested event.
+   * Emits ChainlinkRequested event.
    * @param _oracle The address of the oracle for the request
    * @param _req The initialized Plugin Request
    * @param _payment The amount of PLI to send for the request
@@ -81,7 +81,7 @@ contract PluginClient {
     requestId = keccak256(abi.encodePacked(this, requests));
     _req.nonce = requests;
     pendingRequests[requestId] = _oracle;
-    emit PluginRequested(requestId);
+    emit ChainlinkRequested(requestId);
     require(pli.transferAndCall(_oracle, _payment, encodeRequest(_req)), "unable to transferAndCall to oracle");
     requests += 1;
 
@@ -108,7 +108,7 @@ contract PluginClient {
   {
     PluginRequestInterface requested = PluginRequestInterface(pendingRequests[_requestId]);
     delete pendingRequests[_requestId];
-    emit PluginCancelled(_requestId);
+    emit ChainlinkCancelled(_requestId);
     requested.cancelOracleRequest(_requestId, _payment, _callbackFunc, _expiration);
   }
 
@@ -245,7 +245,7 @@ contract PluginClient {
   modifier recordPluginFulfillment(bytes32 _requestId) {
     require(msg.sender == pendingRequests[_requestId], "Source must be the oracle of the request");
     delete pendingRequests[_requestId];
-    emit PluginFulfilled(_requestId);
+    emit ChainlinkFulfilled(_requestId);
     _;
   }
 

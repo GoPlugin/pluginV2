@@ -16,11 +16,11 @@ contract Consumer is PluginClient {
   );
 
   constructor(
-    address _link,
+    address _pli,
     address _oracle,
     bytes32 _specId
   ) public {
-    setPluginToken(_link);
+    setPluginToken(_pli);
     setPluginOracle(_oracle);
     specId = _specId;
   }
@@ -61,9 +61,9 @@ contract Consumer is PluginClient {
     requested.cancelOracleRequest(_requestId, _payment, _callbackFunctionId, _expiration);
   }
 
-  function withdrawLink() public {
-    LinkTokenInterface _link = LinkTokenInterface(pluginTokenAddress());
-    require(_link.transfer(msg.sender, _link.balanceOf(address(this))), "Unable to transfer");
+  function withdrawPli() public {
+    PliTokenInterface _pli = PliTokenInterface(pluginTokenAddress());
+    require(_pli.transfer(msg.sender, _pli.balanceOf(address(this))), "Unable to transfer");
   }
 
   function addExternalRequest(address _oracle, bytes32 _requestId) external {

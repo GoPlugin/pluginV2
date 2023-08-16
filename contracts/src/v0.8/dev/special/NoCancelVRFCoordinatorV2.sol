@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "../../interfaces/LinkTokenInterface.sol";
+import "../../interfaces/PliTokenInterface.sol";
 import "../../interfaces/BlockhashStoreInterface.sol";
 import "../../interfaces/AggregatorV3Interface.sol";
 import "../../interfaces/VRFCoordinatorV2Interface.sol";
@@ -28,8 +28,8 @@ contract NoCancelVRFCoordinatorV2 is
   VRFCoordinatorV2Interface,
   ERC677ReceiverInterface
 {
-  LinkTokenInterface public immutable LINK;
-  AggregatorV3Interface public immutable LINK_ETH_FEED;
+  PliTokenInterface public immutable PLI;
+  AggregatorV3Interface public immutable PLI_ETH_FEED;
   BlockhashStoreInterface public immutable BLOCKHASH_STORE;
 
   // We need to maintain a list of consuming addresses.
@@ -40,7 +40,7 @@ contract NoCancelVRFCoordinatorV2 is
   error InsufficientBalance();
   error InvalidConsumer(uint64 subId, address consumer);
   error InvalidSubscription();
-  error OnlyCallableFromLink();
+  error OnlyCallableFromPli();
   error InvalidCalldata();
   error MustBeSubOwner(address owner);
   error PendingRequestExists();
@@ -51,7 +51,7 @@ contract NoCancelVRFCoordinatorV2 is
   // at fulfillment time.
   struct Subscription {
     // There are only 1e9*1e18 = 1e27 juels in existence, so the balance can fit in uint96 (2^96 ~ 7e28)
-    uint96 balance; // Common link balance used for all consumer requests.
+    uint96 balance; // Common pli balance used for all consumer requests.
     uint64 reqCount; // For fee tiers
   }
   // We use the config for the mgmt APIs
@@ -76,9 +76,9 @@ contract NoCancelVRFCoordinatorV2 is
   // We make the sub count public so that its possible to
   // get all the current subscriptions via getSubscription.
   uint64 private s_currentSubId;
-  // s_totalBalance tracks the total link sent to/from
+  // s_totalBalance tracks the total pli sent to/from
   // this contract through onTokenTransfer, cancelSubscription and oracleWithdraw.
-  // A discrepancy with this contract's link balance indicates someone
+  // A discrepancy with this contract's pli balance indicates someone
   // sent tokens using transfer and so we may need to use recoverFunds.
   uint96 private s_totalBalance;
   event SubscriptionCreated(uint64 indexed subId, address owner);
@@ -101,7 +101,7 @@ contract NoCancelVRFCoordinatorV2 is
   error NumWordsTooBig(uint32 have, uint32 want);
   error ProvingKeyAlreadyRegistered(bytes32 keyHash);
   error NoSuchProvingKey(bytes32 keyHash);
-  error InvalidLinkWeiPrice(int256 linkWei);
+  error InvalidPliWeiPrice(int256 pliWei);
   error InsufficientGasForConsumer(uint256 have, uint256 want);
   error NoCorrespondingRequest();
   error IncorrectCommitment();
@@ -118,7 +118,7 @@ contract NoCancelVRFCoordinatorV2 is
   mapping(bytes32 => address) /* keyHash */ /* oracle */
     private s_provingKeys;
   bytes32[] private s_provingKeyHashes;
-  mapping(address => uint96) /* oracle */ /* LINK balance */
+  mapping(address => uint96) /* oracle */ /* PLI balance */
     private s_withdrawableTokens;
   mapping(uint256 => bytes32) /* requestID */ /* commitment */
     private s_requestCommitments;
@@ -142,23 +142,23 @@ contract NoCancelVRFCoordinatorV2 is
     // Reentrancy protection.
     bool reentrancyLock;
     // stalenessSeconds is how long before we consider the feed price to be stale
-    // and fallback to fallbackWeiPerUnitLink.
+    // and fallback to fallbackWeiPerUnitPli.
     uint32 stalenessSeconds;
     // Gas to cover oracle payment after we calculate the payment.
     // We make it configurable in case those operations are repriced.
     uint32 gasAfterPaymentCalculation;
   }
-  int256 private s_fallbackWeiPerUnitLink;
+  int256 private s_fallbackWeiPerUnitPli;
   Config private s_config;
   FeeConfig private s_feeConfig;
   struct FeeConfig {
-    // Flat fee charged per fulfillment in millionths of link
+    // Flat fee charged per fulfillment in millionths of pli
     // So fee range is [0, 2^32/10^6].
-    uint32 fulfillmentFlatFeeLinkPPMTier1;
-    uint32 fulfillmentFlatFeeLinkPPMTier2;
-    uint32 fulfillmentFlatFeeLinkPPMTier3;
-    uint32 fulfillmentFlatFeeLinkPPMTier4;
-    uint32 fulfillmentFlatFeeLinkPPMTier5;
+    uint32 fulfillmentFlatFeePliPPMTier1;
+    uint32 fulfillmentFlatFeePliPPMTier2;
+    uint32 fulfillmentFlatFeePliPPMTier3;
+    uint32 fulfillmentFlatFeePliPPMTier4;
+    uint32 fulfillmentFlatFeePliPPMTier5;
     uint24 reqsForTier2;
     uint24 reqsForTier3;
     uint24 reqsForTier4;
@@ -169,17 +169,17 @@ contract NoCancelVRFCoordinatorV2 is
     uint32 maxGasLimit,
     uint32 stalenessSeconds,
     uint32 gasAfterPaymentCalculation,
-    int256 fallbackWeiPerUnitLink,
+    int256 fallbackWeiPerUnitPli,
     FeeConfig feeConfig
   );
 
   constructor(
-    address link,
+    address pli,
     address blockhashStore,
-    address linkEthFeed
+    address pliEthFeed
   ) ConfirmedOwner(msg.sender) {
-    LINK = LinkTokenInterface(link);
-    LINK_ETH_FEED = AggregatorV3Interface(linkEthFeed);
+    PLI = PliTokenInterface(pli);
+    PLI_ETH_FEED = AggregatorV3Interface(pliEthFeed);
     BLOCKHASH_STORE = BlockhashStoreInterface(blockhashStore);
   }
 
@@ -232,9 +232,9 @@ contract NoCancelVRFCoordinatorV2 is
    * @notice Sets the configuration of the vrfv2 coordinator
    * @param minimumRequestConfirmations global min for request confirmations
    * @param maxGasLimit global max for request gas limit
-   * @param stalenessSeconds if the eth/link feed is more stale then this, use the fallback price
+   * @param stalenessSeconds if the eth/pli feed is more stale then this, use the fallback price
    * @param gasAfterPaymentCalculation gas used in doing accounting after completing the gas measurement
-   * @param fallbackWeiPerUnitLink fallback eth/link price in the case of a stale feed
+   * @param fallbackWeiPerUnitPli fallback eth/pli price in the case of a stale feed
    * @param feeConfig fee tier configuration
    */
   function setConfig(
@@ -242,7 +242,7 @@ contract NoCancelVRFCoordinatorV2 is
     uint32 maxGasLimit,
     uint32 stalenessSeconds,
     uint32 gasAfterPaymentCalculation,
-    int256 fallbackWeiPerUnitLink,
+    int256 fallbackWeiPerUnitPli,
     FeeConfig memory feeConfig
   ) external onlyOwner {
     if (minimumRequestConfirmations > MAX_REQUEST_CONFIRMATIONS) {
@@ -252,8 +252,8 @@ contract NoCancelVRFCoordinatorV2 is
         MAX_REQUEST_CONFIRMATIONS
       );
     }
-    if (fallbackWeiPerUnitLink <= 0) {
-      revert InvalidLinkWeiPrice(fallbackWeiPerUnitLink);
+    if (fallbackWeiPerUnitPli <= 0) {
+      revert InvalidPliWeiPrice(fallbackWeiPerUnitPli);
     }
     s_config = Config({
       minimumRequestConfirmations: minimumRequestConfirmations,
@@ -263,13 +263,13 @@ contract NoCancelVRFCoordinatorV2 is
       reentrancyLock: false
     });
     s_feeConfig = feeConfig;
-    s_fallbackWeiPerUnitLink = fallbackWeiPerUnitLink;
+    s_fallbackWeiPerUnitPli = fallbackWeiPerUnitPli;
     emit ConfigSet(
       minimumRequestConfirmations,
       maxGasLimit,
       stalenessSeconds,
       gasAfterPaymentCalculation,
-      fallbackWeiPerUnitLink,
+      fallbackWeiPerUnitPli,
       s_feeConfig
     );
   }
@@ -296,11 +296,11 @@ contract NoCancelVRFCoordinatorV2 is
     external
     view
     returns (
-      uint32 fulfillmentFlatFeeLinkPPMTier1,
-      uint32 fulfillmentFlatFeeLinkPPMTier2,
-      uint32 fulfillmentFlatFeeLinkPPMTier3,
-      uint32 fulfillmentFlatFeeLinkPPMTier4,
-      uint32 fulfillmentFlatFeeLinkPPMTier5,
+      uint32 fulfillmentFlatFeePliPPMTier1,
+      uint32 fulfillmentFlatFeePliPPMTier2,
+      uint32 fulfillmentFlatFeePliPPMTier3,
+      uint32 fulfillmentFlatFeePliPPMTier4,
+      uint32 fulfillmentFlatFeePliPPMTier5,
       uint24 reqsForTier2,
       uint24 reqsForTier3,
       uint24 reqsForTier4,
@@ -308,11 +308,11 @@ contract NoCancelVRFCoordinatorV2 is
     )
   {
     return (
-      s_feeConfig.fulfillmentFlatFeeLinkPPMTier1,
-      s_feeConfig.fulfillmentFlatFeeLinkPPMTier2,
-      s_feeConfig.fulfillmentFlatFeeLinkPPMTier3,
-      s_feeConfig.fulfillmentFlatFeeLinkPPMTier4,
-      s_feeConfig.fulfillmentFlatFeeLinkPPMTier5,
+      s_feeConfig.fulfillmentFlatFeePliPPMTier1,
+      s_feeConfig.fulfillmentFlatFeePliPPMTier2,
+      s_feeConfig.fulfillmentFlatFeePliPPMTier3,
+      s_feeConfig.fulfillmentFlatFeePliPPMTier4,
+      s_feeConfig.fulfillmentFlatFeePliPPMTier5,
       s_feeConfig.reqsForTier2,
       s_feeConfig.reqsForTier3,
       s_feeConfig.reqsForTier4,
@@ -324,12 +324,12 @@ contract NoCancelVRFCoordinatorV2 is
     return s_totalBalance;
   }
 
-  function getFallbackWeiPerUnitLink() external view returns (int256) {
-    return s_fallbackWeiPerUnitLink;
+  function getFallbackWeiPerUnitPli() external view returns (int256) {
+    return s_fallbackWeiPerUnitPli;
   }
 
   /**
-   * @notice Owner cancel subscription, sends remaining link directly to the subscription owner.
+   * @notice Owner cancel subscription, sends remaining pli directly to the subscription owner.
    * @param subId subscription id
    * @dev notably can be called even if there are pending requests, outstanding ones may fail onchain
    */
@@ -341,18 +341,18 @@ contract NoCancelVRFCoordinatorV2 is
   }
 
   /**
-   * @notice Recover link sent with transfer instead of transferAndCall.
-   * @param to address to send link to
+   * @notice Recover pli sent with transfer instead of transferAndCall.
+   * @param to address to send pli to
    */
   function recoverFunds(address to) external onlyOwner {
-    uint256 externalBalance = LINK.balanceOf(address(this));
+    uint256 externalBalance = PLI.balanceOf(address(this));
     uint256 internalBalance = uint256(s_totalBalance);
     if (internalBalance > externalBalance) {
       revert BalanceInvariantViolated(internalBalance, externalBalance);
     }
     if (internalBalance < externalBalance) {
       uint256 amount = externalBalance - internalBalance;
-      LINK.transfer(to, amount);
+      PLI.transfer(to, amount);
       emit FundsRecovered(to, amount);
     }
     // If the balances are equal, nothing to be done.
@@ -537,23 +537,23 @@ contract NoCancelVRFCoordinatorV2 is
   /*
    * @notice Compute fee based on the request count
    * @param reqCount number of requests
-   * @return feePPM fee in LINK PPM
+   * @return feePPM fee in PLI PPM
    */
   function getFeeTier(uint64 reqCount) public view returns (uint32) {
     FeeConfig memory fc = s_feeConfig;
     if (0 <= reqCount && reqCount <= fc.reqsForTier2) {
-      return fc.fulfillmentFlatFeeLinkPPMTier1;
+      return fc.fulfillmentFlatFeePliPPMTier1;
     }
     if (fc.reqsForTier2 < reqCount && reqCount <= fc.reqsForTier3) {
-      return fc.fulfillmentFlatFeeLinkPPMTier2;
+      return fc.fulfillmentFlatFeePliPPMTier2;
     }
     if (fc.reqsForTier3 < reqCount && reqCount <= fc.reqsForTier4) {
-      return fc.fulfillmentFlatFeeLinkPPMTier3;
+      return fc.fulfillmentFlatFeePliPPMTier3;
     }
     if (fc.reqsForTier4 < reqCount && reqCount <= fc.reqsForTier5) {
-      return fc.fulfillmentFlatFeeLinkPPMTier4;
+      return fc.fulfillmentFlatFeePliPPMTier4;
     }
-    return fc.fulfillmentFlatFeeLinkPPMTier5;
+    return fc.fulfillmentFlatFeePliPPMTier5;
   }
 
   /*
@@ -589,9 +589,9 @@ contract NoCancelVRFCoordinatorV2 is
     uint64 reqCount = s_subscriptions[rc.subId].reqCount;
     s_subscriptions[rc.subId].reqCount += 1;
 
-    // We want to charge users exactly the flat link fee, regardless of how much gas is used.
-    // The link fee is specified in millionths of link; if s_config.fulfillmentFlatFeeLinkPPM = 1
-    // 1 link / 1e6 = 1e18 juels / 1e6 = 1e12 juels.
+    // We want to charge users exactly the flat pli fee, regardless of how much gas is used.
+    // The pli fee is specified in millionths of pli; if s_config.fulfillmentFlatFeePliPPM = 1
+    // 1 pli / 1e6 = 1e18 juels / 1e6 = 1e12 juels.
     uint96 payment = calculatePaymentAmount(
       startGas,
       s_config.gasAfterPaymentCalculation,
@@ -612,12 +612,12 @@ contract NoCancelVRFCoordinatorV2 is
   function calculatePaymentAmount(
     uint256 startGas,
     uint256 gasAfterPaymentCalculation,
-    uint32 fulfillmentFlatFeeLinkPPM,
+    uint32 fulfillmentFlatFeePliPPM,
     uint256 weiPerUnitGas
   ) internal view returns (uint96) {
-    uint256 fee = 1e12 * uint256(fulfillmentFlatFeeLinkPPM);
+    uint256 fee = 1e12 * uint256(fulfillmentFlatFeePliPPM);
     if (fee > (1e27 - fee)) {
-      revert PaymentTooLarge(); // Fee cannot be more than all of the link in existence.
+      revert PaymentTooLarge(); // Fee cannot be more than all of the pli in existence.
     }
     return uint96(fee);
   }
@@ -626,17 +626,17 @@ contract NoCancelVRFCoordinatorV2 is
     uint32 stalenessSeconds = s_config.stalenessSeconds;
     bool staleFallback = stalenessSeconds > 0;
     uint256 timestamp;
-    int256 weiPerUnitLink;
-    (, weiPerUnitLink, , timestamp, ) = LINK_ETH_FEED.latestRoundData();
+    int256 weiPerUnitPli;
+    (, weiPerUnitPli, , timestamp, ) = PLI_ETH_FEED.latestRoundData();
     // solhint-disable-next-line not-rely-on-time
     if (staleFallback && stalenessSeconds < block.timestamp - timestamp) {
-      weiPerUnitLink = s_fallbackWeiPerUnitLink;
+      weiPerUnitPli = s_fallbackWeiPerUnitPli;
     }
-    return weiPerUnitLink;
+    return weiPerUnitPli;
   }
 
   /*
-   * @notice Oracle withdraw LINK earned through fulfilling requests
+   * @notice Oracle withdraw PLI earned through fulfilling requests
    * @param recipient where to send the funds
    * @param amount amount to withdraw
    */
@@ -646,7 +646,7 @@ contract NoCancelVRFCoordinatorV2 is
     }
     s_withdrawableTokens[msg.sender] -= amount;
     s_totalBalance -= amount;
-    if (!LINK.transfer(recipient, amount)) {
+    if (!PLI.transfer(recipient, amount)) {
       revert InsufficientBalance();
     }
   }
@@ -656,8 +656,8 @@ contract NoCancelVRFCoordinatorV2 is
     uint256 amount,
     bytes calldata data
   ) external override nonReentrant {
-    if (msg.sender != address(LINK)) {
-      revert OnlyCallableFromLink();
+    if (msg.sender != address(PLI)) {
+      revert OnlyCallableFromPli();
     }
     if (data.length != 32) {
       revert InvalidCalldata();
@@ -816,7 +816,7 @@ contract NoCancelVRFCoordinatorV2 is
     delete s_subscriptionConfigs[subId];
     delete s_subscriptions[subId];
     s_totalBalance -= balance;
-    if (!LINK.transfer(to, uint256(balance))) {
+    if (!PLI.transfer(to, uint256(balance))) {
       revert InsufficientBalance();
     }
     emit SubscriptionCanceled(subId, to, balance);

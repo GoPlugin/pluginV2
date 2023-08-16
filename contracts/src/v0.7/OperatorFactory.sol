@@ -16,10 +16,10 @@ contract OperatorFactory {
   event AuthorizedForwarderCreated(address indexed forwarder, address indexed owner, address indexed sender);
 
   /**
-   * @param linkAddress address
+   * @param pliAddress address
    */
-  constructor(address linkAddress) {
-    getPluginToken = linkAddress;
+  constructor(address pliAddress) {
+    getPluginToken = pliAddress;
   }
 
   /**

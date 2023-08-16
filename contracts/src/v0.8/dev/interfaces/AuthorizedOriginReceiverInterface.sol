@@ -50,7 +50,7 @@ interface AuthorizedOriginReceiverInterface {
 
   /**
    * @notice Use this to check if a node is authorized for fulfilling requests
-   * @param sender The address of the Chainlink node
+   * @param sender The address of the Plugin node
    * @return The authorization status of the node
    */
   function isAuthorizedSender(address sender) external view returns (bool);

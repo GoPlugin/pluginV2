@@ -29,10 +29,10 @@ $ npm install @goplugin/contractsv2 --save
 
 ### Usage
 
-The solidity smart contracts themselves can be imported via the `src` directory of `@chainlink/contracts`:
+The solidity smart contracts themselves can be imported via the `src` directory of `@goplugin/contractsv2`:
 
 ```solidity
-import '@goplugin/contracts/src/v0.8/AutomationCompatibleInterface.sol';
+import '@goplugin/contractsv2/src/v0.8/AutomationCompatibleInterface.sol';
 
 ```
 

@@ -6,11 +6,11 @@ import "../dev/VRFSubscriptionBalanceMonitor.sol";
 
 contract VRFSubscriptionBalanceMonitorExposed is VRFSubscriptionBalanceMonitor {
   constructor(
-    address linkTokenAddress,
+    address pliTokenAddress,
     address coordinatorAddress,
     address keeperRegistryAddress,
     uint256 minWaitPeriodSeconds
-  ) VRFSubscriptionBalanceMonitor(linkTokenAddress, coordinatorAddress, keeperRegistryAddress, minWaitPeriodSeconds) {}
+  ) VRFSubscriptionBalanceMonitor(pliTokenAddress, coordinatorAddress, keeperRegistryAddress, minWaitPeriodSeconds) {}
 
   function setLastTopUpXXXTestOnly(uint64 target, uint56 lastTopUpTimestamp) external {
     s_targets[target].lastTopUpTimestamp = lastTopUpTimestamp;

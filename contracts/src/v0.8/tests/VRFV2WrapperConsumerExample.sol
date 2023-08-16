@@ -16,9 +16,9 @@ contract VRFV2WrapperConsumerExample is VRFV2WrapperConsumerBase, ConfirmedOwner
   mapping(uint256 => RequestStatus) /* requestId */ /* requestStatus */
     public s_requests;
 
-  constructor(address _link, address _vrfV2Wrapper)
+  constructor(address _pli, address _vrfV2Wrapper)
     ConfirmedOwner(msg.sender)
-    VRFV2WrapperConsumerBase(_link, _vrfV2Wrapper)
+    VRFV2WrapperConsumerBase(_pli, _vrfV2Wrapper)
   {}
 
   function makeRequest(

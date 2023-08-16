@@ -310,7 +310,7 @@ contract FluxAggregator is AggregatorV2V3Interface, Owned {
   {
     Funds memory funds = recordedFunds;
 
-    uint256 nowAvailable = PliToken.balanceOf(address(this)).sub(funds.allocated);
+    uint256 nowAvailable = pliToken.balanceOf(address(this)).sub(funds.allocated);
 
     if (funds.available != nowAvailable) {
       recordedFunds.available = uint128(nowAvailable);

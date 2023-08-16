@@ -5,10 +5,10 @@ import {FunctionsBillingRegistry} from "../dev/functions/FunctionsBillingRegistr
 
 contract FunctionsBillingRegistryWithInit is FunctionsBillingRegistry {
   constructor(
-    address link,
-    address linkEthFeed,
+    address pli,
+    address pliEthFeed,
     address oracle
   ) {
-    initialize(link, linkEthFeed, oracle);
+    initialize(pli, pliEthFeed, oracle);
   }
 }

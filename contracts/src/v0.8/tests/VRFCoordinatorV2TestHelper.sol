@@ -8,25 +8,25 @@ contract VRFCoordinatorV2TestHelper is VRFCoordinatorV2 {
   uint256 s_gasStart;
 
   constructor(
-    address link,
+    address pli,
     address blockhashStore,
-    address linkEthFeed
+    address pliEthFeed
   )
     // solhint-disable-next-line no-empty-blocks
-    VRFCoordinatorV2(link, blockhashStore, linkEthFeed)
+    VRFCoordinatorV2(pli, blockhashStore, pliEthFeed)
   {
     /* empty */
   }
 
   function calculatePaymentAmountTest(
     uint256 gasAfterPaymentCalculation,
-    uint32 fulfillmentFlatFeeLinkPPM,
+    uint32 fulfillmentFlatFeePliPPM,
     uint256 weiPerUnitGas
   ) external {
     s_paymentAmount = calculatePaymentAmount(
       gasleft(),
       gasAfterPaymentCalculation,
-      fulfillmentFlatFeeLinkPPM,
+      fulfillmentFlatFeePliPPM,
       weiPerUnitGas
     );
   }

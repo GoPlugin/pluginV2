@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@goplugin/contractsv2/src/v0.8/interfaces/PliTokenInterface.sol";
+import "./interfaces/PliTokenInterface.sol";
 import "./interfaces/VRFV2WrapperInterface.sol";
 
 /** *******************************************************************************
@@ -20,7 +20,7 @@ import "./interfaces/VRFV2WrapperInterface.sol";
  * @dev USAGE
  *
  * @dev Calling contracts must inherit from VRFV2WrapperConsumerBase. The consumer must be funded
- * @dev with enough LINK to make the request, otherwise requests will revert. To request randomness,
+ * @dev with enough PLI to make the request, otherwise requests will revert. To request randomness,
  * @dev call the 'requestRandomness' function with the desired VRF parameters. This function handles
  * @dev paying for the request based on the current pricing.
  *
@@ -28,15 +28,15 @@ import "./interfaces/VRFV2WrapperInterface.sol";
  * @dev fulfillment with the randomness result.
  */
 abstract contract VRFV2WrapperConsumerBase {
-  PliTokenInterface internal immutable LINK;
+  PliTokenInterface internal immutable PLI;
   VRFV2WrapperInterface internal immutable VRF_V2_WRAPPER;
 
   /**
-   * @param _link is the address of LinkToken
+   * @param _pli is the address of PliToken
    * @param _vrfV2Wrapper is the address of the VRFV2Wrapper contract
    */
-  constructor(address _link, address _vrfV2Wrapper) {
-    LINK = PliTokenInterface(_link);
+  constructor(address _pli, address _vrfV2Wrapper) {
+    PLI = PliTokenInterface(_pli);
     VRF_V2_WRAPPER = VRFV2WrapperInterface(_vrfV2Wrapper);
   }
 
@@ -57,7 +57,7 @@ abstract contract VRFV2WrapperConsumerBase {
     uint16 _requestConfirmations,
     uint32 _numWords
   ) internal returns (uint256 requestId) {
-    LINK.transferAndCall(
+    PLI.transferAndCall(
       address(VRF_V2_WRAPPER),
       VRF_V2_WRAPPER.calculateRequestPrice(_callbackGasLimit),
       abi.encode(_callbackGasLimit, _requestConfirmations, _numWords)

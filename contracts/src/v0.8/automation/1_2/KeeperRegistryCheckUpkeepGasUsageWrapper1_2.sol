@@ -40,10 +40,10 @@ contract KeeperRegistryCheckUpkeepGasUsageWrapper1_2 is ConfirmedOwner {
     uint256 startGas = gasleft();
     try i_keeperRegistry.checkUpkeep(id, from) returns (
       bytes memory performData,
-      uint256 maxLinkPayment,
+      uint256 maxPliPayment,
       uint256 gasLimit,
       uint256 adjustedGasWei,
-      uint256 linkEth
+      uint256 pliEth
     ) {
       uint256 gasUsed = startGas - gasleft();
       return (true, performData, gasUsed);

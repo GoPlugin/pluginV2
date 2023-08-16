@@ -145,7 +145,7 @@ contract FunctionsOracle is
     FunctionsBillingRegistryInterface.RequestBilling memory /* billing */
   ) public pure override returns (uint96) {
     // NOTE: Optionally, compute additional fee split between nodes of the DON here
-    // e.g. 0.1 LINK * s_transmitters.length
+    // e.g. 0.1 PLI * s_transmitters.length
     return 0;
   }
 

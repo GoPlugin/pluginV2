@@ -54,7 +54,7 @@ interface KeeperRegistryBaseInterface {
       uint24 stalenessSeconds,
       uint16 gasCeilingMultiplier,
       uint256 fallbackGasPrice,
-      uint256 fallbackLinkPrice
+      uint256 fallbackPliPrice
     );
 }
 
@@ -69,10 +69,10 @@ interface KeeperRegistryInterface is KeeperRegistryBaseInterface {
     view
     returns (
       bytes memory performData,
-      uint256 maxLinkPayment,
+      uint256 maxPliPayment,
       uint256 gasLimit,
       int256 gasWei,
-      int256 linkEth
+      int256 pliEth
     );
 }
 
@@ -81,9 +81,9 @@ interface KeeperRegistryExecutableInterface is KeeperRegistryBaseInterface {
     external
     returns (
       bytes memory performData,
-      uint256 maxLinkPayment,
+      uint256 maxPliPayment,
       uint256 gasLimit,
       uint256 adjustedGasWei,
-      uint256 linkEth
+      uint256 pliEth
     );
 }

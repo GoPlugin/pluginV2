@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
-import {CBORChainlink} from "../../vendor/CBORChainlink.sol";
-import {BufferChainlink} from "../../vendor/BufferChainlink.sol";
+import {CBORPlugin} from "../../vendor/CBORPlugin.sol";
+import {BufferPlugin} from "../../vendor/BufferPlugin.sol";
 
 /**
- * @title Library for Chainlink Functions
+ * @title Library for Plugin Functions
  */
 library Functions {
   uint256 internal constant DEFAULT_BUFFER_SIZE = 256;
 
-  using CBORChainlink for BufferChainlink.buffer;
+  using CBORPlugin for BufferPlugin.buffer;
 
   enum Location {
     Inline,
@@ -42,8 +42,8 @@ library Functions {
    * @return CBOR encoded bytes
    */
   function encodeCBOR(Request memory self) internal pure returns (bytes memory) {
-    BufferChainlink.buffer memory buf;
-    BufferChainlink.init(buf, DEFAULT_BUFFER_SIZE);
+    BufferPlugin.buffer memory buf;
+    BufferPlugin.init(buf, DEFAULT_BUFFER_SIZE);
 
     buf.encodeString("codeLocation");
     buf.encodeUInt(uint256(self.codeLocation));
@@ -74,7 +74,7 @@ library Functions {
   }
 
   /**
-   * @notice Initializes a Chainlink Functions Request
+   * @notice Initializes a Plugin Functions Request
    * @dev Sets the codeLocation and code on the request
    * @param self The uninitialized request
    * @param location The user provided source code location
@@ -95,7 +95,7 @@ library Functions {
   }
 
   /**
-   * @notice Initializes a Chainlink Functions Request
+   * @notice Initializes a Plugin Functions Request
    * @dev Simplified version of initializeRequest for PoC
    * @param self The uninitialized request
    * @param javaScriptSource The user provided JS code (must not be empty)

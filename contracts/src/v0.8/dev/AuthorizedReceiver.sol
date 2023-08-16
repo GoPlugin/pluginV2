@@ -18,7 +18,7 @@ abstract contract AuthorizedReceiver is AuthorizedReceiverInterface {
 
   /**
    * @notice Sets the fulfillment permission for a given node. Use `true` to allow, `false` to disallow.
-   * @param senders The addresses of the authorized Chainlink node
+   * @param senders The addresses of the authorized Plugin node
    */
   function setAuthorizedSenders(address[] calldata senders) external override validateAuthorizedSenderSetter {
     if (senders.length == 0) {
@@ -44,7 +44,7 @@ abstract contract AuthorizedReceiver is AuthorizedReceiverInterface {
 
   /**
    * @notice Use this to check if a node is authorized for fulfilling requests
-   * @param sender The address of the Chainlink node
+   * @param sender The address of the Plugin node
    * @return The authorization status of the node
    */
   function isAuthorizedSender(address sender) public view override returns (bool) {

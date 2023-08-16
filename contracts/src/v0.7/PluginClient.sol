@@ -3,7 +3,7 @@ pragma solidity ^0.7.0;
 
 import "./Plugin.sol";
 import "./interfaces/ENSInterface.sol";
-import "./interfaces/LinkTokenInterface.sol";
+import "./interfaces/PliTokenInterface.sol";
 import "./interfaces/PluginRequestInterface.sol";
 import "./interfaces/OperatorInterface.sol";
 import "./interfaces/PointerInterface.sol";
@@ -17,25 +17,25 @@ import {ENSResolver as ENSResolver_Plugin} from "./vendor/ENSResolver.sol";
 abstract contract PluginClient {
   using Plugin for Plugin.Request;
 
-  uint256 internal constant LINK_DIVISIBILITY = 10**18;
+  uint256 internal constant PLI_DIVISIBILITY = 10**18;
   uint256 private constant AMOUNT_OVERRIDE = 0;
   address private constant SENDER_OVERRIDE = address(0);
   uint256 private constant ORACLE_ARGS_VERSION = 1;
   uint256 private constant OPERATOR_ARGS_VERSION = 2;
-  bytes32 private constant ENS_TOKEN_SUBNAME = keccak256("link");
+  bytes32 private constant ENS_TOKEN_SUBNAME = keccak256("pli");
   bytes32 private constant ENS_ORACLE_SUBNAME = keccak256("oracle");
-  address private constant LINK_TOKEN_POINTER = 0xC89bD4E1632D3A43CB03AAAd5262cbe4038Bc571;
+  address private constant PLI_TOKEN_POINTER = 0xC89bD4E1632D3A43CB03AAAd5262cbe4038Bc571;
 
   ENSInterface private s_ens;
   bytes32 private s_ensNode;
-  LinkTokenInterface private s_link;
+  PliTokenInterface private s_pli;
   OperatorInterface private s_oracle;
   uint256 private s_requestCount = 1;
   mapping(bytes32 => address) private s_pendingRequests;
 
-  event PluginRequested(bytes32 indexed id);
-  event PluginFulfilled(bytes32 indexed id);
-  event PluginCancelled(bytes32 indexed id);
+  event ChainlinkRequested(bytes32 indexed id);
+  event ChainlinkFulfilled(bytes32 indexed id);
+  event ChainlinkCancelled(bytes32 indexed id);
 
   /**
    * @notice Creates a request that can hold additional parameters
@@ -72,7 +72,7 @@ abstract contract PluginClient {
    * @notice Creates a Plugin request to the stored oracle address
    * @dev Calls `pluginRequestTo` with the stored oracle address
    * @param req The initialized Plugin Request
-   * @param payment The amount of LINK to send for the request
+   * @param payment The amount of PLI to send for the request
    * @return requestId The request ID
    */
   function sendPluginRequest(Plugin.Request memory req, uint256 payment) internal returns (bytes32) {
@@ -82,11 +82,11 @@ abstract contract PluginClient {
   /**
    * @notice Creates a Plugin request to the specified oracle address
    * @dev Generates and stores a request ID, increments the local nonce, and uses `transferAndCall` to
-   * send LINK which creates a request on the target oracle contract.
+   * send PLI which creates a request on the target oracle contract.
    * Emits PluginRequested event.
    * @param oracleAddress The address of the oracle for the request
    * @param req The initialized Plugin Request
-   * @param payment The amount of LINK to send for the request
+   * @param payment The amount of PLI to send for the request
    * @return requestId The request ID
    */
   function sendPluginRequestTo(
@@ -99,7 +99,7 @@ abstract contract PluginClient {
     bytes memory encodedRequest = abi.encodeWithSelector(
       PluginRequestInterface.oracleRequest.selector,
       SENDER_OVERRIDE, // Sender value - overridden by onTokenTransfer by the requesting contract's address
-      AMOUNT_OVERRIDE, // Amount value - overridden by onTokenTransfer by the actual amount of LINK sent
+      AMOUNT_OVERRIDE, // Amount value - overridden by onTokenTransfer by the actual amount of PLI sent
       req.id,
       address(this),
       req.callbackFunctionId,
@@ -115,7 +115,7 @@ abstract contract PluginClient {
    * @dev This function supports multi-word response
    * @dev Calls `sendOperatorRequestTo` with the stored oracle address
    * @param req The initialized Plugin Request
-   * @param payment The amount of LINK to send for the request
+   * @param payment The amount of PLI to send for the request
    * @return requestId The request ID
    */
   function sendOperatorRequest(Plugin.Request memory req, uint256 payment) internal returns (bytes32) {
@@ -126,11 +126,11 @@ abstract contract PluginClient {
    * @notice Creates a Plugin request to the specified oracle address
    * @dev This function supports multi-word response
    * @dev Generates and stores a request ID, increments the local nonce, and uses `transferAndCall` to
-   * send LINK which creates a request on the target oracle contract.
+   * send PLI which creates a request on the target oracle contract.
    * Emits PluginRequested event.
    * @param oracleAddress The address of the oracle for the request
    * @param req The initialized Plugin Request
-   * @param payment The amount of LINK to send for the request
+   * @param payment The amount of PLI to send for the request
    * @return requestId The request ID
    */
   function sendOperatorRequestTo(
@@ -143,7 +143,7 @@ abstract contract PluginClient {
     bytes memory encodedRequest = abi.encodeWithSelector(
       OperatorInterface.operatorRequest.selector,
       SENDER_OVERRIDE, // Sender value - overridden by onTokenTransfer by the requesting contract's address
-      AMOUNT_OVERRIDE, // Amount value - overridden by onTokenTransfer by the actual amount of LINK sent
+      AMOUNT_OVERRIDE, // Amount value - overridden by onTokenTransfer by the actual amount of PLI sent
       req.id,
       req.callbackFunctionId,
       nonce,
@@ -157,7 +157,7 @@ abstract contract PluginClient {
    * @notice Make a request to an oracle
    * @param oracleAddress The address of the oracle for the request
    * @param nonce used to generate the request ID
-   * @param payment The amount of LINK to send for the request
+   * @param payment The amount of PLI to send for the request
    * @param encodedRequest data encoded for request type specific format
    * @return requestId The request ID
    */
@@ -169,8 +169,8 @@ abstract contract PluginClient {
   ) private returns (bytes32 requestId) {
     requestId = keccak256(abi.encodePacked(this, nonce));
     s_pendingRequests[requestId] = oracleAddress;
-    emit PluginRequested(requestId);
-    require(s_link.transferAndCall(oracleAddress, payment, encodedRequest), "unable to transferAndCall to oracle");
+    emit ChainlinkRequested(requestId);
+    require(s_pli.transferAndCall(oracleAddress, payment, encodedRequest), "unable to transferAndCall to oracle");
   }
 
   /**
@@ -179,7 +179,7 @@ abstract contract PluginClient {
    * Deletes the request from the `pendingRequests` mapping.
    * Emits PluginCancelled event.
    * @param requestId The request ID
-   * @param payment The amount of LINK sent for the request
+   * @param payment The amount of PLI sent for the request
    * @param callbackFunc The callback function specified for the request
    * @param expiration The time of the expiration for the request
    */
@@ -191,7 +191,7 @@ abstract contract PluginClient {
   ) internal {
     OperatorInterface requested = OperatorInterface(s_pendingRequests[requestId]);
     delete s_pendingRequests[requestId];
-    emit PluginCancelled(requestId);
+    emit ChainlinkCancelled(requestId);
     requested.cancelOracleRequest(requestId, payment, callbackFunc, expiration);
   }
 
@@ -213,11 +213,11 @@ abstract contract PluginClient {
   }
 
   /**
-   * @notice Sets the LINK token address
-   * @param linkAddress The address of the LINK token contract
+   * @notice Sets the PLI token address
+   * @param pliAddress The address of the PLI token contract
    */
-  function setPluginToken(address linkAddress) internal {
-    s_link = LinkTokenInterface(linkAddress);
+  function setPluginToken(address pliAddress) internal {
+    s_pli = PliTokenInterface(pliAddress);
   }
 
   /**
@@ -225,15 +225,15 @@ abstract contract PluginClient {
    * network as given by the Pointer contract
    */
   function setPublicPluginToken() internal {
-    setPluginToken(PointerInterface(LINK_TOKEN_POINTER).getAddress());
+    setPluginToken(PointerInterface(PLI_TOKEN_POINTER).getAddress());
   }
 
   /**
-   * @notice Retrieves the stored address of the LINK token
-   * @return The address of the LINK token
+   * @notice Retrieves the stored address of the PLI token
+   * @return The address of the PLI token
    */
   function pluginTokenAddress() internal view returns (address) {
-    return address(s_link);
+    return address(s_pli);
   }
 
   /**
@@ -255,7 +255,7 @@ abstract contract PluginClient {
   }
 
   /**
-   * @notice Sets the stored oracle and LINK token contracts with the addresses resolved by ENS
+   * @notice Sets the stored oracle and PLI token contracts with the addresses resolved by ENS
    * @dev Accounts for subnodes having different resolvers
    * @param ensAddress The address of the ENS contract
    * @param node The ENS node hash
@@ -263,9 +263,9 @@ abstract contract PluginClient {
   function usePluginWithENS(address ensAddress, bytes32 node) internal {
     s_ens = ENSInterface(ensAddress);
     s_ensNode = node;
-    bytes32 linkSubnode = keccak256(abi.encodePacked(s_ensNode, ENS_TOKEN_SUBNAME));
-    ENSResolver_Plugin resolver = ENSResolver_Plugin(s_ens.resolver(linkSubnode));
-    setPluginToken(resolver.addr(linkSubnode));
+    bytes32 pliSubnode = keccak256(abi.encodePacked(s_ensNode, ENS_TOKEN_SUBNAME));
+    ENSResolver_Plugin resolver = ENSResolver_Plugin(s_ens.resolver(pliSubnode));
+    setPluginToken(resolver.addr(pliSubnode));
     updatePluginOracleWithENS();
   }
 
@@ -300,7 +300,7 @@ abstract contract PluginClient {
   modifier recordPluginFulfillment(bytes32 requestId) {
     require(msg.sender == s_pendingRequests[requestId], "Source must be the oracle of the request");
     delete s_pendingRequests[requestId];
-    emit PluginFulfilled(requestId);
+    emit ChainlinkFulfilled(requestId);
     _;
   }
 

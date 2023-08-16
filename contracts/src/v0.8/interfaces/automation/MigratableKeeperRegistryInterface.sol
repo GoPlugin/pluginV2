@@ -6,7 +6,7 @@ import "../../automation/UpkeepFormat.sol";
 
 interface MigratableKeeperRegistryInterface {
   /**
-   * @notice Migrates upkeeps from one registry to another, including LINK and upkeep params.
+   * @notice Migrates upkeeps from one registry to another, including PLI and upkeep params.
    * Only callable by the upkeep admin. All upkeeps must have the same admin. Can only migrate active upkeeps.
    * @param upkeepIDs ids of upkeeps to migrate
    * @param destination the address of the registry to migrate to

@@ -5,28 +5,28 @@ import "../interfaces/AggregatorV3Interface.sol";
 
 /**
  * Network: Fantom Testnet
- * Base: LINK/USD
+ * Base: PLI/USD
  * Base Address: 0x6d5689Ad4C1806D1BA0c70Ab95ebe0Da6B204fC5
  * Quote: FTM/USD
  * Quote Address: 0xe04676B9A9A2973BCb0D1478b5E1E9098BBB7f3D
  * Decimals: 18
  *
  * Network: AVAX Testnet
- * Base: LINK/USD
+ * Base: PLI/USD
  * Base Address: 0x34C4c526902d88a3Aa98DB8a9b802603EB1E3470
  * Quote: AVAX/USD
  * Quote Address: 0x5498BB86BC934c8D34FDA08E81D444153d0D06aD
  * Decimals: 18
  *
- * Chainlink Data Feeds can be used in combination to derive denominated price pairs in other
+ * Plugin Data Feeds can be used in combination to derive denominated price pairs in other
  * currencies.
  *
  * If you require a denomination other than what is provided, you can use two data feeds to derive
  * the pair that you need.
  *
- * For example, if you needed a LINK / FTM price, you could take the LINK / USD feed and the
- * FTM / USD feed and derive LINK / FTM using division.
- * (LINK/USD)/(FTM/USD) = LINK/FTM
+ * For example, if you needed a PLI / FTM price, you could take the PLI / USD feed and the
+ * FTM / USD feed and derive PLI / FTM using division.
+ * (PLI/USD)/(FTM/USD) = PLI/FTM
  */
 contract DerivedPriceFeed is AggregatorV3Interface {
   uint256 public constant override version = 0;
@@ -84,7 +84,7 @@ contract DerivedPriceFeed is AggregatorV3Interface {
     return (uint80(0), getDerivedPrice(), block.timestamp, block.timestamp, uint80(0));
   }
 
-  // https://docs.chain.link/docs/get-the-latest-price/#getting-a-different-price-denomination
+  // https://docs.chain.pli/docs/get-the-latest-price/#getting-a-different-price-denomination
   function getDerivedPrice() internal view returns (int256) {
     (, int256 basePrice, , , ) = BASE.latestRoundData();
     uint8 baseDecimals = BASE.decimals();
