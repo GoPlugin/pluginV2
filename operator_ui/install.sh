@@ -8,10 +8,10 @@ gitRoot=$(git rev-parse --show-toplevel || pwd)
 cd "$gitRoot/operator_ui"
 unpack_dir="$gitRoot/core/web/assets"
 #tag=$(cat TAG)
-tag='0.2'
+tag='0.3'
 # Remove the version prefix "v"
 #strippedTag="${tag:1}"
-strippedTag='0.2-2a1a3c6'
+strippedTag='0.2-459dc5f'
 # Taken from https://github.com/kennyp/asdf-golang/blob/master/lib/helpers.sh
 msg() {
   echo -e "\033[32m$1\033[39m" >&2
