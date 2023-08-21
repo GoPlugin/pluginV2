@@ -242,7 +242,7 @@ func (cli *Client) runNode(c *clipkg.Context) error {
 		return errors.Wrap(err, "config validation failed")
 	}
 
-	lggr.Infow(fmt.Sprintf("Starting Chainlink Node %s at commit %s", static.Version, static.Sha), "Version", static.Version, "SHA", static.Sha)
+	lggr.Infow(fmt.Sprintf("Starting Plugin Node %s at commit %s", static.Version, static.Sha), "Version", static.Version, "SHA", static.Sha)
 
 	if cli.Config.Dev() {
 		lggr.Warn("Chainlink is running in DEVELOPMENT mode. This is a security risk if enabled in production.")
