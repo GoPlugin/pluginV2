@@ -128,7 +128,7 @@ func (cli *Client) ConfigureOCR2VRFNode(c *clipkg.Context, owner *bind.TransactO
 		return nil, cli.errorOut(errors.Wrap(err, "config validation failed"))
 	}
 	lggr.Infow(
-		fmt.Sprintf("Configuring Chainlink Node for job type %s %s at commit %s", c.String("job-type"), static.Version, static.Sha),
+		fmt.Sprintf("Configuring Plugin Node for job type %s %s at commit %s", c.String("job-type"), static.Version, static.Sha),
 		"Version", static.Version, "SHA", static.Sha)
 
 	var pwd, vrfpwd *string

@@ -64,10 +64,10 @@ func initLocalSubCmds(client *Client, devMode bool) []cli.Command {
 				},
 				cli.StringFlag{
 					Name:  "vrfpassword, vp",
-					Usage: "text file holding the password for the vrf keys; enables Chainlink VRF oracle",
+					Usage: "text file holding the password for the vrf keys; enables Plugin VRF oracle",
 				},
 			},
-			Usage:  "Run the Chainlink node",
+			Usage:  "Run the Plugin node",
 			Action: client.RunNode,
 		},
 		{
@@ -245,7 +245,7 @@ func (cli *Client) runNode(c *clipkg.Context) error {
 	lggr.Infow(fmt.Sprintf("Starting Plugin Node %s at commit %s", static.Version, static.Sha), "Version", static.Version, "SHA", static.Sha)
 
 	if cli.Config.Dev() {
-		lggr.Warn("Chainlink is running in DEVELOPMENT mode. This is a security risk if enabled in production.")
+		lggr.Warn("Plugin is running in DEVELOPMENT mode. This is a security risk if enabled in production.")
 	}
 
 	ldb := pg.NewLockedDB(cli.Config, lggr)
@@ -410,7 +410,7 @@ func (cli *Client) runNode(c *clipkg.Context) error {
 
 	cli.Config.LogConfiguration(lggr.Debug)
 
-	lggr.Infow(fmt.Sprintf("Chainlink booted in %.2fs", time.Since(static.InitTime).Seconds()), "appID", app.ID())
+	lggr.Infow(fmt.Sprintf("Plugin booted in %.2fs", time.Since(static.InitTime).Seconds()), "appID", app.ID())
 
 	grp.Go(func() error {
 		errInternal := cli.Runner.Run(grpCtx, app)

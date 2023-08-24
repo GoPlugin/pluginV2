@@ -917,7 +917,7 @@ type changePasswordPrompter struct {
 }
 
 func (c changePasswordPrompter) Prompt() (web.UpdatePasswordRequest, error) {
-	fmt.Println("Changing your chainlink account password.")
+	fmt.Println("Changing your plugin account password.")
 	fmt.Println("NOTE: This will terminate any other sessions.")
 	oldPassword := c.prompter.PasswordPrompt("Password:")
 

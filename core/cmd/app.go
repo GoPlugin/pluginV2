@@ -49,7 +49,7 @@ func isDevMode() bool {
 func NewApp(client *Client) *cli.App {
 	devMode := isDevMode()
 	app := cli.NewApp()
-	app.Usage = "CLI for Chainlink"
+	app.Usage = "CLI for Plugin"
 	app.Version = fmt.Sprintf("%v@%v", static.Version, static.Sha)
 	app.Flags = []cli.Flag{
 		cli.BoolFlag{
@@ -62,12 +62,12 @@ func NewApp(client *Client) *cli.App {
 		},
 		cli.StringFlag{
 			Name:  "remote-node-url",
-			Usage: "optional, applies only in client mode when making remote API calls. If provided, `URL` will be used as the remote Chainlink API endpoint",
+			Usage: "optional, applies only in client mode when making remote API calls. If provided, `URL` will be used as the remote Plugin API endpoint",
 			Value: "http://localhost:6688",
 		},
 		cli.BoolFlag{
 			Name:  "insecure-skip-verify",
-			Usage: "optional, applies only in client mode when making remote API calls. If turned on, SSL certificate verification will be disabled. This is mostly useful for people who want to use Chainlink with a self-signed TLS certificate",
+			Usage: "optional, applies only in client mode when making remote API calls. If turned on, SSL certificate verification will be disabled. This is mostly useful for people who want to use Plugin with a self-signed TLS certificate",
 		},
 		cli.StringSliceFlag{
 			Name:  "config, c",
@@ -192,7 +192,7 @@ func NewApp(client *Client) *cli.App {
 		},
 		{
 			Name:  "keys",
-			Usage: "Commands for managing various types of keys used by the Chainlink node",
+			Usage: "Commands for managing various types of keys used by the Plugin node",
 			Subcommands: []cli.Command{
 				// TODO unify init vs keysCommand
 				// out of scope for initial refactor because it breaks usage messages.
@@ -214,7 +214,7 @@ func NewApp(client *Client) *cli.App {
 			Name:        "node",
 			Aliases:     []string{"local"},
 			Usage:       "Commands for admin actions that must be run locally",
-			Description: "Commands can only be run from on the same machine as the Chainlink node.",
+			Description: "Commands can only be run from on the same machine as the Plugin node.",
 			Subcommands: initLocalSubCmds(client, devMode),
 		},
 		{
