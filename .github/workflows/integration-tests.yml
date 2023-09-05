@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v3.3.0
       - uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
         id: changes
         with:
@@ -54,7 +54,7 @@ jobs:
     needs: [changes]
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v3.3.0
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Build Image
@@ -98,7 +98,7 @@ jobs:
           this-job-name: Build Test Image
         continue-on-error: true
       - name: Checkout the repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v3.3.0
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: build test runner
@@ -178,7 +178,7 @@ jobs:
     name: ETH Smoke Tests ${{ matrix.product.name }}
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v3.3.0
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       ## Run this step when changes that require tests to be run are made
@@ -253,7 +253,7 @@ jobs:
       projectserum_version: ${{ steps.psversion.outputs.projectserum_version }}
     steps:
       - name: Checkout the solana repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v3.3.0
         with:
           repository: smartcontractkit/chainlink-solana
           ref: ${{ env.SOLANA_REF }}
@@ -278,7 +278,7 @@ jobs:
         FORCE_COLOR: 1
     steps:
       - name: Checkout the solana repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v3.3.0
         with:
           repository: smartcontractkit/chainlink-solana
           ref: ${{ env.SOLANA_REF }}
@@ -316,7 +316,7 @@ jobs:
       CONTRACT_ARTIFACTS_PATH: contracts/target/deploy
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v3.3.0
         with:
           repository: smartcontractkit/chainlink-solana
           ref: ${{ env.SOLANA_REF }}
@@ -406,7 +406,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v3.3.0
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       ## Only run OCR smoke test for now
