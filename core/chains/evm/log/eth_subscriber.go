@@ -11,6 +11,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 
 	evmclient "github.com/GoPlugin/pluginV2/core/chains/evm/client"
+	evmtypes "github.com/GoPlugin/pluginV2/core/chains/evm/types"
 	"github.com/GoPlugin/pluginV2/core/logger"
 	"github.com/GoPlugin/pluginV2/core/null"
 	"github.com/GoPlugin/pluginV2/core/utils"
@@ -32,6 +33,10 @@ func newEthSubscriber(ethClient evmclient.Client, config Config, logger logger.L
 		logger:    logger.Named("EthSubscriber"),
 		chStop:    chStop,
 	}
+}
+func (sub *ethSubscriber) getHeadByNumber(ctx context.Context,n int64)(*evmtypes.Head, error){
+	head, err := sub.ethClient.HeadByNumber(ctx, big.NewInt(n))
+	return head,err
 }
 
 // backfillLogs - fetches earlier logs either from a relatively recent block (latest minus BlockBackfillDepth) or from the given fromBlockOverride
