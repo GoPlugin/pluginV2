@@ -429,6 +429,12 @@ func (b *broadcaster) eventLoop(chRawLogs <-chan types.Log, chErr <-chan error) 
 
 		select {
 		case rawLog := <-chRawLogs:
+			fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@@@@ eventLoop chRawLogs",chRawLogs)
+			fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@@@@ eventLoop rawLog",rawLog)
+			ctx, _ := utils.ContextFromChan(b.chStop)
+			head, err := b.ethSubscriber.getHeadByNumber(ctx, int64(rawLog.BlockNumber))
+			fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@ eventloop  head by number",head,err)
+			rawLog.BlockHash = head.Hash
 			b.logger.Debugw("Received a log",
 				"blockNumber", rawLog.BlockNumber, "blockHash", rawLog.BlockHash, "address", rawLog.Address)
 			b.onNewLog(rawLog)
