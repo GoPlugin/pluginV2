@@ -284,10 +284,14 @@ func (lsn *listenerV2) getAndRemoveConfirmedLogsBySub(latestHead uint64) map[uin
 	updateQueueSize(lsn.job.Name.ValueOrZero(), lsn.job.ExternalJobID, v2, uniqueReqs(lsn.reqs))
 	var toProcess = make(map[uint64][]pendingRequest)
 	var toKeep []pendingRequest
-	for i := 0; i < len(lsn.reqs); i++ {
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@@@@@ latest head",latestHead);
+	
+	for i := 0; i < len(lsn.reqs); i++ {		
 		if r := lsn.reqs[i]; lsn.ready(r, latestHead) {
+			fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@ toProcess",lsn.reqs[i])
 			toProcess[r.req.SubId] = append(toProcess[r.req.SubId], r)
 		} else {
+			fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@ tokeep",lsn.reqs[i])
 			toKeep = append(toKeep, lsn.reqs[i])
 		}
 	}
@@ -298,14 +302,17 @@ func (lsn *listenerV2) getAndRemoveConfirmedLogsBySub(latestHead uint64) map[uin
 func (lsn *listenerV2) ready(req pendingRequest, latestHead uint64) bool {
 	// Request is not eligible for fulfillment yet
 	if req.confirmedAtBlock > latestHead {
+		fmt.Println("@@@@@@@@@@@@@@@@@ Request is not eligible for fulfillment yet")
+		fmt.Println("@@@@@@@@@@@@@@@@@ req.confirmedAtBlock",req.confirmedAtBlock)
+		fmt.Println("@@@@@@@@@@@@@@@@@ latestHead",latestHead)
 		return false
 	}
-
+	fmt.Println("@@@@@@@@@@@@@@@@@@ backoff initial delay")
 	if lsn.job.VRFSpec.BackoffInitialDelay == 0 || req.attempts == 0 {
 		// Backoff is disabled, or this is the first try
 		return true
 	}
-
+	fmt.Println("@@@@@@@@@@@@@@@@@@ next try");
 	return time.Now().UTC().After(
 		nextTry(
 			req.attempts,
@@ -359,6 +366,7 @@ func (lsn *listenerV2) pruneConfirmedRequestCounts() {
 // Its easier to optimistically assume it will go though and in the rare case of a reversion
 // we simply retry TODO: follow up where if we see a fulfillment revert, return log to the queue.
 func (lsn *listenerV2) processPendingVRFRequests(ctx context.Context) {
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@ Process Pending VRF Requests");
 	confirmed := lsn.getAndRemoveConfirmedLogsBySub(lsn.getLatestHead())
 	processed := make(map[string]struct{})
 	start := time.Now()
@@ -368,6 +376,8 @@ func (lsn *listenerV2) processPendingVRFRequests(ctx context.Context) {
 		var toKeep []pendingRequest
 		for _, subReqs := range confirmed {
 			for _, req := range subReqs {
+				fmt.Println("@@@@@@@@@@@@@@@@@@ reqests callback gas limit",req.req.CallbackGasLimit);
+				fmt.Println("@@@@@@@@@@@@@@@@@@ reqests request ID",req.req.RequestId.String());	
 				if _, ok := processed[req.req.RequestId.String()]; !ok {
 					req.attempts++
 					req.lastTry = time.Now().UTC()
@@ -385,6 +395,7 @@ func (lsn *listenerV2) processPendingVRFRequests(ctx context.Context) {
 								req.lastTry))
 					}
 				} else {
+					fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@@ request consumed",req.lb);
 					lsn.markLogAsConsumed(req.lb)
 				}
 			}
@@ -573,7 +584,8 @@ func (lsn *listenerV2) processRequestsPerSubBatch(
 		// All fromAddresses passed to the VRFv2 job have the same KeySpecificMaxGasPriceWei value.
 		fromAddresses := lsn.fromAddresses()
 		maxGasPriceWei := lsn.cfg.KeySpecificMaxGasPriceWei(fromAddresses[0])
-
+		fmt.Println("@@@@@@@@@@@@@@@@@@@@ from Address: ",fromAddresses);
+		fmt.Println("@@@@@@@@@@@@@@@@@@@@ maxGasPriceWei: ",maxGasPriceWei);
 		// Cases:
 		// 1. Never simulated: in this case, we want to observe the time until simulated
 		// on the utcTimestamp field of the pending request.
@@ -688,9 +700,10 @@ func (lsn *listenerV2) processRequestsPerSub(
 	reqs []pendingRequest,
 ) map[string]struct{} {
 	if lsn.job.VRFSpec.BatchFulfillmentEnabled && lsn.batchCoordinator != nil {
+		fmt.Println("@@@@@@@@@@@@@@@@@@@@@@ processRequestsPerSubBatch")
 		return lsn.processRequestsPerSubBatch(ctx, subID, startBalance, reqs)
 	}
-
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@ processRequestsPerSub")
 	start := time.Now()
 	var processed = make(map[string]struct{})
 	startBalanceNoReserveLink, err := MaybeSubtractReservedLink(
@@ -973,7 +986,7 @@ func (lsn *listenerV2) estimateFeeJuels(
 	if err != nil {
 		return nil, errors.Wrap(err, "get aggregator latestAnswer")
 	}
-
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@ latest round data",roundData);
 	juelsNeeded, err := EstimateFeeJuels(
 		req.CallbackGasLimit,
 		maxGasPriceWei.ToInt(),
@@ -1045,7 +1058,9 @@ func (lsn *listenerV2) simulateFulfillment(
 		res.err = errors.Errorf("unexpected number of outputs, expected 1, was %d", len(trrs.FinalResult(lg).Values))
 		return res
 	}
-
+	
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@@@@ Final Result: ", trrs.FinalResult(lg).Values[0]);
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@@@@ Task Run results: ", trrs);
 	// Run succeeded, we expect a byte array representing the billing amount
 	b, ok := trrs.FinalResult(lg).Values[0].([]uint8)
 	if !ok {
@@ -1115,6 +1130,9 @@ func (lsn *listenerV2) getConfirmedAt(req *vrf_coordinator_v2.VRFCoordinatorV2Ra
 	// Add the requested confs delay if provided in the jobspec so that we avoid an edge case
 	// where the primary and backup VRF v2 nodes submit a proof at the same time.
 	minConfs := nodeMinConfs
+	fmt.Println("@@@@@@@@@@@@@@@@@@ nodeMinConfs",nodeMinConfs)
+	fmt.Println("@@@@@@@@@@@@@@@@@@ req.MinimumRequestConfirmations", req.MinimumRequestConfirmations);
+	fmt.Println("@@@@@@@@@@@@@@@@@@ lsn.job.VRFSpec.RequestedConfsDelay",lsn.job.VRFSpec.RequestedConfsDelay)
 	if uint32(req.MinimumRequestConfirmations)+uint32(lsn.job.VRFSpec.RequestedConfsDelay) > nodeMinConfs {
 		minConfs = uint32(req.MinimumRequestConfirmations) + uint32(lsn.job.VRFSpec.RequestedConfsDelay)
 	}
@@ -1126,6 +1144,8 @@ func (lsn *listenerV2) getConfirmedAt(req *vrf_coordinator_v2.VRFCoordinatorV2Ra
 	if newConfs > 200 {
 		newConfs = 200
 	}
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@ newConfs", newConfs);
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@ req.Raw.BlockNumber",req.Raw.BlockNumber)
 	if lsn.respCount[req.RequestId.String()] > 0 {
 		lsn.l.Warnw("Duplicate request found after fulfillment, doubling incoming confirmations",
 			"txHash", req.Raw.TxHash,
@@ -1160,6 +1180,7 @@ func (lsn *listenerV2) handleLog(lb log.Broadcast, minConfs uint32) {
 	}
 
 	req, err := lsn.coordinator.ParseRandomWordsRequested(lb.RawLog())
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@@@ ParseRandomWordsRequested")
 	if err != nil {
 		lsn.l.Errorw("Failed to parse log", "err", err, "txHash", lb.RawLog().TxHash)
 		consumed, err := lsn.logBroadcaster.WasAlreadyConsumed(lb)
@@ -1250,6 +1271,9 @@ const GasProofVerification uint32 = 200_000
 // given the callback gas limit, the gas price, and the wei per unit link.
 // An error is returned if the wei per unit link provided is zero.
 func EstimateFeeJuels(callbackGasLimit uint32, maxGasPriceWei, weiPerUnitLink *big.Int) (*big.Int, error) {
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@ EstimateFeeJuels , callbackGasLimit: ",callbackGasLimit);
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@ EstimateFeeJuels , maxGasPriceWei: ",maxGasPriceWei);
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@ EstimateFeeJuels , weiPerUnitLink: ",weiPerUnitLink);
 	if weiPerUnitLink.Cmp(big.NewInt(0)) == 0 {
 		return nil, errors.New("wei per unit link is zero")
 	}

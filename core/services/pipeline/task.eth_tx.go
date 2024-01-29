@@ -241,6 +241,9 @@ func setJobIDOnMeta(lggr logger.Logger, vars Vars, meta *txmgr.EthTxMeta) {
 	case int64:
 		vv := int32(v)
 		meta.JobID = &vv
+	case int32:
+		vv := int32(v)
+		meta.JobID = &vv
 	default:
 		logger.Sugared(lggr).AssumptionViolationf("expected type int32 for vars.jobSpec.databaseID; got: %T (value: %v)", jobID, jobID)
 	}
